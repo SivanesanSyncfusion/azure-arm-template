@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Syncfusion.Dashboard.Connection.ClientMode/1.0.0": {
+        "dependencies": {
+          "Syncfusion.Dashboard.Connection.ClientMode.Model": "1.0.0"
+        },
+        "runtime": {
+          "Syncfusion.Dashboard.Connection.ClientMode.dll": {}
+        }
+      },
+      "Syncfusion.Dashboard.Connection.ClientMode.Model/1.0.0": {
+        "runtime": {
+          "Syncfusion.Dashboard.Connection.ClientMode.Model.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Syncfusion.Dashboard.Connection.ClientMode/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Syncfusion.Dashboard.Connection.ClientMode.Model/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
