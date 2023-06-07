@@ -6049,7 +6049,7 @@ var Designer = {
             },
             customWebDsDateRange  :{
                 today : 'Today',
-                yesterDay :'YesterDay',
+                yesterday :'Yesterday',
                 pastWeek : 'Past Week',
                 past2Weeks : 'Past 2 Weeks',
                 pastMonth :'Past Month',
