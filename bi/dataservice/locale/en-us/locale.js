@@ -838,7 +838,9 @@
                     showRowGrandTotals: "Show Row Grand Totals",
                     showColumnGrandTotals: "Show Column Grand Totals",
                     showRowSubTotals: "Show Row Sub Totals",
-                    showColumnSubTotals: "Show Column Sub Totals"
+                    showColumnSubTotals: "Show Column Sub Totals",
+                    RowGrandTotalText: "Grand Total",
+                    ColumnGrandTotalText: "Grand Total"
                 },
                 pivotFormattingSettings: {
                     groupPanelBackground: "Group Panel Background",
