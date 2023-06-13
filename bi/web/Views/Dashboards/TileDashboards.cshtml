@@ -217,7 +217,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="dashboard-action-container col-xs-12" ng-show="activeMenu !== @((int)DisplayCategory.UsageAnalytics) && (initialDashboardCount > 0)">
+                <div class="dashboard-action-container col-xs-12" ng-show="activeMenu !== @((int)DisplayCategory.UsageAnalytics) && (initialDashboardCount > 0) && totalDashboardCount > 0">
                     <span class="col-xs-5 dashboards-header ng-hide" ng-show="isTablet && !isMobile">
                         <span class="col-xs-12 no-padding dashboard-header-info">
                             <span class="dashboard-category-name" ng-bind="activeMenuLabel" data-container="body" data-toggle="dashboard-list-tooltip" data-original-title="{{activeMenuLabel}}" data-placement="bottom">@T["All Dashboards"]</span>
