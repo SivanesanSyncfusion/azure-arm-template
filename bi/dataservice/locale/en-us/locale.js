@@ -7245,7 +7245,9 @@
 			userParameter: {
 				fullName: "Current User Full Name",
 				email: "Current User Email",
-                token: "Current User Token"
+                token: "Current User Token",
+				tenantURL: "Tenant URL",
+				siteIdentifier: "Site Identifier"
             },
             tabWidget: {
                 deleteTab: "Delete Tab",

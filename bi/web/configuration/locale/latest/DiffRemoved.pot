@@ -1,102 +1,3 @@
-msgid "{0} Users, {1} Groups, and {2} External Recipients"
-msgstr ""
-
-msgid "{0} has been deleted successfully."
-msgstr ""
-
-msgid "{0} permission for {1} has been added successfully."
-msgstr ""
-
-msgid "{0} duplicate user(s) exists."
-msgstr ""
-
-msgid "{0} minutes ago"
-msgstr ""
-
-msgid "{0} hours ago"
-msgstr ""
-
-msgid "{0} days ago"
-msgstr ""
-
-msgid "{0} of {1} pages ({2} items)"
-msgstr ""
-
-msgid "{0} invalid user(s) exists"
-msgstr ""
-
-msgid "{0} user(s) has been imported successfully."
-msgstr ""
-
-msgid "{0} user(s) details are modified."
-msgstr ""
-
-msgid "{0} user(s) are deleted."
-msgstr ""
-
-msgid "{0} user(s) were not found in the database."
-msgstr ""
-
-msgid "{0} user import"
-msgstr ""
-
-msgid "{0} (1 of 2: Dashboard Info)"
-msgstr ""
-
-msgid "{0} (2 of 2: Configure Data Source)"
-msgstr ""
-
-msgid "{0} has been failed to delete."
-msgstr ""
-
-msgid "{0} group import"
-msgstr ""
-
-msgid "{0} group(s) details are modified."
-msgstr ""
-
-msgid "{0} group(s) are deleted."
-msgstr ""
-
-msgid "{0} duplicate group(s) exists."
-msgstr ""
-
-msgid "{0} Server Group(s) has been deleted successfully."
-msgstr ""
-
-msgid "{0} Group(s) has been deleted successfully."
-msgstr ""
-
-msgid "{0} and {1} Server Group(s) has been deleted successfully."
-msgstr ""
-
-msgid "{0} and {1} Group(s) has been deleted successfully."
-msgstr ""
-
-msgid "{0} Group(s)"
-msgstr ""
-
-msgid "{0} Group(s) and "
-msgstr ""
-
-msgid "{0} and {1} in Enterprise Mode are not supported."
-msgstr ""
-
-msgid "{0} and {1} image formats are supported."
-msgstr ""
-
-msgid "{0} You can manage the existing sites in the {1}connected sites{2} page."
-msgstr ""
-
-msgid "{0} Synchronization settings updated successfully."
-msgstr ""
-
-msgid "{0} User Synchronization"
-msgstr ""
-
-msgid "{0} Schedule Synchronization Failure"
-msgstr ""
-
 msgid "Configuration for managing user accounts."
 msgstr ""
 
@@ -131,6 +32,9 @@ msgid "Manage all webhooks here."
 msgstr ""
 
 msgid "Import Groups"
+msgstr ""
+
+msgid "Import"
 msgstr ""
 
 msgid "Manage support team’s access to your resources."

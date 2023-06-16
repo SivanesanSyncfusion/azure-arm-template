@@ -40,6 +40,60 @@ msgstr ""
 msgid "Refresh cannot be initiated as another refresh is currently in progress"
 msgstr ""
 
+msgid "View Status"
+msgstr ""
+
+msgid "Please select a CSV file with a user count of {0} or less."
+msgstr ""
+
+msgid "Delete bulk users import job"
+msgstr ""
+
+msgid "Error while importing users."
+msgstr ""
+
+msgid "Are you sure you want to delete the bulk users import job - {0}?"
+msgstr ""
+
+msgid "Are you sure you want to suspend the bulk users import job - {0}?"
+msgstr ""
+
+msgid "Import users’ job has been deleted successfully."
+msgstr ""
+
+msgid "Failed to delete import users’ job."
+msgstr ""
+
+msgid "Import users’ job has been suspended successfully."
+msgstr ""
+
+msgid "Failed to suspend import users’ job"
+msgstr ""
+
+msgid "Suspend bulk users import job"
+msgstr ""
+
+msgid "Bulk users import job has already been deleted. Please refresh the page."
+msgstr ""
+
+msgid "Bulk users import job has already been suspended. Please refresh the page."
+msgstr ""
+
+msgid "Bulk User Import"
+msgstr ""
+
+msgid "A background job for importing users has been created, and the import process will start within 3 minutes of the job’s creation. Please check the import job status."
+msgstr ""
+
+msgid "Another import is currently in process. Multiple imports cannot be triggered simultaneously."
+msgstr ""
+
+msgid "Yet to start"
+msgstr ""
+
+msgid "In progress"
+msgstr ""
+
 msgid "Yet to complete"
 msgstr ""
 
@@ -211,6 +265,69 @@ msgstr ""
 msgid "Import Groups — {0}"
 msgstr ""
 
+msgid "Import Selected Users"
+msgstr ""
+
+msgid "Import All Users"
+msgstr ""
+
+msgid "Import all users and activate their accounts"
+msgstr ""
+
+msgid "Bulk import Result"
+msgstr ""
+
+msgid "The user import process will start on or before 3 minutes from the job creation time."
+msgstr ""
+
+msgid "Job Id"
+msgstr ""
+
+msgid "Import Type"
+msgstr ""
+
+msgid "Started On"
+msgstr ""
+
+msgid "Suspend"
+msgstr ""
+
+msgid "Type Of import"
+msgstr ""
+
+msgid "Bulk user import Result"
+msgstr ""
+
+msgid "The bulk user import status will be marked as completed within 3 minutes after all the users have been imported successfully."
+msgstr ""
+
+msgid "Total User Count"
+msgstr ""
+
+msgid "Imported Users"
+msgstr ""
+
+msgid "Yet To Import"
+msgstr ""
+
+msgid "Failed User"
+msgstr ""
+
+msgid "Date Created"
+msgstr ""
+
+msgid "Last Updated"
+msgstr ""
+
+msgid "The import has been suspended by system due to 5 consecutive Failure."
+msgstr ""
+
+msgid "Type Of Import"
+msgstr ""
+
+msgid "Failed Import"
+msgstr ""
+
 msgid "Click to view"
 msgstr ""
 
@@ -220,7 +337,25 @@ msgstr ""
 msgid "{0}Go to home page{1} or {2}Create a support ticket{3}"
 msgstr ""
 
+msgid "Shows the bulk user import detail"
+msgstr ""
+
+msgid "Bulk Import Result"
+msgstr ""
+
+msgid "The import of {0} users from {1} is still in progress"
+msgstr ""
+
+msgid "Import users job Not Found"
+msgstr ""
+
 msgid "Refresh Logs Not Found"
+msgstr ""
+
+msgid "Import users job details not found"
+msgstr ""
+
+msgid "Sorry! The import users job detail you’re looking for isn’t available. The job detail may have been deleted or the job id is invalid. Please refresh the bulk import result page."
 msgstr ""
 
 msgid "Refresh logs not found"
