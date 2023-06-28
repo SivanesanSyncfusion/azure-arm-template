@@ -7336,6 +7336,12 @@
 		oauthDriveButtonLable: "Select a file from the drive",
                 oauthDriveButtonText:"Browse",
 				fileUploadFailedText: "Please upload a file to continue",
+				alertDialogContent: "This data source uses the following data sources in its configuration. Please complete the configuration of the below data sources first.",
+				linkedDsContent1: "This data source is used by the following data sources",
+				linkedDsContent2: ". Please complete the configuration of this data source first to prevent errors when configuring the mentioned data sources.",
+				alertDialogue: "alertDialogue",
+				okText: "Ok",
+				noText: "No",
 				uploadingProgressText: "Uploading in progress. Please wait for the upload to complete or you can remove the uploading item to continue.",
             }
         }
