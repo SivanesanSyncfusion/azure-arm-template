@@ -497,7 +497,8 @@ var Designer = {
                     lineWidth:"Line Width",
                     emptyCellsContent:"Empty Cell Content",
 					rawData: "Show Raw Data",
-                    rawDataInfo:"This option will remove the aggregation in grid columns and show raw data."
+                    rawDataInfo:"This option will remove the aggregation in grid columns and show raw data.",
+                    apiType:"API Type"
                 },
 				 chartLineStyleSettings: {
                     series: "Series",

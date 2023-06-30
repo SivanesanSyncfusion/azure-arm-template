@@ -530,7 +530,8 @@
 					tabWidgetHideTabText: "Hide Tab",
 					headerColorText: "Header Color",
 					headerFontSizeText: "Header Font Size",
-					activeTabText: "Active  Tab"
+					activeTabText: "Active  Tab",
+                    apiType:"API Type"
                 },
 				 chartLineStyleSettings: {
                     series: "Series",
