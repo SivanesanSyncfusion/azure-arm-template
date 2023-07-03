@@ -1,6 +1,6 @@
 /*!
 *  filename: ej1.grid.all.js
-*  version : 6.8.6
+*  version : 6.8.7
 *  Copyright Syncfusion Inc. 2001 - 2023. All rights reserved.
 *  Use of this code is subject to the terms of our license.
 *  A copy of the current license can be obtained at any time by e-mailing
@@ -2583,8 +2583,13 @@
                             else {
                                 if (!BoldBIDashboard.isNullOrUndefined(e.scrollData) && e.scrollData.handler == "e-hhandle" && proxy.model.allowFiltering && (proxy.model.filterSettings.filterType == "menu" || proxy._isExcelFilter))
                                     !proxy._isExcelFilter ? proxy._closeFilterDlg() : proxy._excelFilter.closeXFDialog();
-                                    e["reachedEnd"] = this.content()[0].scrollHeight - e.scrollTop == this.content()[0].clientHeight;
-                           if ((e.source == "button" || e.source == "key" || e.source == "wheel") && proxy.model != null)
+                                    if(this._hScroll) {
+                                      e["reachedEnd"] = this.content()[0].scrollHeight - e.scrollTop + e.model.scrollerSize == this.content()[0].clientHeight;
+                                    }
+                                    else{
+                                      e["reachedEnd"] = this.content()[0].scrollHeight - e.scrollTop  == this.content()[0].clientHeight;
+                                    }
+                                if ((e.source == "button" || e.source == "key" || e.source == "wheel") && proxy.model != null)
                                     proxy._virtualScroll(e);
                                 if (e.source == "wheel" && e.scrollTop != proxy._scrollValue)
                                     e.scrollTop = proxy._scrollValue;

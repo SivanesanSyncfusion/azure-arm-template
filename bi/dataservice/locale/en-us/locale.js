@@ -251,6 +251,7 @@
                 containerAppearanceText: "Container Appearance",
                 containerActionsText: "Container Actions",
                 basicSettingsText: "Basic Settings",
+                tooltipSettingsText: "Tooltip Settings",
                 linkText: "Link",
                 filterText: "Filter",
                 headerSettingsText: "Header Settings",
@@ -332,6 +333,7 @@
                     columnText: "Column",
                     chooseField: "Choose Field",
                     urlText: "URL",
+                    urlLinkInfo: "Please follow the below syntax to create a dynamic dashboard link.\n@{{:CURRENT.SITEURL}}/dashboards?dashboardName={dashboard_name}&categoryName={category_name}",
                     appendColumn: "Append Column",
                     urlPreview: "URL Preview",
                     linkDestination: "Link Destination",
@@ -435,7 +437,6 @@
                     showLegendAsDropDown: "Show Legend Items as Dropdown",
                     showLegendTitle: "Show Title",
 		            showTooltip:"Show Tooltip",
-					showValueInTooltip: "Show Value In Tooltip",
                     legend: "Legend",
 					legendShapeText: "Legend Shape",
                     legendPosition: "Legend Position",
@@ -533,7 +534,18 @@
 					activeTabText: "Active  Tab",
                     apiType:"API Type"
                 },
-				 chartLineStyleSettings: {
+                tooltipSettings: {
+                    showTooltip: "Show Tooltip",
+                    showValueInTooltip: "Show Value In Tooltip",
+                    customizeTooltip: "Customize Tooltip",
+                    customizeTooltipBtnText: "Customize Tooltip",
+                    customizeTooltipDialogTitleText: "Customize Tooltip Settings",
+                    customizeTooltipDialogOkBtnText: "OK",
+                    customizeTooltipDialogCancelBtnText: "Cancel",
+                    columnNameHeaderText: "Column Name",
+                    visibilityHeaderText: "Visibility"
+                },
+				chartLineStyleSettings: {
                     series: "Series",
                     lineWidth:"Line Width",
                     lineStyleText: "Line Style",
@@ -7247,8 +7259,8 @@
 				fullName: "Current User Full Name",
 				email: "Current User Email",
                 token: "Current User Token",
-				tenantURL: "Tenant URL",
-				siteIdentifier: "Site Identifier"
+				tenantURL: "Current Site URL",
+				siteIdentifier: "Current Site Identifier"
             },
             tabWidget: {
                 deleteTab: "Delete Tab",
