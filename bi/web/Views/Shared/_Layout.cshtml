@@ -202,18 +202,19 @@
                 <script asp-append-version="true" src="@dashboardServerResourceUrl/cdn/scripts/itemaction.min.js"></script>
             </environment>
         }
-
-        <script asp-append-version="true" src="@dashboardServerResourceUrl/cdn/scripts/ej2-dialog.min.js"></script>
     }
     else
     {
         <environment include="Development,CloudDevelopment">
             <script asp-append-version="true" src="@dashboardServerResourceUrl/cdn/scripts/layout-mobile.js"></script>
+            <script asp-append-version="true" src="@dashboardServerResourceUrl/cdn/scripts/itemaction.js"></script>
         </environment>
         <environment exclude="Development,CloudDevelopment">
             <script asp-append-version="true" src="@dashboardServerResourceUrl/cdn/scripts/layout-mobile.min.js"></script>
+            <script asp-append-version="true" src="@dashboardServerResourceUrl/cdn/scripts/itemaction.min.js"></script>
         </environment>
     }
+    <script asp-append-version="true" src="@dashboardServerResourceUrl/cdn/scripts/ej2-dialog.min.js"></script>
     <script type="text/javascript">
         $.extend(ej, Syncfusion);
         var baseUrl = "@globalAppSettings.SystemSettings.BaseUrl";

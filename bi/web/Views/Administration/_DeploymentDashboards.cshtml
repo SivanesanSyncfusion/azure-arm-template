@@ -18,7 +18,7 @@
     var isDashboardNameExistUrl = "@Url.Action("IsDeploymentDashboardNameExists", "Publish")";
     var getDeploymentDashboardsUrl = "@Url.Action("GetDeploymentDashboards", "Publish")";
     var deploymentItemDetails = @Html.Raw(Json.Serialize(ViewBag.DeploymentDashboard));
-    var getSelectPickerValuesUrl = "@Url.Action("GetCreateSlideshowDetail", "SlideShow")";
+    var getSelectPickerValuesUrl = "@Url.Action("GetDeploymentDashboardDetail", "Administration")";
     var removeDashboardUrl = "@Url.Action("RemoveDeploymentDashboard", "Publish")";
 </script>
 

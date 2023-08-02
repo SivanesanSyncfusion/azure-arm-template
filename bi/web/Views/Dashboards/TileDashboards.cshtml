@@ -1076,10 +1076,9 @@
         @await Html.PartialAsync("../Items/_DashboardSecurity")
         @await Html.PartialAsync("../Items/_PublishDashboard")
         @await Html.PartialAsync("../Items/_GetExternalSites")
-        @await Html.PartialAsync("../Items/_CopyItem")
         @await Html.PartialAsync("../Items/_MoveItem")
     }
-
+            @await Html.PartialAsync("../Items/_CopyItem")
     @if (samePagePreview && !isMobile)
     {
         @await Html.PartialAsync("_DashboardIframe")
