@@ -132,7 +132,12 @@
                         <div class="form-element-label">
                             <div class="show input-field">
                                 <label>@T["Status"]:</label>
-                                @if (ViewBag.jobDetails.BulkImportDetails.CreatedBy == 0 && ViewBag.jobDetails.ImportJobStatus == "Suspended")
+                                @if (ViewBag.jobDetails.BulkImportDetails.CreatedBy == 0 && ViewBag.jobDetails.ImportJobStatus == "Suspended" && !string.IsNullOrWhiteSpace(ViewBag.jobDetails.BulkImportDetails.ErrorMessage))
+                                {
+                                    <span value="@ViewBag.jobDetails.ImportJobStatus)">@ViewBag.jobDetails.ImportJobStatus</span>
+                                    <span class="su su-help" title="@T["The import job has been suspended by system due to some unexpected error."]" data-toggle="tooltip"></span>
+                                }
+                                else if (ViewBag.jobDetails.BulkImportDetails.CreatedBy == 0 && ViewBag.jobDetails.ImportJobStatus == "Suspended")
                                 {
                                     <span value="@ViewBag.jobDetails.ImportJobStatus)">@T["Suspended"]</span>
                                     <span class="su su-help" title="@T["The import has been suspended by system due to 5 consecutive Failure."]" data-toggle="tooltip"></span>
