@@ -934,19 +934,6 @@ function updateTenantStatus(actionUrl, tenantId, action) {
     });
 }
 
-$(document).on("change", "#isolation-enable-switch", function (event) {
-    event.preventDefault();
-    if ($("#isolation-enable-switch").is(":checked")) {
-        $("#update-isolation-code").attr("disabled", false);
-        $("#isolation-code").attr("disabled", false);
-        enableIsolationCode();
-    }
-    else {
-        $("#update-isolation-code").attr("disabled", true);
-        $("#isolation-code").attr("disabled", true);
-    }
-});
-
 function enableIsolationCode() {
     isolationCode = isIsolationCodeUpdated ? $("#isolation-code").val().trim() : isolationCode;
     var isEnabled = $("#isolation-enable-switch").is(":checked");
@@ -962,6 +949,7 @@ function enableIsolationCode() {
     }
 
     if ($("#isolation-code").val() == "" && isEnabled) {
+        $("#update-isolation-code").attr("disabled", true);
         $("#isolation-code-validation").html(window.Server.App.LocalizationContent.IsolationCodeValidator);
     }
     else {
