@@ -1,0 +1,9 @@
+msgid "Your session has expired. Please login again or refresh the page and try again"
+msgstr ""
+
+msgid "Create Incidents"
+msgstr ""
+
+msgid "My Incidents"
+msgstr ""
+
