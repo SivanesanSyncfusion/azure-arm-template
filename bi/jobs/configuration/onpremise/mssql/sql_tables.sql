@@ -233,6 +233,7 @@ CREATE TABLE [BOLDBI_ScheduleDetail](
 	[Id] [int] IDENTITY(1,1) PRIMARY KEY NOT NULL,
 	[ScheduleId] [uniqueidentifier] NOT NULL UNIQUE,
 	[ItemId] [uniqueidentifier] NOT NULL,
+	[DashboardWidgetId] [uniqueidentifier] NULL,
 	[Name] [nvarchar](150) NOT NULL,
 	[RecurrenceTypeId] [int] NULL,
 	[RecurrenceInfo] [nvarchar](4000) NULL,
@@ -714,7 +715,8 @@ CREATE TABLE [BOLDBI_PublishedItem](
 	[CreatedById] [int] NOT NULL,
 	[CreatedDate] [datetime] NOT NULL,
 	[ModifiedDate] [datetime] NOT NULL,
-    [IsActive] [bit] NOT NULL)
+    [IsActive] [bit] NOT NULL,
+	[ExternalSiteId] [int] NOT NULL DEFAULT 0)
 ;
 
 CREATE TABLE [BOLDBI_PublishJobs](
@@ -944,6 +946,47 @@ CREATE TABLE [BOLDBI_UploadDataSourceMapping](
     [IsActive] [bit] NULL)
 ;
 
+CREATE TABLE [BOLDBI_ScheduleRunHistory](
+	[Id] [int] IDENTITY(1,1) PRIMARY KEY NOT NULL,
+	[ScheduleStatusId] [int] NOT NULL,
+	[ScheduleId] [uniqueidentifier] NOT NULL,
+	[StartedDate] [datetime] NOT NULL,
+	[Message] [nvarchar](max) NULL,
+	[ModifiedDate] [datetime] NOT NULL,
+	[IsOnDemand] [bit] NOT NULL DEFAULT (0),
+	[IsActive] [bit] NOT NULL)
+;
+CREATE TABLE [BoldBI_DSMetrics]  (
+   Id INT IDENTITY(1,1) PRIMARY KEY,
+   DataSourceID VARCHAR(255),
+   IsRefresh bit,
+   RefreshStartTime VARCHAR(255),
+   RefreshEndTime VARCHAR(255),
+   IsIncremental VARCHAR(255),
+   TableDetails VARCHAR(255),
+   RowsUpdated INTEGER,
+   TotalRows INTEGER,
+   CustomQuery VARCHAR(700),
+   SourceConnectionDetails VARCHAR(255),
+   IncrementalRefreshDetails VARCHAR(255),
+   ExtractType VARCHAR(255),
+   RefreshStatus VARCHAR(255),
+   RefreshException VARCHAR(255))
+;
+
+CREATE TABLE [BoldBI_ai_qnawidgethistory] (
+   searchid VARCHAR(255) PRIMARY KEY,
+   question TEXT,
+   tableinfo TEXT,
+   schemasequence TEXT,
+   fieldinfo TEXT,
+   message TEXT,
+   haserror BIT,
+   sqlquery TEXT,
+   uservote TEXT,
+   isreported BIT)
+;
+
 ---- PASTE INSERT Queries below this section --------
 
 INSERT into [BOLDBI_ItemType] (Name,IsActive) VALUES (N'Category',1)
@@ -1033,6 +1076,8 @@ INSERT into [BOLDBI_ItemLogType] (Name,IsActive) VALUES ( N'Rollbacked',1)
 ;
 INSERT into [BOLDBI_ItemLogType] (Name,IsActive) VALUES ( N'Visited',1)
 ;
+INSERT into [BOLDBI_ItemLogType] (Name,IsActive) VALUES ( N'Downloaded',1)
+;
 
 INSERT into [BOLDBI_ExportType] (Name,IsActive) VALUES (N'Excel', 1)
 ;
@@ -1045,6 +1090,10 @@ INSERT into [BOLDBI_ExportType] (Name,IsActive) VALUES (N'Word', 1)
 INSERT into [BOLDBI_ExportType] (Name,IsActive) VALUES (N'Image', 1)
 ;
 INSERT into [BOLDBI_ExportType] (Name,IsActive) VALUES (N'Refresh', 1)
+;
+INSERT into [BOLDBI_ExportType] (Name,IsActive) VALUES (N'PPT', 1)
+;
+INSERT into [BOLDBI_ExportType] (Name,IsActive) VALUES (N'CSV', 1)
 ;
 
 INSERT into [BOLDBI_RecurrenceType] (Name,IsActive) VALUES (N'Daily', 1)
@@ -1128,6 +1177,8 @@ INSERT INTO [BOLDBI_PermissionEntity] (Name,EntityType,ItemTypeId, IsActive) VAL
 INSERT INTO [BOLDBI_PermissionEntity] (Name,EntityType,ItemTypeId, IsActive) VALUES (N'All Permissions',1,13,1)
 ;
 INSERT INTO [BOLDBI_PermissionEntity] (Name,EntityType,ItemTypeId, IsActive) VALUES (N'All Groups',1,12,1)
+;
+INSERT INTO [BOLDBI_PermissionEntity] (Name,EntityType,ItemTypeId, IsActive) VALUES (N'All Users',1,12,1)
 ;
 
 INSERT into [BOLDBI_Group] (Name,Description,Color,IsolationCode,ModifiedDate,DirectoryTypeId,IsActive) VALUES (N'System Administrator','Has administrative rights for the dashboards','#ff0000',null,GETDATE(), 1, 1)
@@ -1311,6 +1362,8 @@ INSERT INTO [BOLDBI_PermissionAccEntity] (PermissionEntityId, PermissionAccessId
 ;
 INSERT INTO [BOLDBI_PermissionAccEntity] (PermissionEntityId, PermissionAccessId, IsActive) VALUES (14,5,1)
 ;
+INSERT INTO [BOLDBI_PermissionAccEntity] (PermissionEntityId, PermissionAccessId, IsActive) VALUES (30,3,1)
+;
 
 INSERT into [BOLDBI_PermissionLogType] (Name,IsActive) VALUES ( N'PermissionAdded',1)
 ;
@@ -1322,6 +1375,8 @@ INSERT into [BOLDBI_Source] (Name,IsActive) VALUES ( N'Web',1)
 INSERT into [BOLDBI_Source] (Name,IsActive) VALUES ( N'API',1)
 ;
 INSERT into [BOLDBI_Source] (Name,IsActive) VALUES ( N'Schedule',1)
+;
+INSERT into [BOLDBI_Source] (Name,IsActive) VALUES ( N'Embed',1)
 ;
 
 INSERT into [BOLDBI_LogStatus] (Name,IsActive) VALUES ( N'Start',1)
@@ -1869,9 +1924,6 @@ INSERT into [BOLDBI_PublishType] (Name,IsActive) VALUES ( N'Unlock',1)
 ;
 
 ---- PASTE ALTER Queries below this section --------
-
-ALTER TABLE [BOLDBI_PublishJobs]  ADD [Type] [int] NOT NULL DEFAULT 1
-;
 
 ALTER TABLE [BOLDBI_PublishJobs]  ADD FOREIGN KEY([Type]) REFERENCES [BOLDBI_PublishType] ([Id])
 ;

@@ -190,6 +190,7 @@ var Designer = {
                 markerImage: "Marker Image",
                 markerAddress: "Address",
                 markerPostalCode: "Postal Code",
+                markerSize: "Marker Size",
                 locationTooltip: "Location Tooltip",
                 value: "Value",
                 shape: "Shape",
@@ -249,6 +250,7 @@ var Designer = {
                 descriptionText: "Description",
                 containerAppearanceText: "Container Appearance",
                 containerActionsText: "Container Actions",
+                exportName: "Export Settings",
                 basicSettingsText: "Basic Settings",
                 tooltipSettingsText: "Tooltip Settings",
 				PaddingSettings:"Padding Settings",
@@ -290,6 +292,7 @@ var Designer = {
                 alignmentSettingsText:"Alignment Settings",
 				contentSettingsText: "Content Settings",
                 kpiValueText: "KPI Value",
+				widgetTitleLengthErrorText: "The name should not exceed 255 characters",
 				pageSettings: {
 					pageSettingsText: "Page Settings",
 					pageSizeText: "Page Size",
@@ -345,6 +348,11 @@ var Designer = {
                     height: "Height",
                     width: "Width"
                 },
+                rteBasicSettings: {
+                    autofitContent: "Autofit Content",
+                    contentPadding: "Content Padding",
+                    content: "\u2022 Enabling the Autofit Content will automatically adjust the font size to fit within the boundaries or constraints.\n\u2022 Complex structured text not be suitable for Autofit Content funtionalities such as Bulleted List, Table, Numbered List etc..,."
+                },
                 containerApperance: {
                     containerTitleAlignText: "Title Alignment",
                     containerTitleColorText: "Title Color",
@@ -394,16 +402,28 @@ var Designer = {
                 },
                 containerActions: {
                     showMaximizeText: "Allow Maximize View",
-                    csvExportText: "Allow CSV Export",
-                    excelExportText: "Allow Excel Export",
-                    imageExportText: "Allow Image Export",
-                    pdfExportText: "Allow PDF Export",
                     enableCommentText: "Enable Commenting",
                     showLinkIconText: "Show Link Icon",
                     viewDataText: "View Underlying Data",
                     pinWidgetText: "Pin Widget",
                     actionText: "Actions",
                     allowExportingText: "Allow Exporting"
+                },
+                exportSettings: {
+                    csvExportText: "Allow CSV Export",
+                    excelExportText: "Allow Excel Export",
+                    imageExportText: "Allow Image Export",
+                    pdfExportText: "Allow PDF Export",
+                    hiddenColumnExportText: "Include Hidden Columns"
+                },
+				viewDataActions: {
+                    allowViewDataExporting: "Allow Exporting",
+                    allowViewDataColumnSelection: "Allow Column Selection",
+					allowViewDataAction: "Enable",
+					allowAccessVia: "Access via",
+					accessViaWidgetTitle: "Widget Header",
+					accessViaWidgetSelection: "Widget Selection",
+					accessViaBoth: "Both Widget Header & Selection"
                 },
                 basicSettings: {
                     allowSortingText: "Allow Sorting",
@@ -419,6 +439,7 @@ var Designer = {
                     chartTypeandAxis: "Chart Type & Axis",
                     enableAnimation: "Enable Animation",
                     showLegend: "Show Legend",
+                    interactivity: "Interactivity",
 					showLegendTitle: "Show Title",
 		            showTooltip:"Show Tooltip",
                     legend: "Legend",
@@ -443,6 +464,7 @@ var Designer = {
                     showItemsWithNoData: "Show Items With No Data",
 					emptyPointMode: "Empty Point Mode",
                     enableMultiSelect: "Enable Multiselect",
+                    showAll: "Show All",
                     allowFilter: "Allow Filter",
                     defaultPosition: "Default Positions",
                     rangeSelection: "Range Selection",
@@ -468,6 +490,7 @@ var Designer = {
                     valueColor: "Value Color",
                     labelColor: "Label Color",
                     sliderColor: "Slider Color",
+                    sliderInterval: "Slider Interval",
                     color: "Color",
                     titleColor: "Title Color",
                     enableValueSorting: "Allow Value Sorting",
@@ -500,7 +523,8 @@ var Designer = {
                     emptyCellsContent:"Empty Cell Content",
 					rawData: "Show Raw Data",
                     rawDataInfo:"This option will remove the aggregation in grid columns and show raw data.",
-                    apiType:"API Type"
+                    apiType:"API Type",
+                    listBoxShowAll:"Show All"
                 },
                 tooltipSettings: {
                     showTooltip: "Show Tooltip",
@@ -752,6 +776,7 @@ var Designer = {
 					showAxisTitle: "Show Axis Title",
 					axisTitle: "Axis Title",
 					labelRotation: "Label Rotation",
+                    axisRange: "Axis Range"
 				},
                 markerShapeSettings: {
                     markerShape: "Marker Shape",
@@ -822,6 +847,10 @@ var Designer = {
                     columnHeaderText:"Column Header",
                     valueText:"Value"
                 },
+                comboBox: {
+                    defaultplaceHolderText: "All",
+                    placeHolderPropertylabel: "Place Holder"
+                },
             },
             designPanel: {
                 editLabel: "Edit Label",
@@ -830,7 +859,9 @@ var Designer = {
                 editTextEditor: "Edit",
                 widgetNotConfigured: "This widget has not been configured.",
                 noWidgetToPreview: "No Widgets to Preview",
-                noDataToBeDisplay: "There is no data to be displayed."
+                noDataToBeDisplay: "There is no data to be displayed.",
+				autoWidgetDropErrorMsg: "widgets are not placed because the cell bounds of these widgets are already occupied or the given name or ID is incorrect",
+				autoWidgetDropErrorMode: "This method can only invoke the Bold BI initialization page."
             },
             dataSource: {
                 headerText: "Data Source",
@@ -842,6 +873,7 @@ var Designer = {
 				thresHold: "Threshold",
 				thresHoldLimit: "Threshold Data Limit",
 				dataSampling: "Data Sampling",
+				appendDsText: "Append Data",
 				dataLimit: "Data Limit",
                 headerNewConnectionText: "NEW CONNECTION",
                 newDataSourceText: "NEW DATA SOURCE",
@@ -855,6 +887,23 @@ var Designer = {
                 dataSourceNameText: "Data Source name",
                 dataSourceText: "Data Source",
                 dsnNameText: "Dsn Name",
+		        appendTextBoxName: "Data Source Name",
+                appendFileRadioBtnText: 'Append data from file',
+                appendDatasourceRadioBtnText: 'Append data from data store',
+                appendDsSaveBtn: 'Save',
+                appendDsSaveAsBtn: "Save as",
+                appendDsAppendBtn: "Append",
+                appendDsCloseBtn: "Close",
+                appendDsChooseFile: 'Choose File',
+                appendDsEstimatedFileSize: "(up to 200MB)",
+                appendDsBrowseText: "Browse File",
+                appendDsSelectedTables: "Selected Tables",
+                appendDsdragAndDropText: "Drop files here or ",
+				appendDsWaitingPopupText: "Appending data from the uploaded file(s)",
+                appendDsSuccessPopupText: "The file(s) have been appended successfully",
+                appendDsFailurePopupText: "The process of appending the file(s) was unsuccessful",
+                appendDsReadyToAppend: "file(s) ready to append",
+                appendDsFilesNeedsAttention: "file(s) needs attention",
                 serverNameText: "Server name",
                 commandTimeoutText: "Command Timeout (in seconds)",
                 enableSSH: "Enable SSH",
@@ -1006,7 +1055,7 @@ var Designer = {
                 exploreSamples: "explore samples",
                 alertboxHeaderEditConnectionText: "Edit Connection",
                 dialogTitletext: "Users in",
-                datasourceDescriptionWaterMarkTxt: "Write description about this datasource",
+                datasourceDescriptionWaterMarkTxt: "Write description about this data source",
                 datasourceDescriptionLabelTxt: "Description (Optional)",
                 datasourceNameLabelTxt: "Name",
                 connectTo: "Connect To ",
@@ -1047,6 +1096,7 @@ var Designer = {
                     edi: "EDI",
                     json: "JSON",
                     xml: "XML",
+					parquet: "Parquet",
                     odbc: "ODBC",
                     msSql: "Microsoft SQL",
                     azureSqlDataWarehouse: "Azure SQL Data Warehouse",
@@ -1073,6 +1123,7 @@ var Designer = {
                     sparksql: "SparkSQL",
                     postgres: "PostgreSQL",
                     redshift: "Amazon Redshift",
+					rockSet: "Rockset",
                     influxdb: "InfluxDB",
                     amazonRDS: "Amazon RDS",
                     amazonRDSSqlServer: "AmazonRDSSqlServer",
@@ -1646,6 +1697,12 @@ var Designer = {
                             { projects: { name: '', desc: '' } }
                         ]
                     },
+                    tdengine: {
+                        name: 'TDengine',
+                        templates: [
+                            { projects: { name: '', desc: '' } }
+                        ]
+                    },
                     youScan: {
                         name: 'YouScan',
                         templates: [
@@ -2047,7 +2104,12 @@ var Designer = {
                 exportingSuccessContent: "export was completed successfully. If the download does not begin, please",
                 exportingSuccessClick: "click here",
 				exportingSuccessEndContent: " to download the file.",
-                connectorFileSizeValidationMessage: 'The chosen file name length must be up to 100 characters.'
+                connectorFileSizeValidationMessage: 'The chosen file name length must be up to 100 characters.',
+                fileNotFoundError: "The shape data file was not found. Please add the file and try again.",
+                filesNotValid: "The following file has a schema mismatch compared to the initial uploaded file. Do you want to remove and continue?",
+				joinMessageMySQL: "MySQL does not support the FULL OUTER JOIN",
+                joinMessageGoogle: "Google Big Query does not support the FULL OUTER JOIN",
+                joinMessageRockset: "Rockset does not support the FULL OUTER JOIN"
             },
             parameterMessages: {
                 nameHasSpecialChar: "Name should not contain spaces and special characters",
@@ -2129,7 +2191,8 @@ var Designer = {
                 SlaveWidgetOverrideTitle: "Period-over-Period Configuration",
                 LargeFileSizeAlert: "Confirm File Import",
                 JoinAlert: "Join Alert",
-                relativeDatesAlert: "Relative Dates Alert"
+                relativeDatesAlert: "Relative Dates Alert",
+                fileNotFound: "File Not Found"
             },
             linkedAccountsWindow: {
                 title: "Accounts",
@@ -2879,7 +2942,9 @@ var Designer = {
                 validApplicationNameValidation: "Please enter a valid Application Key",
                 locationIdDisplayText: "Location Id",
                 relativeDateDisplayText: "Relative Date",
+                dateRangeDisplayText: "Date Range",
                 isSinceSeqFilterDisplayText:"SinceSeq Filter",
+                enableIncrementalRefreshDisplayText: "Incremental Refresh",
             },
             asanaWebDataSource: {
                 showAttachment: "Show Attachment",
@@ -3096,7 +3161,24 @@ var Designer = {
                 SpecifyFilePath: "Please select a file",
                 fileLimitInfoText: "Max file size: 200 MB",
                 fileNoteForOnpremise: "<b> Note </b> : Larger files will take more time to import",
-                fileSizeAlert:"The selected file size is very large at "
+                fileSizeAlert: "The selected file size is very large at ",
+                fileUploadBrowseText: "Browse File",
+                fileUploaddragAndDropText: "Drop files here or ",
+                fileuploadEstimatedFileSize: "(up to 200MB)",
+                uploadedSuccessfully: "Uploaded successfully",
+                ofText: " OF ",
+                invalidFileText: "Uploaded failed",
+                exceededFileSizeText: "Exceeds File Size",
+                mbText: "MB",
+                uploadingText: "Uploading...",
+                matchingPattern: "Matching Pattern (Optional)",
+                InvalidFiles: "File(s) Need Attention",
+                existingUploadedfilesText: "Existing Uploaded Files",
+                filesText: "files",
+                expandText: "Expand",
+                collapseText: "Collapse",
+                folderInfoToolTip: "The files within subfolders will be uploaded.",
+                fileNotAllowedText: "File type is not allowed"
 			},
             stripeDataSource: {
                 balance: "Balance",
@@ -3910,6 +3992,14 @@ var Designer = {
                 webhooks: "Webhooks",
                 oauthApp: "OAuth App",
             },
+            tdengineDataSource: {
+                tdEngineCloud: "TDengine Cloud",
+                tdEngineServer: "TDengine Server",
+                cloudToken: "Cloud Token",
+                database: "Database",
+                table: "Table",
+                databaseError: "Database cannot be empty"
+            },
             facebookDataSource: {
                 insightsDisplayText: "Insights",
                 graphAPIDisplayText: "Graph API",
@@ -4392,7 +4482,8 @@ var Designer = {
                 resetButtonTooltip: "This action will reset the colors to default colors",
                 closeButtonText: "Close",
                 configureButtonText: "Configure",
-                updateButtonText: "Update"
+                updateButtonText: "Update",
+				selectColumnButtonText: "Select Column"
             },
             dateRangeFilterDialog: {
                 titleText: "Range Filter",
@@ -4424,7 +4515,7 @@ var Designer = {
                 invalidCharText: "Invalid characters in the",
                 invalidDatasourceName: "Invalid datasource name",
                 notSupportedCharDatasourceName: ".The following characters are not supported: \" + , ; [ ] % #",
-                datasourceNameWaterMarkTxt: "Enter datasource name"
+                datasourceNameWaterMarkTxt: "Enter data source name"
             },
             queryDesigner: {
                 columnType: {
@@ -4449,6 +4540,7 @@ var Designer = {
                     dec: "Dec"
                 },
                 rename: "Rename",
+				replaceValues: "Replace Values",
                 changeColumnType: "Change Column Type",
                 fiscalYearStart: "Fiscal Year Start",
                 sharedTable: {
@@ -4502,6 +4594,8 @@ var Designer = {
                 refreshWidget: "Refresh Selected Widgets Only",
                 timeInterval: "Time Interval",
                 removeLoader: "Hide Loading Indicator",
+				commonTimeInterval: "Common Time Interval",
+				differentTimeInterval: "Differed Time Interval",
                 removeLoaderDescription: "Enable this property to remove the loading indicator while refreshing the widget data"
             },
             dialogText: {
@@ -4544,7 +4638,9 @@ var Designer = {
             },
             editConnection: {
                 fileAlertMsg: "*Previous tables will be dropped.",
-                reconnect: "Reconnect"
+                reconnect: "Reconnect",
+                update: "Update",
+                updateIconMsg: "The purpose of this button is solely to update the optional parameters like Description, MaxrowCount,CommandTimeOut and Additional connection Properties. It does not Reconnect the data source."
             },
             sharedDSMenu: {
                 ownerNameHeader: "Owner",
@@ -4723,6 +4819,15 @@ var Designer = {
 
                     upperDesc: "Returns an upper case converted string value from a given string expression.",
                     upperEx: "UPPER(string_expression)",
+					
+					htmlParseDesc: "Returns a string value with the HTML tags stripped from the specified string expression.",
+                    htmlParseEx: "HTML_Parse(string_expression)",
+
+                    xmlParseDesc: "Returns a string value with the XML tags stripped from the specified string expression.",
+                    xmlParseEx: "XML_Parse(string_expression)",
+
+                    string_aggDesc: "Concatenates a list of strings and places a separator between them.",
+                    string_aggEx: "STRING_AGG(string_expression, separator)",
 
                     avgDesc: "Returns the average of the values in the given expression.",
                     avgEx: "AVG(numeric_expression)",
@@ -4755,7 +4860,7 @@ var Designer = {
                     varEx: "VAR(numeric_expression)",
 
                     totalDesc: "Returns the total values in the given expression.",
-                    totalEx: "TOTAL(numeric_expression)",
+                    totalEx: "TOTAL(AGG(numeric_expression))",
 
                     runningCountDesc: "Returns Running Count of each Row.",
                     runningCountEx: "RUNNINGCOUNT(aggregate_expression)",
@@ -4799,7 +4904,7 @@ var Designer = {
                 refreshColumnTitle: "Incremental Refresh Settings"
             },
             driveFilePicker: {
-                folderEmptyText: "This folder does not have any CSV/JSON files.",
+                folderEmptyText: "This folder does not contain any valid file(s).",
                 selectButtonText: "Select",
                 cancelButtonText: "Cancel",
                 backContainerText: "My Drive",
@@ -4998,7 +5103,9 @@ var Designer = {
                 includeFilterInfoTooltipForPdf: "When Include filter information is switched on, the dashboard exported PDF will contain the applied filter(s) information.",
                 includeFilterInfoText: "Include filter information",
                 reset: "Reset",
-                apiExportErrMsg: "Invalid export parameter (widgetName)"
+                apiExportErrMsg: "Invalid export parameter (widgetName)",
+				widgetDataNotConfigured: "The export request cannot be processed because the widgets in the dashboard are not configured.",
+				emptyDashboard: "The export request cannot be processed because the dashboard is empty and does not contain any configured widgets."
             },
             maximize: {
                 maximize: "Maximize",
@@ -5048,6 +5155,11 @@ var Designer = {
                 importType: "Import Type",
                 worksheets: "Worksheets",
                 tables: "Tables"
+            },
+            filePathType: {
+                filePathType: "File Path",
+                files: "File",
+                folder: "Folder"
             },
             thousandSeparator: {
                 decimal: "Decimal Symbol",
@@ -5191,7 +5303,12 @@ var Designer = {
                     measures: "measures",
                     rename: "Rename",
                     first: "First",
-                    last: "Last"
+                    last: "Last",
+                    showValueAs: "Show Value As",
+                    noCalculation: "No calculation",
+                    percentOfRowTotal: "Percent Of Row Total",
+                    percentOfColumnTotal: "Percent Of Column Total",
+                    percentOfGrandTotal: "Percent Of Grand Total"
                 },
                 numberFilterOption: {
                     equals: "Equals",
@@ -5250,7 +5367,8 @@ var Designer = {
                 gotIt: "Ok, Got it",
                 addRows: "Add more rows",
                 deleteRowsAlertMsg: "Please remove the widgets from the rows to be deleted and try again.",
-                done: "Done"
+                performanceAlertMsg: "Adding more rows might affect the performance of the dashboard.",
+				done: "Done"
             },
             initialFilter: {
                 dialogTitle: "Query Filters",
@@ -5441,7 +5559,8 @@ var Designer = {
                 addGlobalWhereCondition: "+ Add Global Where Condition",
                 selectTargetText: "Select Target",
                 selectConditionText: "Select Condition",
-                selectFormatText: "Select Format"
+                selectFormatText: "Select Format",
+				conditionErrorText: "A condition should be added"
             },
             dataAlertExpression: {
                 dialogTitle: "Custom Expressions",
@@ -6065,6 +6184,7 @@ var Designer = {
                 allWorkFlows: "All Work Flows",
             },
             customWebDsDateRange  :{
+                none: 'None',
                 today : 'Today',
                 yesterday :'Yesterday',
                 pastWeek : 'Past Week',
@@ -6486,6 +6606,10 @@ var Designer = {
                 scenarioAutomations: "Scenario Automations",
                 slaPolicies: "SLA Policies",
                 settings: "Settings",
+				agent: "Agent",
+				allAgent: "All Agent",
+                currentAgent: "Current Agent",
+                viewAgent:"View Agent",
             },            			
             nutshellDataSource: {
                 allAccounts: "All Accounts",
@@ -6706,6 +6830,30 @@ var Designer = {
 				tenantURL: 'Current Site URL',
                 siteIdentifier: 'Current Site Identifier'
 			},
+			defaultParameter: {
+                browserCulture: 'Current Browser Culture',
+            },
+			replaceValues: { 
+				applyBtnText: "Apply",
+				cancelBtnText: "Cancel",
+				updateBtnText: "Update",
+				newRuleBtnText: "New Rule",
+				addRuleBtnText: "Add Rule",
+				title: "Replace Values",
+				addRuleTitle: "Add New Rule",
+				editRuleTitle: "Edit Rule",
+				replaceRuleTitle: "Replace Rule",
+				valueToFindText: "Value To Find",
+				replaceText: "Replace",
+				valueToReplaceText: "Value To Replace",
+				matchCaseText: "Match Case",
+		        matchEntireStringText: "Match Entire String",
+				nullText: "Null",
+				nullValueText: "(Null)",
+				blanksValueText: "(Blanks)",
+				blanksText: "Blanks",
+				customRuleText: "Custom Rule",
+			}
         }
     }
 }

@@ -123,8 +123,7 @@
     background-size: contain; }
   #oauth-settings-tab .admin-page-body .auth-settings-form .logo-container .auth-image-upload-box .upload-options, #openid-settings-tab .admin-page-body .auth-settings-form .logo-container .auth-image-upload-box .upload-options, #azure-ad-settings-tab .admin-page-body .auth-settings-form .logo-container .auth-image-upload-box .upload-options, #jwt-settings-tab .admin-page-body .auth-settings-form .logo-container .auth-image-upload-box .upload-options, #azure-ad-b2c-settings-tab .admin-page-body .auth-settings-form .logo-container .auth-image-upload-box .upload-options {
     height: 26px;
-    background-color: var(--grey-100);
-    cursor: pointer; }
+    background-color: var(--grey-100); }
     #oauth-settings-tab .admin-page-body .auth-settings-form .logo-container .auth-image-upload-box .upload-options input, #openid-settings-tab .admin-page-body .auth-settings-form .logo-container .auth-image-upload-box .upload-options input, #azure-ad-settings-tab .admin-page-body .auth-settings-form .logo-container .auth-image-upload-box .upload-options input, #jwt-settings-tab .admin-page-body .auth-settings-form .logo-container .auth-image-upload-box .upload-options input, #azure-ad-b2c-settings-tab .admin-page-body .auth-settings-form .logo-container .auth-image-upload-box .upload-options input {
       width: 0.1px;
       height: 0.1px; }
@@ -138,21 +137,24 @@
         color: var(--primary-branding-bg-color);
         display: table-cell;
         vertical-align: middle;
-        text-align: center; }
+        text-align: center;
+        cursor: pointer; }
 #oauth-settings-tab .admin-page-body .auth-settings-form #jwt-signing-key, #openid-settings-tab .admin-page-body .auth-settings-form #jwt-signing-key, #azure-ad-settings-tab .admin-page-body .auth-settings-form #jwt-signing-key, #jwt-settings-tab .admin-page-body .auth-settings-form #jwt-signing-key, #azure-ad-b2c-settings-tab .admin-page-body .auth-settings-form #jwt-signing-key {
   width: 366px !important;
   border-right: 0px; }
 #oauth-settings-tab .admin-page-body .auth-settings-form #show-signing-key, #openid-settings-tab .admin-page-body .auth-settings-form #show-signing-key, #azure-ad-settings-tab .admin-page-body .auth-settings-form #show-signing-key, #jwt-settings-tab .admin-page-body .auth-settings-form #show-signing-key, #azure-ad-b2c-settings-tab .admin-page-body .auth-settings-form #show-signing-key {
   border-left: none;
-  padding: 4px;
+  padding: 7px;
   border-radius: 0px;
   position: inherit; }
 #oauth-settings-tab .admin-page-body .auth-settings-form #copy-signing-key, #openid-settings-tab .admin-page-body .auth-settings-form #copy-signing-key, #azure-ad-settings-tab .admin-page-body .auth-settings-form #copy-signing-key, #jwt-settings-tab .admin-page-body .auth-settings-form #copy-signing-key, #azure-ad-b2c-settings-tab .admin-page-body .auth-settings-form #copy-signing-key {
   border-left: none;
-  border-radius: 0px; }
+  border-radius: 0px;
+  cursor: pointer; }
 #oauth-settings-tab .admin-page-body .auth-settings-form #generate-signing-key, #openid-settings-tab .admin-page-body .auth-settings-form #generate-signing-key, #azure-ad-settings-tab .admin-page-body .auth-settings-form #generate-signing-key, #jwt-settings-tab .admin-page-body .auth-settings-form #generate-signing-key, #azure-ad-b2c-settings-tab .admin-page-body .auth-settings-form #generate-signing-key {
   border-radius: 0 4px 4px 0;
-  border-left: none; }
+  border-left: none;
+  cursor: pointer; }
 #oauth-settings-tab .admin-page-body .auth-settings-form .copy-signing-key-values, #openid-settings-tab .admin-page-body .auth-settings-form .copy-signing-key-values, #azure-ad-settings-tab .admin-page-body .auth-settings-form .copy-signing-key-values, #jwt-settings-tab .admin-page-body .auth-settings-form .copy-signing-key-values, #azure-ad-b2c-settings-tab .admin-page-body .auth-settings-form .copy-signing-key-values {
   background-color: var(--surface) !important;
   overflow: hidden;

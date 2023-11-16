@@ -7,6 +7,7 @@
     var isDebug = globalAppSettings.SystemSettings.IsDebug;
     var tenantAppConfig = new TenantAppConfiguration(globalAppSettings);
     var licenseSettings = globalAppSettings.GetLicenseSettings(_clientDateTimeInfo);
+    var siteUrl = globalAppSettings.SystemSettings.BaseUrl;
     var cdnLink = globalAppSettings.SystemSettings.CDNLink;
     var displayName = Context.Session.GetString("displayname") != null ? Context.Session.GetString("displayname") : string.Empty;
     var emailAddress = Context.Session.GetString("emailaddress") != null ? Context.Session.GetString("emailaddress") : string.Empty;
@@ -39,11 +40,6 @@
     var homepagePageUrl = System.Net.WebUtility.UrlDecode(Url.Action("Homepages", "Boards"));
     var isMobile = new DeviceDetection(Context).IsMobile;
     var isEmbed = @Context.Request.QueryString.ToString().ToLower().Contains("isembed");
-    var isDataSourceConnection = string.Empty;
-    if((Context.Request.Query["isembed"].ToString() != null && Context.Request.Query["isembed"].ToString().ToLower() == "true"))
-    {
-      isDataSourceConnection = ViewBag.isDataSourceConnection;
-    }  
     var slideshowPageUrl = Url.Action("Slideshows", "Slideshow");
     var dashboardServerApiUrl = new DashboardServerApiEndPoints(globalAppSettings).DashboardServerApiUrl();
     var dashboardServerResourceUrl = globalAppSettings.SystemSettings.CDNLink.TrimEnd('/');
@@ -53,6 +49,12 @@
     var designerServiceUrl = ServerAppConfig.GetServiceEndPointUrl(ServerAppConfig.InternalAppDataServiceUrl, _globalAppSettings);
     var dashboardCutomTheme = string.Empty;
     var isEmbedSignature = url.Query.ToLower().Contains("embed_signature") && globalAppSettings.GetLicenseSettings().EnterpriseFeatures.Embed;
+    var isDataSourceConnection = string.Empty;
+    var canShowSession = ServerAppConfig.IsSelfHosted && (ViewBag.CanHideSessionInEmbed == null ? true : (ViewBag.CanHideSessionInEmbed != null && ViewBag.CanHideSessionInEmbed == true) ? false : true);
+    if((Context.Request.Query["isembed"].ToString() != null && Context.Request.Query["isembed"].ToString().ToLower() == "true") || isEmbedSignature)
+    { 
+        isDataSourceConnection = ViewBag.isDataSourceConnection;
+    }
     var isEmbedTrue = ((Context.Request.Query["isembed"].ToString() != null && Context.Request.Query["isembed"].ToString().ToLower() == "true") || isEmbedSignature) && !string.IsNullOrWhiteSpace(Context.Request.Query["embed_theme"]);
     if (isEmbedTrue)
     {
@@ -75,6 +77,7 @@
     }
     <meta name="dashboard_service:url" content="@globalAppSettings.SystemSettings.InternalAppDataServiceUrl" />
     <meta name="dashboard_server:url" content="@dashboardServerApiUrl" />
+    <meta name="site_identifier:url" content="@siteUrl" />
     <meta name="designer_service:url" content="@designerServiceUrl" />
     <meta name="designer_service:access_token" content="@ViewBag.AccessToken" />
     <meta name="data_service:url" content="@designerServiceUrl" />
@@ -85,6 +88,7 @@
 
     <meta name="datasource:version" content="@ViewBag.Version" />
     <meta name="datasource:id" content="@ViewBag.DataSourceId" />
+    <meta name="isurlchange" content="@ViewBag.IsUrlChange" />
     <meta name="datasource:name" content="@ViewBag.DataSourceName" />
     <meta name="datasource:description" content="@ViewBag.Description" />
     <meta name="datasource:is_draft" content="@ViewBag.IsDraft" />
@@ -133,6 +137,7 @@
         var dashboardDesignerUrl = "@Url.Action("DashboardDesigner", "Designer")";
         var dataSourcesPageUrl = "@Url.Action("DataSources", "DataSources")";
         var createDatasourceIframeUrl = "@Url.Action("Connection", "DataSourceDesigner")";
+        var isSessionActiveUrl = "@Url.Action("IsSessionActive", "Accounts")";
         var dataStoreSettingUrl = "@Url.Action("DataStoreSettings", "Administration")";
         var getUserNotificationsPartialViewResultUrl = "@Url.Action("GetUserNotificationsPartialViewResult", "notification")";
         var licenseSettings =@Html.Raw(JsonConvert.SerializeObject(licenseSettings));
@@ -151,7 +156,7 @@
         var appBranding = "@GlobalAppSettings.Branding";
         var rootUrlAction = "@rootUrl";
         var isSelfHosted = @Json.Serialize(isSelfHosted);
-		var cdnLink = "@cdnLink";
+        var cdnLink = "@cdnLink";
         var modelLanguage = "@ViewBag.ModelLanguage";
         var isHideHelpLink = @Json.Serialize(ServerAppConfig.IsHideHelpLink);
         var customHelpLinkDomain = "@(ServerAppConfig.AllowCustomHelpLink ? ServerAppConfig.AppSettings.Documentation.BaseUri : string.Empty)";
@@ -164,6 +169,8 @@
         var enableApplicationEmbed =@ServerAppConfig.EnableSameTabLinkTarget.ToString().ToLower();
         var isUmsAdmin = "@_identityResponse.IsUmsAdmin";
         var isDataSourceConnection = "@isDataSourceConnection";
+        var appVersion = "@ServerAppConfig.ProductVersion";
+        var canCheckSession = @Html.Raw(Json.Serialize(canShowSession));
     </script>
     <script type="text/javascript">
         window.addEventListener("beforeunload", function (e) {

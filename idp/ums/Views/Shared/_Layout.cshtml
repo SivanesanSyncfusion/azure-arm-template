@@ -1,13 +1,15 @@
-﻿@{
+﻿@using Newtonsoft.Json
+@{
     var includeMessageBox = ViewBag.MessageBox == null || ViewBag.MessageBox == true;
 
-    var currentUserId = Guid.Parse(Context.User.Claims.First(c => c.Type == ClaimTypes.NameIdentifier).Value);
+    var currentUserId = Context.User.GetUserId();
 
     var showMenuBar = Context.User.Identity.IsAuthenticated && (ViewBag.ShowMenuBar == null || ViewBag.ShowMenuBar) && Convert.ToBoolean(Context.Session.GetString("IsAdmin").ToString()) || await new UserManagement().IsTenantMangementUser(currentUserId);
 
     var helpSiteBaseUrl = GlobalAppSettings.Configuration.GetSection("AppSettings")["documentation:base_url"];
     var isMobile = DeviceDetection.IsMobile;
     var url = new Uri(Context.Request.GetDisplayUrl());
+    var cookieValue = string.IsNullOrWhiteSpace(Context.Request.Cookies["boldservice.client.locale"]) ? string.Empty : Context.Request.Cookies["boldservice.client.locale"];
 }
 <!DOCTYPE html>
 <html>
@@ -45,6 +47,20 @@
     <link rel="stylesheet" href="~/bundles/css/layout.css" asp-append-version="true" />
 
     @RenderSection("styles", false)
+    <script type="text/javascript">
+        var setCookieHttpOnlyUrl = "@Url.Action("SetHttpOnlyCookie", "PartialView")";
+        var cookieValue = @Html.Raw(JsonConvert.SerializeObject(@cookieValue));
+        var value = {
+            Locale: navigator.language,
+            TimeZone: Intl.DateTimeFormat().resolvedOptions().timeZone
+        };
+
+        setTimeout(function () {
+            if (isEmptyOrWhitespace(cookieValue) || cookieValue != JSON.stringify(value)) {
+                SetHttpOnlyCookie("boldservice.client.locale", JSON.stringify(value), 365);
+            }
+        }, 5000);
+    </script>
 </head>
 <body ng-app="serverApp" class="clearfix col-xs-12 no-padding" id="body">
     <div class="loader-blue loader-icon" id="layout-body-loader-icon">

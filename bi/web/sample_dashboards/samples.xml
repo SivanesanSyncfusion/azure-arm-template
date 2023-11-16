@@ -15,12 +15,267 @@
         </Dashboard>
       </Dashboards>
     </Category>
+	<Category>
+      <Name>Sales</Name>
+      <Description>Check our Sample dashboards.</Description>
+      <Dashboards>
+        <Dashboard>
+          <Name>Freshsales Pipeline Performance Dashboard</Name>
+		  <ImageName>sales.svg</ImageName>
+          <Description>The Freshsales Deal Pipeline Performance Dashboard aims to detect and resolve bottlenecks in deal development by improving the sales process and ensuring that sales teams concentrate their efforts on the most promising leads and opportunities, to aim at increase conversion rates at every stage thus optimizing revenue and sales performance.</Description>
+          <FileName>freshsales-pipeline-performance-dashboard.sydj</FileName>
+          <Tags>Combo Box, Card, Spline Chart, KPI card,Column Chart, Bar Chart, pie Chart, funnel chart, Grid</Tags>
+          <Features>Master Filter, Top-N-Rank-Filter-Bar_Chart</Features>
+        </Dashboard>
+      </Dashboards>
+    </Category>
+    <Category>
+      <Name>Sales</Name>
+      <Description>Check our Sample dashboards.</Description>
+      <Dashboards>
+        <Dashboard>
+          <Name>Chargebee Subscription Overview Dashboard</Name>
+		  <ImageName>sales.svg</ImageName>
+          <Description>The Chargebee Subscription Overview Dashboard is designed to help company leadership manage subscription billing, process recurring invoices, manage subscriptions, and keep customers engaged</Description>
+          <FileName>chargebee-subscription-overview-dashboard.sydj</FileName>
+          <Tags>Combo Box, Card, Spline Chart, KPI card,Column Chart, Bar Chart, Doughnut Chart, Tree Map,Grid</Tags>
+          <Features>Master Filter, Top-N-Rank-Filter-Bar_Chart</Features>
+        </Dashboard>
+      </Dashboards>
+    </Category>
+	<Category>
+      <Name>Support</Name>
+      <Description>Check our Sample dashboards.</Description>
+      <Dashboards>
+        <Dashboard>
+          <Name>Zendesk Sunshine Customer Support Dashboard</Name>
+		  <ImageName>support.svg</ImageName>
+          <Description>The Zendesk Sunshine Customer Support Dashboard serves as a centralized hub for monitoring and analyzing our customer support operations. It showcases essential metrics such as total tickets, response and resolution times, CSAT, CSAT by month and channel distribution. This dashboard provides real-time insights into our support team's performance, enabling us to streamline processes and ensure prompt and efficient ticket resolution.</Description>
+          <FileName>zendesk-sunshine-customer-support-dashboard.sydj</FileName>
+          <Tags>DatePicker, Card, Spline Chart, Column Chart, Bar Chart, Doughnut Chart, Spline Area,Combined Widget,Grid</Tags>
+          <Features>Master Filter, Conditional-Formatting-Tree_Map </Features>
+        </Dashboard>
+      </Dashboards>
+    </Category>
+	<Category>
+      <Name>Support</Name>
+      <Description>Check our Sample dashboards.</Description>
+      <Dashboards>
+        <Dashboard>
+          <Name>Bold Desk Ticket Analytics Dashboard</Name>
+		  <ImageName>support.svg</ImageName>
+          <Description>The Bold Desk Ticket Analytics Dashboard offers real-time insights into ticketing platform performance. It tracks ticket volume, resolution times, response efficiency, and customer satisfaction. Visualizations include charts depicting ticket sources, statuses, types, and priorities, empowering support teams to monitor and optimize their operations for exceptional customer service and adherence to SLAs.</Description>
+          <FileName>bold-desk-ticket-analytics-dashboard.sydj</FileName>
+          <Tags>DatePicker, Combo, Card, Spline Chart, Column Chart, Bar Chart, Doughnut Chart,Combined Widget</Tags>
+          <Features>Master Filter, Conditional-Formatting-Tree_Map, Relative_Date_Filter-Spline_Chart </Features>
+        </Dashboard>
+      </Dashboards>
+    </Category>
+	<Category>
+      <Name>Support</Name>
+      <Description>Check our Sample dashboards.</Description>
+      <Dashboards>
+        <Dashboard>
+          <Name>Zendesk Customer Support Monitoring Dashboard</Name>
+		  <ImageName>support.svg</ImageName>
+          <Description>The Zendesk Customer Support Monitoring Dashboard provides a comprehensive overview of customer support performance. It includes the key metrics: ticket volume, closed tickets, resolution time, tickets by type and status, tickets by channel, tickets by priority, satisfaction rate, and ticket volume versus satisfaction rate. The dashboard enables the monitoring and analysis of support operations, the tracking of ticket trends, categorization, resolution efficiency, and customer satisfaction. Additionally, it provides insights into the balance between ticket volume and satisfaction rate, as well as the progress of closed versus open tickets over time.</Description>
+          <FileName>zendesk-customer-support-monitoring-dashboard.sydj</FileName>
+          <Tags>DatePicker, Card, Spline Chart, Column Chart, Bar Chart, Doughnut Chart, Spline Area,Combined Widget,Grid</Tags>
+          <Features>Master Filter, Conditional-Formatting-Tree_Map </Features>
+        </Dashboard>
+      </Dashboards>
+    </Category>
+	 <Category>
+      <Name>Sales</Name>
+      <Description>Check our Sample dashboards.</Description>
+      <Dashboards>
+        <Dashboard>
+          <Name>PipelineDeals Deals Analysis Dashboard</Name>
+		  <ImageName>sales.svg</ImageName>
+          <Description>The pipeline deals analysis dashboard helps track sales opportunities/deals and allows one to see where your prospects are in the sales pipeline with these KPIs and metrics, deals stage, total companies, win rate, deals won, avg. deals size, sales cycle, deals probability by stage, revenue by the deal, pipeline velocity, deals by status, qualified leads by date, and the deal summary.</Description>
+          <FileName>pipelinedeals-deals-analysis-dashboard.sydj</FileName>
+          <Tags>DatePicker, Card, Spline Chart, Column Chart, Bar Chart, Doughnut Chart, Spline Area,Combined Widget,Grid</Tags>
+          <Features>Master Filter</Features>
+        </Dashboard>
+      </Dashboards>
+    </Category>
+	<!--<Category>
+      <Name>Sales</Name>
+      <Description>Check our Sample dashboards.</Description>
+      <Dashboards>
+        <Dashboard>
+          <Name>Zendesk Sell Deals Performance Dashboard</Name>
+		  <ImageName>sales.svg</ImageName>
+          <Description>The Zendesk Sell deals performance dashboard offers a comprehensive snapshot of sales efficacy. It displays deal owners, sources, categories, and top 5 deals by value. Metrics like total, active, won, and lost deals values provide clarity, while average active deal value gauges ongoing performance. Sales cycle length, win rate, and win likelihood help evaluate processes. Deal status, lost deals by reasons, unqualified deals, and monthly forecasts inform strategy. The sales pipeline visualizes the flow, and a summary consolidates key data. This dashboard empowers swift, informed decisions, steering our sales efforts for optimum outcomes.</Description>
+          <FileName>zendesk-sell-deals-performance-dashboard.sydj</FileName>
+          <Tags>Combo Box, Card, Bar Chart, Radial Gauge, Combined Widget, Pie Chart,Grid, Radial Gauge, Doughnut Chart, Spline Chart, Funnel Chart</Tags>
+          <Features>Master Filter, Conditional_Formatting-Grid, Relative_Date_Filter-Spline_Chart</Features>
+        </Dashboard>
+      </Dashboards>
+    </Category>-->
+	<Category>
+      <Name>Information Technology</Name>
+      <Description>Check our Sample dashboards.</Description>
+      <Dashboards>
+        <Dashboard>
+          <Name>Harvest Project Time Tracking Dashboard</Name>
+		  <ImageName>project-overview-dashboard.svg</ImageName>
+          <Description>The Harvest Project Time Tracking Dashboard offers a concise snapshot of project efficiency. It showcases essential metrics such as project completion rate and project progress by date, revealing real-time progress. The breakdown of billable, nonbillable, invoiced, and  not invoiced time provides financial insights. Time utilization rate ensures resource efficiency, while tasks overview highlights task management. Tracked vs. budgeted hours by project ensures financial compliance. The active projects summary offers a quick glance at ongoing initiatives. This intuitive dashboard empowers users to gauge performance, allocate resources effectively, and optimize project outcomes, all at a glance.</Description>
+          <FileName>harvest-project-time-tracking-dashboard.sydj</FileName>
+          <Tags>Combo Box, Combined Widget, Radial Gauge, Spline Chart, Stacked Column Chart, Grid</Tags>
+          <Features>Master Filter, Conditional_Formatting-Grid, Relative_Date_Filter-Spline_Chart</Features>
+        </Dashboard>
+      </Dashboards>
+    </Category>
+	
+	<Category>
+      <Name>Sales</Name>
+      <Description>Check our Sample dashboards.</Description>
+      <Dashboards>
+        <Dashboard>
+          <Name>Keen E-Commerce Sales Analysis Dashboard</Name>
+		  <ImageName>sales.svg</ImageName>
+          <Description>The Keen Sales Analysis Dashboard delivers real-time insight into sales performance. Its interactive charts and widgets provide a visual overview of key metrics, from revenue trends to top-selling products. This empowers sales teams and managers to make informed decisions, optimize strategies, and drive revenue growth efficiently. Stay ahead in the market with data-driven sales insights at your fingertips.</Description>
+          <FileName>keen-e-commerce-sales-analysis-dashboard.sydj</FileName>
+          <Tags>Combo Box, KPI Card, Stacked Column Chart, Area Chart, Pie Chart,Spline Chart, Map</Tags>
+          <Features>Master Filter, Forecast-Spline_Chart</Features>
+        </Dashboard>
+      </Dashboards>
+    </Category>
+	<Category>
+          <Name>Marketing</Name>
+          <Description>Check our Sample dashboards.</Description>
+          <Dashboards>
+              <Dashboard>
+                  <Name>ActiveCampaign Email Marketing Performance Dashboard</Name>
+                  <ImageName>marketing.svg</ImageName>
+                  <Description>The Active Campaign Email Marketing Performance Dashboard offers a comprehensive view of your email marketing efforts, providing essential metrics such as Sent Emails, Deliveries, Clicks, Opens, and more. It enables you to monitor key engagement indicators like Open Rate and Click Rate, ensuring your campaigns resonate with your audience. Additionally, you can track subscriber behaviour with metrics like Unsubscribes and Forwards, optimize email delivery with insights on Bounces, and analyse performance over time through data such as Opens by Weekday and Campaigns by Type. With this dashboard, you'll gain the insights needed to refine your email strategies, enhance user engagement, and drive campaign success.</Description>
+                  <FileName>active-campaign-email-marketing-performance-dashboard.sydj</FileName>
+                  <Tags>Date Picker, Radial Gauge, Combined Widget, Cards, Spline Chart, Doughnut Chart, Column Chart, Pie Chart, Bar Chart, Grid</Tags>
+                  <Features>Relative_Date_Filter-Date_Picker, Relative_Date_Filter-Spline_Chart</Features>
+              </Dashboard>
+          </Dashboards>
+      </Category>
+	  <Category>
+      <Name>Sales</Name>
+      <Description>Check our Sample dashboards.</Description>
+      <Dashboards>
+        <Dashboard>
+          <Name>ActiveCampaign Deals Performance Dashboard</Name>
+          <ImageName>sales.svg</ImageName>
+          <Description>This ActiveCampaign Deals Performance Dashboard offers a comprehensive view of your sales pipeline and deal performance, featuring vital metrics such as the total number of deals, aggregate deal value, and average time to win. Gain actionable insights into your sales operations with a breakdown of deals by status, stage, and creation date, allowing you to identify bottlenecks and optimize your sales process. Additionally, track the top 10 deals with the highest win probability to focus on high-value opportunities and explore the distribution of deals across value brackets, enabling strategic decision-making for more successful sales outcomes.</Description>
+          <FileName>active-campaign-deals-performance-dashboard.sydj</FileName>
+          <Tags>Date Picker, Card, Radial Gauge, Spline Chart, Funnel Chart, Doughnut Chart, Bar Chart, Grid</Tags>
+          <Features>Relative_Date_Filter-Date_Picker, Relative_Date_Filter-Spline_Chart, Top-N-Rank-Filter-Bar_Chart</Features>
+        </Dashboard>
+      </Dashboards>
+    </Category>
+	<Category>
+      <Name>Information Technology</Name>
+      <Description>Check our Sample dashboards.</Description>
+      <Dashboards>
+        <Dashboard>
+          <Name>Lighthouse Ticket Analysis Dashboard</Name>
+		  <ImageName>project-overview-dashboard.svg</ImageName>
+          <Description>The Lighthouse Ticket Analysis Dashboard offers essential insights into project ticket status, aiding project managers and administrators in informed decision-making. Key performance indicators such as average resolution time, completion rates, and ticket statuses are presented for efficient resource allocation. This dashboard enhances project outcomes through detailed ticket assignment, priority, and progress analyses, providing a comprehensive overview of project performance.</Description>
+          <FileName>lighthouse-ticket-analysis-dashboard.sydj</FileName>
+          <Tags>Combo Box, Spilne Chart, Card, Column Chart, Bar Chart, Combined Widget, Doughnut Chart, Grid, Radial Gauge, HeatMap</Tags>
+          <Features>Master Filter, Conditional_Formatting-Grid</Features>
+        </Dashboard>
+      </Dashboards>
+    </Category>
+	
+	<Category>
+      <Name>Support</Name>
+      <Description>Check our Sample dashboards.</Description>
+      <Dashboards>
+        <Dashboard>
+          <Name>LiveAgent Customer Support Dashboard</Name>
+		  <ImageName>support.svg</ImageName>
+          <Description>Track and manage customer support operations efficiently with our  LiveAgent Customer Support Dashboard. Monitor key metrics like ticket volume, average response and resolution times, customer satisfaction, and agent performance. View ticket distribution by department, status, channel, and tags. Identify trends, allocate resources, and improve service quality to enhance customer experience and satisfaction. Optimize decision-making for an efficient and effective support team.</Description>
+          <FileName>liveagent-customer-support-dashboard.sydj</FileName>
+          <Tags>Date Picker, Card, Stacked Bar Chart, Bar Chart, Grouped Bar Chart,Spline</Tags>
+          <Features>Master Filter, Relative_Date_Filter-Spline_Chart</Features>
+        </Dashboard>
+      </Dashboards>
+    </Category>
+	
+	<Category>
+      <Name>Marketing</Name>
+      <Description>Check our Sample dashboards.</Description>
+      <Dashboards>
+        <Dashboard>
+          <Name>Nutshell Leads Marketing Dashboard</Name>
+		  <ImageName>marketing.svg</ImageName>
+          <Description>This Nutshell marketing dashboard lets users monitor the performance of a marketing department. The dashboard uses metrics like lead win rate, leads conversion rate, and win/loss ratio to judge its performance and improve sales.</Description>
+          <FileName>nutshell-leads-marketing-dashboard.sydj</FileName>
+          <Tags>Date Picker, Card, Gauge, Funnel, Spline Chart, Doughnut Chart, Grid</Tags>
+          <Features>Master Filter, Conditional_Formatting-Grid, Relative_Date_Filter-Line_Chart</Features>
+        </Dashboard>
+      </Dashboards>
+    </Category>
+	<Category>
+      <Name>Finance</Name>
+      <Description>Check our Sample dashboards.</Description>
+      <Dashboards>
+        <Dashboard>
+          <Name>Harvest Financial and Invoicing Dashboard</Name>
+		  <ImageName>finance.svg</ImageName>
+          <Description>The Harvest Project Time Tracking Dashboard offers a concise snapshot of project efficiency. It showcases essential metrics such as project completion rate and project progress by date, revealing real-time progress. The breakdown of billable, nonbillable, invoiced, and  not invoiced time provides financial insights. Time utilization rate ensures resource efficiency, while tasks overview highlights task management. Tracked vs. budgeted hours by project ensures financial compliance. The active projects summary offers a quick glance at ongoing initiatives. This intuitive dashboard empowers users to gauge performance, allocate resources effectively, and optimize project outcomes, all at a glance.</Description>
+          <FileName>harvest-financial-and-invoicing-dashboard.sydj</FileName>
+          <Tags>Combo Box, Card,Stacked Column Chart, Bar Chart, Combo Chart, Pie Chart, Line Chart, Grid</Tags>
+          <Features>Master Filter, Conditional_Formatting-Grid</Features>
+        </Dashboard>
+      </Dashboards>
+    </Category>
+	<Category>
+      <Name>Sales</Name>
+      <Description>Check our Sample dashboards.</Description>
+      <Dashboards>
+        <Dashboard>
+          <Name>Shopify Product Monitoring Dashboard</Name>
+		  <ImageName>sales.svg</ImageName>
+          <Description>Track your Shopify store's performance effortlessly with our comprehensive product monitoring dashboard. Gain insights into total orders and sales, visualize sales by country, and maintain optimal inventory levels with average inventory and stock-to-sales ratio. Monitor product success through sell-through rate and sales breakdown by product. Compare your prices against competitors and analyze estimated vs. actual sales. Identify top-selling products, manage vendor quantities, and stay ahead with products by payment term. Understand customer trends, while ensuring stock availability for smooth operations. Make informed decisions and drive success with these key metrics, all in one streamlined dashboard.</Description>
+          <FileName>shopify-product-monitoring-dashboard.sydj</FileName>
+          <Tags>Combo Box, Date Picker, Card, Map, Grouped Column Chart, Bar Chart, Column Chart, Pie Chart, Line Chart</Tags>
+          <Features>Master Filter, Relative_Date_Filter-Spline_Chart</Features>
+        </Dashboard>
+      </Dashboards>
+    </Category>
+	<Category>
+      <Name>Sales</Name>
+      <Description>Check our Sample dashboards.</Description>
+      <Dashboards>
+        <Dashboard>
+          <Name>SingleStore Sales Funnel Analytics Dashboard</Name>
+		  <ImageName>sales.svg</ImageName>
+          <Description>The SingleStore Sales Funnel Analytics Dashboard allows you to monitor your prospects and each stage of the buyer's journey. With this dashboard, you’ll be able to see exactly where potential buyers are in the sales funnel and be able to monitor KPIs like sales cycle, cost per lead, cost per opportunity, conversion rate, and win rate.</Description>
+          <FileName>singlestore-sales-funnel-analytics-dashboard.sydj</FileName>
+          <Tags>Date Picker, Card, Grouped Column Chart, Gauge, Funnel Chart, Doughnut Chart, Grid</Tags>
+          <Features>Master Filter, Conditional_Formatting-Grid</Features>
+        </Dashboard>
+      </Dashboards>
+    </Category>
+	<Category>
+      <Name>Sales</Name>
+      <Description>Check our Sample dashboards.</Description>
+      <Dashboards>
+        <Dashboard>
+          <Name>Stripe Subscription Performance Dashboard</Name>
+		  <ImageName>sales.svg</ImageName>
+          <Description>The Stripe Subscription Performance Dashboard offers a comprehensive overview of your subscription-based business. Visualize essential metrics such as total revenue, monthly recurring revenue (MRR), annual recurring revenue (ARR), and average revenue per user (ARPU). Track customer engagement with metrics like customer count and subscriptions by status. Gain insights into customer longevity through customer lifetime value by month. Evaluate expansion and retention with MRR expansion and churn rates, renewal and customer churn rates. Forecast future growth, compare active customers vs. subscriptions, manage invoices, and uncover valuable customer trends. Maximize efficiency with a concise invoice details summary and top 5 customers analysis.</Description>
+          <FileName>stripe-subscription-performance-dashboard.sydj</FileName>
+          <Tags>Combo Box, Card, KPI Card, Pie Chart, Spline Chart, Gauge, Bar Chart, Grid</Tags>
+          <Features>Master Filter, Conditional_Formatting-Grid</Features>
+        </Dashboard>
+      </Dashboards>
+    </Category>	
     <Category>
       <Name>Health Care</Name>
       <Description>Check our Sample dashboards.</Description>
       <Dashboards>
         <Dashboard>
-          <Name>Patient Experience Analysis</Name>
+          <Name>Patient Experience Analysis Dashboard</Name>
 		  <ImageName>healthcare.svg</ImageName>
           <Description>This Patient Experience Analysis Dashboard offers valuable insights into the quality of care and service provided by healthcare facilities. It includes key metrics such as the overall patient satisfaction, average visit length by department, average waiting time by department, patient feedback by gender, patients by department, and patient feedback details.</Description>
           <FileName>patient experience analysis.sydj</FileName>
@@ -37,7 +292,7 @@
          <Name>Hospital Management Dashboard</Name>
           <ImageName>healthcare.svg</ImageName>
           <Description>This Hospital Management Dashboard displays healthcare metrics and KPIs, including data on doctors, admitted and readmitted patients, readmission rate, average length of stay, bed occupancy rate, patients by specialization, average cost of treatment by age group, patients by week, and upcoming appointments. The dashboard provides a comprehensive overview for informed decision-making and improving patient outcomes</Description>
-          <FileName>hospital management dashboard.sydj</FileName>
+          <FileName>hospital-management-dashboard.sydj</FileName>
           <Tags>Combo Box, Date Picker, Stacked Chart, Pie Chart, TreeMap,Grid, Card, Line Chart</Tags>
           <Features>Master Filter, Conditional_Formatting-Grid, Relative_Date_Filter-Date_Picker,Conditional-Formatting-Tree_Map</Features>
         </Dashboard>
@@ -100,6 +355,76 @@
              </Dashboard>
          </Dashboards>
     </Category>
+	<Category>
+      <Name>Sales</Name>
+      <Description>Check our Sample dashboards.</Description>
+      <Dashboards>
+        <Dashboard>
+          <Name>Copper Sales Opportunities Dashboard</Name>
+		  <ImageName>sales.svg</ImageName>
+          <Description>The Copper Sales Opportunities Dashboard can be used by sales managers and business owners to monitor the sales performance of their companies. This can be achieved by measuring the following KPIs and metrics: total opportunities, total sales, open opportunities, won opportunities, lost opportunities, abandoned opportunities, closed opportunities percentage, opportunities by source, opportunities by pipeline stage, opportunities by priority, opportunities by win probability, opportunities by sales, opportunity status by value, opportunity value by close date, opportunities by created date, and opportunities summary details.</Description>
+          <FileName>copper-sales-opportunities-dashboard.sydj</FileName>
+          <Tags>Date Picker, Combo Box, Card, Combined Widget, Radial Gauge, Doughnut Chart, Tree Map, Spline Chart, Funnel Chart, Bar Chart, Combo Chart, Grid</Tags>
+          <Features>Master Filter, Conditional_Formatting-Grid, Relative_Date_Filter-Spline_Chart, Top-N-Rank-Filter-Bar_Chart</Features>
+        </Dashboard>
+      </Dashboards>
+    </Category>
+	<Category>
+      <Name>Sales</Name>
+      <Description>Check our Sample dashboards.</Description>
+      <Dashboards>
+        <Dashboard>
+          <Name>HubSpot Deals Report Dashboard</Name>
+		  <ImageName>sales.svg</ImageName>
+          <Description>This HubSpot Deals Report Dashboard offers a comprehensive overview of the performance of a sales team, presenting vital metrics to inform strategic decisions. From total deal value and contracts sent to closed/won and lost amounts, it provides financial insights. Efficiency is assessed with metrics like days to win a deal, win rate, and conversion rate, while tracking new deals and their types. Delve into pipeline dynamics with active, won, and lost deals, uncover top-performing deal types and priorities, and explore sales cycle trends via deal stages. The dashboard's revenue forecast and deal source analysis offer crucial insights, empowering data-driven actions to foster growth.</Description>
+          <FileName>hubspot-deals-report-dashboard.sydj</FileName>
+          <Tags>Date Picker, Card, Combined Widget, Radial Gauge, Pie Chart, Spline Chart, Bar Chart, Funnel Chart, Tree Map, Grid</Tags>
+          <Features>Master Filter, Conditional_Formatting-Grid, Relative_Date_Filter-Spline_Chart, Top-N-Rank-Filter-Bar_Chart</Features>
+        </Dashboard>
+      </Dashboards>
+    </Category>
+	<Category>
+      <Name>Sales</Name>
+      <Description>Check our Sample dashboards.</Description>
+      <Dashboards>
+        <Dashboard>
+          <Name>Insightly Opportunities Analysis Dashboard</Name>
+		  <ImageName>sales.svg</ImageName>
+          <Description>The Insightly Opportunities Analysis Dashboard offers a comprehensive view of your sales performance and opportunity management. Dive deep into your data with key metrics such as total sales, average sale size, expected opportunity duration, win rate, and opportunities by  state. Identify trends with lost opportunities by reason and track your sales pipeline through a funnel chart. Monitor the progress of opportunities across stages and assess individual  performance with total sales by representative. Stay informed about your biggest wins with the top 5 opportunities by value and gain visibility into opportunity outcomes by state and value. Additionally, make data-driven decisions with the top 10 opportunities ranked by win probability. This dashboard equips you with the tools needed to optimize your sales strategies, enhance decision-making, and drive revenue growth.</Description>
+          <FileName>insightly-opportunities-analysis-dashboard.sydj</FileName>
+          <Tags>Date Picker, Card, Combined Widget, Radial Gauge, Pie Chart, Spline Chart, Bar Chart, Funnel Chart, Tree Map, Grid</Tags>
+          <Features>Master Filter, Conditional_Formatting-Grid, Relative_Date_Filter-Spline_Chart, Top-N-Rank-Filter-Bar_Chart</Features>
+        </Dashboard>
+      </Dashboards>
+    </Category>
+	<Category>
+      <Name>Finance</Name>
+      <Description>Check our Sample dashboards.</Description>
+      <Dashboards>
+        <Dashboard>
+          <Name>ChartMogul Subscription Report Dashboard</Name>
+		  <ImageName>financial-management.svg</ImageName>
+          <Description>The goal of a ChartMogul subscription dashboard is to track, analyze, and manage revenue data through key metrics like the ones in this dashboard: subscriptions,  monthly recurring revenue, average revenue per account by month, customer lifetime value by month, annual run rate, average revenue per account by month, customer subscription status, plan by interval count, customer churn rate by month, net MRR churn rate by month, total customers by month, monthly recurring revenue by country,  transactions by month, and also invoice summary details.</Description>
+          <FileName>chartmogul-subscription-report-dashboard.sydj</FileName>
+          <Tags>Combo Box, Card, Radial Gauge, Combined Widget, Doughnut Chart, Grid, Funnel Chart, Bar Chart.</Tags>
+          <Features>Master Filter, Top-N-Rank-Filter-Bar_Chart</Features>
+        </Dashboard>
+      </Dashboards>
+    </Category>
+	<Category>
+      <Name>Information Technology</Name>
+      <Description>Check our Sample dashboards.</Description>
+      <Dashboards>
+        <Dashboard>
+          <Name>Snowflake Usage Overview Dashboard</Name>
+		  <ImageName>project-overview-dashboard.svg</ImageName>
+          <Description>This Snowflake Usage Overview Dashboard helps users to review, observe, and manage the operational workflow in Snowflake using these metrics: total warehouses, total users, total databases, total queries, total execution time, query success rate, top 5 users by query success rate, total elapsed time, avg. elapsed time, compilation time, total credits used, top 5 users by queries, queries by type, queries and users by warehouse, users by database, cost analysis, and credits used by warehouse.</Description>
+          <FileName>snowflake-usage-overview-dashboard.sydj</FileName>
+          <Tags>Combo Box, Card, Radial Gauge, Bar Chart, Pie Chart, Stacked Bar Chart</Tags>
+          <Features>Master Filter, Top-N-Rank-Filter-Bar_Chart</Features>
+        </Dashboard>
+      </Dashboards>
+    </Category>
     <!-- <Category> -->
       <!-- <Name>Sales</Name> -->
       <!-- <Description>Check our Sample dashboards.</Description> -->
@@ -147,12 +472,12 @@
       <Description>Check our Sample dashboards.</Description>
       <Dashboards>
         <Dashboard>
-          <Name>Northwind Products and Suppliers Dashboard</Name>
+          <Name>Products and Suppliers Dashboard</Name>
 		  <ImageName>sales.svg</ImageName>
-          <Description>Analyze the sales performance of different products    Information: This dashboard shows the popularity of different products sold in a fictitious company.</Description>
-          <FileName>northwind-products-and-suppliers-dashboard.sydj</FileName>
-          <Tags>Combo Box, Card, Column Chart, Choropleth Map, Grid</Tags>
-          <Features>Master Filter, Drill_Down-Column_Chart</Features>
+          <Description>This Products and Suppliers Dashboard provides a comprehensive overview of key metrics to monitor sales, supplier performance, and inventory. It includes the metrics total sales, suppliers ranked by sales, on-time delivery, supplier compliance score, customer satisfaction, return rate, stock-out rate, supplier compliance score by month, categories with high sales, suppliers with maximum and minimum order percentages, orders by country, and products order summary. This dashboard empowers users to assess product performance, supplier relationships, and inventory efficiency, enabling data-driven decision-making and optimizing overall operational effectiveness.</Description>
+          <FileName>products-and-suppliers-dashboard.sydj</FileName>
+          <Tags>Combo Box, Card, Bar Chart, Column Chart, Combined Widget, Gauge, Scatter Plot, Bing Map, Grid</Tags>
+          <Features>Master Filter, Drill_Down-Column_Chart, Drill_Down-Bar_Chart, Relative_Date_Filter-Scatter_Plot</Features>
         </Dashboard>
       </Dashboards>
     </Category>
@@ -161,12 +486,12 @@
       <Description>Check our Sample dashboards.</Description>
       <Dashboards>
         <Dashboard>
-          <Name>Website Visitor Analysis</Name>
+          <Name>Website Visitor Analysis Dashboard</Name>
 		  <ImageName>website-visitor-analysis.svg</ImageName>
-          <Description>This dashboard provides an analysis of user behavior for a fictitious e-commerce website.The dashboard also shows a forecast for visitor and purchaser patterns for the year 2019.</Description>
-          <FileName>website visitor analysis.sydj</FileName>
-          <Tags>Combo Box, Date Picker, Card, Line Chart, Pie Chart, Grid, Column Chart</Tags>
-          <Features>Master Filter, Drill_Down-Column_Chart, Forecasting-Line_Chart</Features>
+          <Description>The Website Visitor Analysis Dashboard provides a comprehensive overview of visitor behavior and engagement on a U.S.-based e-commerce website. It tracks key metrics such as page views, conversion rate, and click-through rate. Gain insights into visitor demographics, traffic sources, and engagement rates. Optimize your strategies to increase conversions, enhance user experience, and drive business growth.</Description>
+          <FileName>website-visitor-analysis-dashboard.sydj</FileName>
+          <Tags>Date Picker, Card, Stacked Bar Chart, Gauge, Pie Chart, Combo Chart, Bar Chart,Grid, Doughnut Chart, Map</Tags>
+          <Features>Master Filter, Forecasting-Spline_Chart,Relative_Date_Filter_Combo_Chart</Features>
         </Dashboard>
       </Dashboards>
     </Category>
@@ -190,12 +515,12 @@
       <Description>Check our Sample dashboards.</Description>
       <Dashboards>
         <Dashboard>
-          <Name>Sales Performance</Name>
+          <Name>Sales Performance Dashboard</Name>
 		  <ImageName>sales.svg</ImageName>
-          <Description>Overview of total production and sales through online and retail channels, product expiration details, and percentage of products returned by customers.</Description>
+          <Description>This sales performance dashboard provides a comprehensive overview of sales performance through online and store channels. It includes key metrics such as units ordered, units sold, total revenue, average units per transaction, and average order value. Additionally, it tracks sales cycle time, conversion rate, and the product-to-sales ratio. The dashboard highlights the top 5 products by sales, customer retention rate, and sales growth rate to measure customer loyalty and business growth. With detailed insights on sales by sales channel, month, region, online orders, store orders, products sold, and sales by customer segment, this dashboard empowers businesses to make data-driven decisions and optimize their sales strategies.</Description>
           <FileName>sales-performance-dashboard.sydj</FileName>
-          <Tags>Combo Box, Card, Gauge, Column Chart, Pie Chart, Line Chart</Tags>
-          <Features>Master Filter, Drill_Down-Pie_Chart</Features>
+          <Tags>List Box, Card, Gauge, Scatter Plot, Map, Pie Chart, Combined Widget, Bar Chart, Combo Chart</Tags>
+          <Features>Master Filter, Relative_Date_Filter-Scatter_Plot, Relative_Date_Filter-Combo_Chart</Features>
         </Dashboard>
       </Dashboards>
     </Category>
@@ -213,6 +538,21 @@
        </Dashboard>
       </Dashboards>
     </Category>
+	<Category>
+      <Name>Sales</Name>
+      <Description>Check our Sample dashboards.</Description>
+      <Dashboards>
+        <Dashboard>
+          <Name>Salesforce Opportunities Dashboard</Name>
+          <ImageName>sales.svg</ImageName>
+          <Description>This Salesforce Opportunities Dashboard provides a comprehensive overview of key sales metrics. It showcases the number of opportunities, win rate, opportunities conversion rate, and open opportunities by lead source. The dashboard also highlights pipeline value, average deal value, and revenue won. Sales cycle length, top 10 open and won opportunities by revenue, and pipeline value by month offer insights into performance. Additionally, closed opportunities by stage, opportunity stage distribution, sales velocity by month, and active opportunities revenue by stage and lead source provide a comprehensive view of sales progression, performance, and revenue generation.</Description>
+          <FileName>salesforce-opportunities-dashboard.sydj</FileName>
+          <Tags>Number card, Combined Widget, Bar Chart, Gauge, Funnel Chart, Line Chart, HeatMap, Doughnut Chart, Spline Chart</Tags>
+          <Features>Relative_Date_Filter-Line_Chart, Relative_Date_Filter-Spline_Chart</Features>
+        </Dashboard>
+      </Dashboards>
+    </Category>
+
     <!-- <Category> -->
       <!-- <Name>Marketing</Name> -->
       <!-- <Description>Check our Sample dashboards.</Description> -->
@@ -430,11 +770,11 @@
       <Description>Check our Sample dashboards.</Description>
       <Dashboards>
         <Dashboard>
-          <Name>Network Management</Name>
+          <Name>Network Performance Dashboard</Name>
 		  <ImageName>telecom.svg</ImageName>
-          <Description>The Network Management dashboard showcases the essential key metrics of a telecom service company such as dropped services, jitter, delay, call setup time, bit rate, packet loss, round-trip time, and throughput time.</Description>
-          <FileName>Network Management.sydj</FileName>
-          <Tags>Spline Chart, Card, Combo box, Tree Map</Tags>
+          <Description>The Network Performance Dashboard provides a comprehensive overview of your network's performance, allowing you to monitor key metrics such as total services, dropped services, average server response time, network bandwidth, and network availability rate. Additionally, you can track the mean opinion score for voice quality, call quality-customer satisfaction by region, delays, call setup time, data packet loss, jitter, throughput time, round-trip time, and bit rate. These metrics help you gain insights into your network's performance, identify areas that require improvement, and make informed decisions to optimize your network's efficiency and reliability.</Description>
+          <FileName>network-performance-dashboard.sydj</FileName>
+          <Tags>Combo Box, Card, Radial Gauge, Pie Chart, Spline Chart, Heat Map</Tags>
           <Features>Master Filter</Features>
         </Dashboard>
       </Dashboards>
@@ -458,12 +798,12 @@
       <Description>Check our Sample dashboards.</Description>
       <Dashboards>
         <Dashboard>
-          <Name>Financial Analysis Dashboard</Name>
+           <Name>Financial Analysis Dashboard</Name>
 		  <ImageName>sales.svg</ImageName>
-          <Description>Overview of revenue and expense details, online vs. retail sales comparison, regional revenue, and predicted revenue for the next three months.</Description>
+          <Description>This financial analysis dashboard offers a comprehensive view of a retail business's financial health. It includes important metrics like revenue, expenses, net profit, gross profit margin, and net profit margin. Key performance indicators (KPIs) such as revenue by product category, sales agent performance, and revenue by state help track profitability, sales effectiveness, and geographical performance. The dashboard aids in strategic decision-making for business growth.</Description>
           <FileName>financial-analysis-dashboard.sydj</FileName>
-          <Tags>Date Picker, Card, Gauge, Combo Box, Pie Chart, Column Chart, Choropleth Map</Tags>
-          <Features>Master Filter, Drill_Down-Pie_Chart</Features>
+          <Tags>Date Picker, Card, KPI card, Gauge, Combo Box, Doughnut Chart, Column Chart,Bar Chart ,Choropleth Map</Tags>
+          <Features>Master Filter, Drill_Down-Doughnut_Chart, Range Navigator-Group_Column_Chart</Features>
         </Dashboard>
       </Dashboards>
     </Category>
@@ -500,11 +840,11 @@
 	  <Description>Check our Sample dashboards.</Description>
 	  <Dashboards>
 		<Dashboard>
-		  <Name>Financial Management</Name>
+		  <Name>Financial Management Dashboard</Name>
 		  <ImageName>financial-management.svg</ImageName>
 		  <Description>This financial management dashboard displays key metrics for a company's finances and performance over a specific period. The dashboard includes metrics such as accounts receivable, accounts payable, days sales in inventory, days sales outstanding, days payable outstanding, current ratio, gross profit margin, revenue, debt-to-equity ratio, burn rate, equity ratio, and receivable and payable accounts by payment target. Additionally, the dashboard provides insights on net and gross working capital, as well as a profit and loss summary.</Description>
-		  <FileName>financial management.sydj</FileName>
-		  <Tags>Combined Widget, Image Widget, Card, Radial Gauge, Combo Chart, Spline Chart, Column Chart</Tags>
+		  <FileName>financial-management-dashboard.sydj</FileName>
+		  <Tags>Combined Widget, Image Widget, Card, Radial Gauge, Combo Chart, Line Chart, Spline Chart, Column Chart</Tags>
 		  <Features></Features>
 		</Dashboard>
 	  </Dashboards>
@@ -558,9 +898,9 @@
 		<Dashboard>
 		  <Name>Project Management Dashboard</Name>
 		  <ImageName>project-overview-dashboard.svg</ImageName>
-		  <Description>This dashboard provides an overview of the projects undertaken by an IT company. The dashboard displays all essential key metrics such as customer satisfaction, deadline, investment and profit details.</Description>
+		  <Description>The Project Management Dashboard provides a comprehensive view of key project metrics. It displays schedule variance, cost variance, actual cost, total budget, resource utilization, open issues by risks, defect density, CPI, SPI, change request status, utilized budget, estimated vs. actual days by project, customer satisfaction, monthly expenses, and SLA status. This dashboard enables stakeholders to monitor project progress, financial performance, resource utilization, risk status, and customer satisfaction. It facilitates informed decision-making, identifies areas for improvement, and ensures projects stay on track, within budget and schedule, while meeting service-level agreement requirements.</Description>
 		  <FileName>project-management-dashboard.sydj</FileName>
-		  <Tags>Card, Radial Gauge, Radar Polar, Stacked Column Chart, Pie Chart</Tags>
+		  <Tags>Combo Box, Card, Radial Gauge, Combined Widget, Bar Chart, Radar Polar, Doughnut Chart, Stacked Column Chart, 100% Stacked Column Chart</Tags>
 		  <Features></Features>
 		</Dashboard>
 	  </Dashboards>
@@ -654,12 +994,12 @@
 	  <Description>Check our Sample dashboards.</Description>
 	  <Dashboards>
 		<Dashboard>
-		  <Name>Pharma Sales Performance Dashboard</Name>
+		  <Name>Pharmaceuticals Sales Performance Dashboard</Name>
 		  <ImageName>pharmaceutical.svg</ImageName>
-		  <Description>This dashboard tells the story of Rx and Non-Rx drugs Sales performance over different states via important key metrics. Compare the changes over different quarters, channels and analyze the sales and profit incurred.</Description>
-		  <FileName>pharma sales performance dashboard.sydj</FileName>
-		  <Tags>Choropleth Map, Line chart, Card, Pie Chart, 100% Stacked Bar Chart, Grid </Tags>
-		  <Features>Master Filter, Drill_Down-Pie_Chart, Drill_Down-Line_Chart</Features>
+		  <Description>The Pharmaceuticals Sales Performance Dashboard provides a comprehensive analysis of Rx and non-Rx drugs' sales performance in different states via key metrics. It shows total revenue, sales growth rate, average order value, average prescription value, market share, ROI, sales expenses-to-revenue ratio, total units ordered and sold, sales by region, and sales conversion rate. The dashboard also offers insights into sales forecast accuracy, revenue vs. profit margin, profit by drug and sales channel, and prescription drug performance. With intuitive visuals, this dashboard empowers informed decision-making for optimizing sales strategies and overall business performance.</Description>
+		  <FileName>pharmaceuticals-sales-performance-dashboard.sydj</FileName>
+		  <Tags>Combo Box, Card, Choropleth Map, Gauge, Bar Chart, Spline Chart, HeatMap, Grid </Tags>
+		  <Features>Master Filter, Relative_Date_Filter-Spline_Chart</Features>
 		</Dashboard>
 	  </Dashboards>
 	</Category>
@@ -668,12 +1008,12 @@
 	  <Description>Check our Sample dashboards.</Description>
 	  <Dashboards>
 		<Dashboard>
-		  <Name>Pharma Production Analysis Dashboard</Name>
+		  <Name>Pharmaceuticals Production Analysis Dashboard</Name>
 		  <ImageName>pharmaceutical.svg</ImageName>
-		  <Description>This dashboard gives an overview of important KPIs in drugs manufacturing processes like LAR, PQCR, LeadTime and the Manufacturing Cost of the drugs. Also take a view of overall production quality, drugs produced compared with its target set, over past quarters.</Description>
-		  <FileName>pharma production analysis dashboard.sydj</FileName>
-		  <Tags>Combo box, Gauge, Area chart, Card,Stacked Column Chart, Grid, Pivot Grid </Tags>
-		  <Features>Master Filter, Conditional_Formatting-Grid</Features>
+		  <Description>This pharmaceutical production analysis dashboard provides a comprehensive overview of key metrics to monitor and optimize the manufacturing process. It includes the metrics: cycle time, changeover time, manufacturing cost, batch yield, availability, quality, performance, overall equipment effectiveness, production efficiency, runtime vs. downtime, first pass yield, rejection rate, lead time by drug, noncompliance incidents by reason, production vs. target, and compliance metrics. The dashboard enables stakeholders to identify bottlenecks, improve productivity, ensure quality control, minimize noncompliance risks, and track performance against targets.</Description>
+		  <FileName>pharmaceuticals-production-analysis-dashboard.sydj</FileName>
+		  <Tags>Combo box, Card, Stacked Bar Chart, Gauge, Area Chart, Stacked Column Chart, Combo Chart, Grid</Tags>
+		  <Features>Master Filter, Relative_Date_Filter-Area_Chart, Relative_Date_Filter-Combo_Chart</Features>
 		</Dashboard>
 	  </Dashboards>
 	</Category>
@@ -712,9 +1052,9 @@
 		<Dashboard>
 		  <Name>Oil and Gas Production Monitoring Dashboard</Name>
 		  <ImageName>oil-and-gas.svg</ImageName>
-		  <Description>With this dashboard, you get the analysis of Oil and Gas production in BOEPD units across different wells. Values in this dashboard are represented as BOEPD (Barrels of Oil Equivalent Per Day). One barrel of Oil is equal to 159 liters of crude oil, and one barrel of Gas is equal to 5800 cubic feet of natural gas.</Description>
-		  <FileName>oil and gas production monitoring dashboard.sydj</FileName>
-		  <Tags>Combo Box, Card, Line Chart, Stacked Column, Bar Chart, Choropleth Map</Tags>
+		  <Description>Monitor and optimize oil and gas production with our comprehensive Oil and Gas Production Monitoring dashboard. Track oil and gas production, flow pressure, efficiency, and well performance. Analyze top-performing wells and production trends. Filter data by date for precise insights. Stay in control of operations, identify opportunities, and make data-driven decisions to maximize productivity and profitability in real time.</Description>
+		  <FileName>oil-and-gas-production-monitoring-dashboard.sydj</FileName>
+		  <Tags>Card, KPI, Area Chart, Gauge,Doughnut Chart, Bar Chart, Heat Map , Choropleth Map</Tags>
 		  <Features>Master Filter</Features>
 		</Dashboard>
 	  </Dashboards>
@@ -726,10 +1066,10 @@
 		<Dashboard>
 		  <Name>Oil and Gas Wells Summary Dashboard</Name>
 		  <ImageName>oil-and-gas.svg</ImageName>
-		  <Description>With this dashboard, you get the complete summary of the wells managed by operator(s) from its current status, purpose the wells used, wells that are in down state and gross, net wells count over the past 6 months.</Description>
-		  <FileName>oil and gas wells summary dashboard.sydj</FileName>
-		  <Tags>Combo Box, Card, Treemap, Grid, Column Chart, Pie Chart, Doughnut Chart</Tags>
-		  <Features>Master Filter, Trendline-Column_Chart</Features>
+		  <Description>Monitor and optimize oil and gas well operations with our comprehensive Oil and Gas Well Summary dashboard. Track total wells, water cut, flaring and venting, carbon gas emissions, and well statuses. Dive deeper with well details and downtime analysis to improve efficiency, reduce environmental impact, and ensure sustainable production. Make informed decisions to enhance overall well performance and maximize returns.</Description>
+		  <FileName>oil-and-gas-wells-summary-dashboard.sydj</FileName>
+		  <Tags>Card, Doughnut, Gauge,Treemap, Grid</Tags>
+		  <Features>Master Filter, Conditional_Formatting-Grid</Features>
 		</Dashboard>
 	  </Dashboards>
 	</Category>
@@ -740,10 +1080,10 @@
 		<Dashboard>
 		  <Name>HR Recruitment Dashboard</Name>
 		  <ImageName>hr.svg</ImageName>
-		  <Description>This dashboard is included with essential recruitment related KPIs of Human Resources (HR) department. HR admins can make use of these metrics and KPIs to improvise sourcing the best candidates for different roles. And constant monitoring helps them to cut costs and better understand factors that influence their hiring processes.</Description>
-		  <FileName>hr recruitment dashboard.sydj</FileName>
-		  <Tags>Grid, Bar Chart, Column Chart, Pie chart, Funnel Chart, Card</Tags>
-		  <Features>Master Filter, Conditional_Formatting-Grid</Features>
+		  <Description>This HR Recruitment Dashboard provides a comprehensive view of the recruitment process, tracking key metrics to help you make informed hiring decisions. The dashboard includes metrics such as total applicants, shortlisted candidates, hired candidates, and rejected candidates, which provide an overview of the recruitment funnel. Other key metrics include cost per hire, time to hire, and time to fill, which help you assess the efficiency and effectiveness of your recruitment process.</Description>
+		  <FileName>hr-recruitment-dashboard.sydj</FileName>
+		  <Tags>Combo Box, Card, Doughnut Chart, Column Chart, Radial Gauge, Funnel Chart, Pie chart, Bar Chart, Grid</Tags>
+		  <Features>Master Filter</Features>
 		</Dashboard>
 	  </Dashboards>
 	</Category>
@@ -752,12 +1092,12 @@
 	  <Description>Check our Sample dashboards.</Description>
 	  <Dashboards>
 		<Dashboard>
-		  <Name>Workforce Performance Dashboard</Name>
+		  <Name>Workforce Performance Management Dashboard</Name>
 		  <ImageName>hr.svg</ImageName>
-		  <Description>This dashboard is included with essential workforce related KPIs of Human Resources (HR) department. The interactive metrics present in this dashboard helps both the HR department and top-level management to know about the quality level of their employees and other crucial metrics to improve the work-quality of their organization. Additional important KPIs include Absenteeism, Gender diversity ratio, Average employee tenure and so on.</Description>
-		  <FileName>workforce performance dashboard.sydj</FileName>
-		  <Tags>Grid, Card, Pie Chart, Column Chart, Doughnut Chart</Tags>
-		  <Features>Master Filter</Features>
+		  <Description>This Workforce Performance Management Dashboard provides a comprehensive view of key metrics essential for assessing employee performance and organizational effectiveness. It includes total employees, average yearly absenteeism, overtime per week, absenteeism rate, yearly average overtime hours per employee for the last 5 years, gender ratio, employee turnover rate, full-time vs. part-time employees, training costs (net cost and returns), employees by department, compensation distribution by department, and overall labor effectiveness by department. With these metrics, HR and management can gain insights into workforce productivity, attendance patterns, employee engagement, training investments, turnover rates, departmental performance, and compensation distribution. This dashboard enables data-driven decision-making, strategic planning, and targeted interventions to optimize employee performance and drive organizational success.</Description>
+		  <FileName>workforce-performance-management-dashboard.sydj</FileName>
+		  <Tags>Card, Radial Gauge, Combo Chart, Spline Chart, Doughnut Chart, Line Chart, Column Chart, Pie Chart, Stacked Bar Chart, Bar Chart, Grid</Tags>
+		  <Features>Master Filter, Relative_Date_Filter-Spline_Chart, Relative_Date_Filter-Line_Chart, Relative_Date_Filter-Column_Chart</Features>
 		</Dashboard>
 	  </Dashboards>
 	</Category>
@@ -776,16 +1116,44 @@
 	  </Dashboards>
 	</Category>
 	<Category>
+	  <Name>Marketing</Name>
+	  <Description>Check our Sample dashboards.</Description>
+	  <Dashboards>
+		<Dashboard>
+		  <Name>Marketing Performance Dashboard</Name>
+		  <ImageName>marketing.svg</ImageName>
+		  <Description>Marketing performance dashboards are a comprehensive tool to track and analyze key metrics for your online marketing platform. This example dashboard monitors click-through rates, conversion rates, cost per acquisition, engagement metrics, and more. Gain valuable insights into the performance of your campaigns, optimize strategies, and make data-driven decisions to maximize your platform's success. Stay ahead of the competition with our powerful marketing dashboards.</Description>
+		  <FileName>marketing-performance-dashboard.sydj</FileName>
+		  <Tags>Card, Gauge,Combo Chart,Doughnut Chart, Stacked_Bar_Chart, Spline Chart</Tags>
+		  <Features>Relative_Date_Filter-Combo_Chart</Features>
+		</Dashboard>
+	  </Dashboards>
+	</Category>
+	<Category>
       <Name>Marketing</Name>
       <Description>Check our Sample dashboards.</Description>
       <Dashboards>
         <Dashboard>
           <Name>Website Analytics Dashboard</Name>
 		  <ImageName>marketing.svg</ImageName>
-          <Description>This website analytics dashboard provides valuable insights into your revenue performance and user behavior. Key metrics: total revenue, customers, leads, qualified leads, bounce rate, customer churn rate, revenue by traffic source, sessions, page views, monthly recurring revenue, traffic sources, conversion rate, conversion funnel, successful payments, average order value, customer lifetime value, average revenue per user by month, and top 5 landing pages by revenue. With these metrics, you can track financial performance, monitor customer acquisition and engagement, optimize marketing efforts, analyze user behavior, and identify top-performing landing pages. This comprehensive dashboard empowers you to make data-driven decisions for maximizing your website's revenue potential.</Description>
+          <Description>This website analytics dashboard provides valuable insights into your revenue performance and user behavior. Key metrics: total revenue, customers, leads, qualified leads, bounce rate, customer churn rate, revenue by traffic source, sessions, page views, monthly recurring revenue, traffic sources, successful payments, average order value, customer lifetime value, average revenue per user by month, and top 5 landing pages by revenue. With these metrics, you can track financial performance, monitor customer acquisition and engagement, optimize marketing efforts, analyze user behavior, and identify top-performing landing pages. This comprehensive dashboard empowers you to make data-driven decisions for maximizing your website's revenue potential.</Description>
           <FileName>website-analytics-dashboard.sydj</FileName>
-          <Tags>Card, Column Chart, Doughnut Chart, Radial Gauge, Spline Chart, Pie Chart, Funnel Chart, Bar Chart</Tags>
-         <Features></Features>
+          <Tags>Card, Column Chart, Doughnut Chart, Radial Gauge, Spline Chart, Pie Chart, Combo Chart, Bar Chart</Tags>
+         <Features>Relative_Date_Filter-Column_Chart, Relative_Date_Filter-Spline_Chart, Relative_Date_Filter-Combo_Chart, Top-N-Rank-Filter-Bar_Chart</Features>
+        </Dashboard>
+      </Dashboards>
+    </Category>
+	<Category>
+      <Name>Marketing</Name>
+      <Description>Check our Sample dashboards.</Description>
+      <Dashboards>
+        <Dashboard>
+          <Name>SendGrid Email Marketing Dashboard</Name>
+		  <ImageName>marketing.svg</ImageName>
+          <Description>The SendGrid Email Marketing Dashboard tracks email deliverability, delivery rate, and click rate by browser to optimize targeting. Analyze engagement trends with bounce rate and unsubscribe rate by month. Measure content effectiveness with click-to-open rate and click-through rate. Address user feedback using requests, unsubscribes, spam reports, and block rate insights. Gain valuable insights into email engagement by device and opens by country to tailor your strategies. Monitor opens vs. open rate and clicks by month for performance evaluation. Maximize your email marketing potential with actionable data in one user-friendly dashboard.</Description>
+          <FileName>sendgrid-email-marketing-dashboard.sydj</FileName>
+          <Tags>Combined Widget, Text, Number card, Doughnut Chart, Gauge, Column Chart, Choropleth Map, Spline Chart</Tags>
+          <Features>Relative_Date_Filter-Spline_Chart, Top-N-Rank-Filter-Doughnut_Chart, Relative_Date_Filter-Combo_Chart</Features>
         </Dashboard>
       </Dashboards>
     </Category>
@@ -837,12 +1205,12 @@
       <Description>Check our Sample dashboards.</Description>
       <Dashboards>
         <Dashboard>
-          <Name>Defect Management in Agile</Name>
+          <Name>Defect Management Dashboard</Name>
           <ImageName>agile.svg</ImageName>
-          <Description>This Defect Management Dashboard for Agile helps Product Managers to track the defect metrics such as Defect Density, Escaped Defect per Module, Defects Gap(%), Defects by Project, Type &#38; Status, Defects Cycle Time, Defects by Reporter and Priority.</Description>
-          <FileName>defect-management-in-agile.sydj</FileName>
-          <Tags>Combo Box,Number Card, KPI Card, Doughnut Chart, Spline Chart, Area Chart, Stacked Column Chart</Tags>
-          <Features>Master Filter,Drill_Down-Column_Chart</Features>
+          <Description>The Defect Management Dashboard provides real-time visibility into the status and quality of a software product. It offers key metrics and visualizations to track defect density, severity distribution, first-time pass rate, bug fix time, and more. The dashboard empowers teams to identify trends, prioritize actions, and improve overall defect management efficiency, ensuring a high-quality software delivery process in an Agile environment.</Description>
+          <FileName>defect-management-dashboard.sydj</FileName>
+          <Tags>Combo Box,Number Card,Doughnut Chart, Spline Chart, Radar Polar Chart, Column Chart, Combo Chart</Tags>
+          <Features>Master Filter,Drill_Down-Bar_Chart, Relative_Date_Filter-Column_Chart,Relative_Date_Filter-Spline_Chart</Features>
         </Dashboard>
       </Dashboards>
     </Category>
@@ -851,11 +1219,11 @@
       <Description>Check our Sample dashboards.</Description>
       <Dashboards>
         <Dashboard>
-          <Name>Team Management in Agile</Name>
+          <Name>Team Management Dashboard</Name>
           <ImageName>agile.svg</ImageName>
-          <Description>This Team Management Dashboard helps project leads and managers track the team work status of each project with metrics such as total resources, overall task completion percentage, bug and feature tasks completion status, team roles, bug status, and task summary by resource, to direct the team most efficiently.</Description>
-          <FileName>team-management-in-agile.sydj</FileName>
-          <Tags>Combo Box,Number Card, KPI Card, Pie Chart, Column Chart, Doughnut Chart, Gauge, Grid, Bar Chart, 100% Stacked Bar Chart</Tags>
+          <Description>This Team Management Dashboard provides a comprehensive overview of team performance and resource utilization. It includes key metrics such as task cycle time, task completion rate, average story points, bugs and features closed, and planned vs actual task completion by project. Additionally, it tracks team morale through a morale index. The dashboard also presents information on resource allocation with planned vs utilized hours by resource and story points scored by the team. It highlights bug status based on priority, tasks by status, and team roles. The dashboard offers a concise summary of the team's progress and productivity, aiding effective decision-making.</Description>
+          <FileName>team-management-dashboard.sydj</FileName>
+          <Tags>Combo Box,Number Card, KPI Card, Pie Chart, Doughnut Chart, Gauge, Grid, Bar Chart, 100% Stacked Bar Chart</Tags>
           <Features>Master Filter,Conditional_Formatting-Grid</Features>
         </Dashboard>
       </Dashboards>
@@ -907,12 +1275,12 @@
       <Description>Check our Sample dashboards.</Description>
       <Dashboards>
         <Dashboard>
-          <Name>Coronavirus Disease (COVID-19) Situation Dashboard</Name>
+          <Name>Coronavirus Disease (COVID-19) Global Situation Dashboard</Name>
           <ImageName>healthcare.svg</ImageName>
-          <Description>This coronavirus disease (COVID-19) situation dashboard helps healthcare providers track the health status of each country with metrics such as confirmed cases, recovered cases, deaths by date and country, and mortality rate by date.</Description>
-          <FileName>coronavirus-disease-situation-dashboard.sydj</FileName>
-          <Tags>Combo Box, Number Card, Spline Chart, Grid, Image, Choropleth Map </Tags>
-          <Features>Master Filter, Conditional_Formatting-Map, Relative_Date_Filter-Spline_Chart</Features>
+          <Description>This Coronavirus Disease (COVID-19) Global Situation Dashboard helps healthcare providers and crisis planners view the health status of each country with metrics such as confirmed cases, recovered cases, deaths by date and country, recovery rate, and mortality rate.</Description>
+          <FileName>coronavirus-disease-global-situation-dashboard.sydj</FileName>
+          <Tags>Combo Box,Card, Radial Gauge, Grid, Image, Choropleth Map </Tags>
+          <Features>Master Filter, Conditional_Formatting-Map</Features>
         </Dashboard>
       </Dashboards>
     </Category>
@@ -921,11 +1289,11 @@
       <Description>Check our Sample dashboards.</Description>
       <Dashboards>
         <Dashboard>
-          <Name>Coronavirus Disease (COVID-19) Daily Cases Analysis</Name>
+          <Name>Coronavirus Disease (COVID-19) Monthly Cases Analysis Dashboard</Name>
           <ImageName>healthcare.svg</ImageName>
-          <Description>This COVID -19 Disease Daily Cases Analysis dashboard helps Hospital administrators, doctors, healthcare providers, physicians monitor health metrics such as new confirmed, recovered, and deaths over a date.</Description>
-          <FileName>coronavirus-disease-daily-cases-analysis.sydj</FileName>
-          <Tags>DatePicker, Combo Box, Spline Chart, Pie Chart </Tags>
+          <Description>This COVID-19 Disease Daily Cases Analysis Dashboard helps hospital administrators, doctors, healthcare providers, and physicians to monitor health metrics such as newly confirmed cases, recovered patients, deaths, cases distribution, and recovery rate trend.</Description>
+          <FileName>coronavirus-disease-monthly-cases-analysis-dashboard.sydj</FileName>
+          <Tags>Date Picker, Combo Box, Column Chart, Spline Chart, Pie Chart </Tags>
           <Features>Master Filter,Relative_Date_Filter-Date_Picker</Features>
         </Dashboard>
       </Dashboards>
@@ -958,17 +1326,31 @@
         </Dashboard>
       </Dashboards>
     </Category>
-	  <!--<Category>
+	<Category>
+      <Name>Finance</Name>
+      <Description>Check our Sample dashboards.</Description>
+      <Dashboards>
+        <Dashboard>
+          <Name>FreshBooks Profit and Loss Dashboard</Name>
+          <ImageName>finance.svg</ImageName>
+          <Description>This profit and loss dashboard details revenue, expenses, and more. Use a Freshbooks dashboard to track your company's growth.</Description>
+          <FileName>freshbooks-profit-and-loss-dashboard.sydj</FileName>
+          <Tags>Card, Gauge, Doughnut Chart, Pie Chart, Line Chart, Spline Chart, Bar Chart,  Doughnut Chart, Combo Chart</Tags>
+          <Features>Relative_Date_Filter-Line_Chart, Relative_Date_Filter-Spline_Chart, Relative_Date_Filter-Combo_Chart, Relative_Date_Filter-Pie_Chart, Top-N-Rank-Filter-Bar_Chart</Features>
+        </Dashboard>
+      </Dashboards>
+    </Category>
+	<Category>
       <Name>Sales</Name>
       <Description>Check our Sample dashboards.</Description>
       <Dashboards>
         <Dashboard>
-          <Name>Revenue Analysis Dashboard</Name>
+          <Name>Keap Revenue Analysis Dashboard</Name>
 		  <ImageName>sales.svg</ImageName>
-          <Description>This custom dashboard lets you track periodical information like contacts, orders, subscriptions, and its revenue progress using pre-built Infusionsoft KPIs.</Description>
-          <FileName>revenue-analysis-dashboard.sydj</FileName>
-          <Tags>Image, KPI card,Area Chart, Doughnut Chart, Combo Chart, Grid, Column Chart</Tags>
-          <Features></Features>
+          <Description>The Keap Revenue Analysis Dashboard provides a comprehensive view of financial performance, showcasing total revenue and refunds. It tracks transaction growth rate, paid vs. unpaid transactions, orders by month trend, subscriptions, and order status. It compares revenue and refunds by month and offers a revenue forecast, empowering businesses with actionable insights for optimized revenue generation and growth.</Description>
+          <FileName>keap-revenue-analysis-dashboard.sydj</FileName>
+          <Tags>Card, Gauge, Grouped Column Chart, Column Chart, Combo Chart, Doughnut Chart, Area Chart, Spline Chart</Tags>
+          <Features>Trendline-Column_Chart, Forecasting-Spline_Chart</Features>
         </Dashboard>
       </Dashboards>
     </Category>
@@ -977,16 +1359,16 @@
       <Description>Check our Sample dashboards.</Description>
       <Dashboards>
         <Dashboard>
-          <Name>Incident Management Dashboard</Name>
+           <Name>ServiceNow Incident Management Dashboard</Name>
 		  <ImageName>support.svg</ImageName>
-          <Description>The ServiceNow dashboard is used to monitor incident details over a period of time and provides accurate information regarding average resolution time for an incident and status of incidents based on category and priority.</Description>
-          <FileName>incident-management-dashboard.sydj</FileName>
-          <Tags>Image, KPI card,Gauge, Treemap, Doughnut Chart, Line Chart</Tags>
-          <Features></Features>
+          <Description>The ServiceNow Incident Management Dashboard provides real-time visibility into key metrics, including new incidents, unresolved incidents, resolved incidents, closed incidents, resolution rate, forecast, category analysis, status distribution, and priority breakdown. It enables efficient monitoring, analysis, and decision-making to ensure timely incident resolution, optimize resource allocation, and enhance customer satisfaction.</Description>
+          <FileName>servicenow-incident-management-dashboard.sydj</FileName>
+          <Tags>Card, KPI, Gauge, Spline Chart, Column Chart, 100% Stacked Bar, Doughnut Chart, Heat Map, Grid</Tags>
+          <Features>Master Filter, Forecasting-Spline_Chart, Conditional_Formatting-Grid</Features>
         </Dashboard>
       </Dashboards>
     </Category>
-	<Category>
+	<!--<Category>
       <Name>Finance</Name>
       <Description>Check our Sample dashboards.</Description>
       <Dashboards>
@@ -1014,7 +1396,6 @@
         </Dashboard>
       </Dashboards>
     </Category>-->
-    
        <Category>
       <Name>Finance</Name>
       <Description>Check our Sample dashboards.</Description>
@@ -1072,6 +1453,34 @@
       </Dashboards>
     </Category>
 	<Category>
+      <Name>Social Media</Name>
+      <Description>Check our Sample dashboards.</Description>
+      <Dashboards>
+        <Dashboard>
+          <Name>LinkedIn Engagement Analytics Dashboard</Name>
+		  <ImageName>social-media.svg</ImageName>
+          <Description>This LinkedIn Engagement Analytics Dashboard offers a comprehensive snapshot of your LinkedIn performance, presenting vital metrics such as total page views, unique visitors, engagement rate, click-through rate, impressions, and engagement metrics (clicks, shares, likes, and comments). It also dives into audience demographics, showcasing followers by seniority level, industry, and job function. You can gain weekly insights through comparisons of impressions vs. unique impressions and clicks vs. likes, helping you adapt your content strategy to optimize your LinkedIn presence effectively. This tool empowers data-driven decision-making, providing the insights needed to tailor your content and engage with your LinkedIn audience strategically.</Description>
+          <FileName>linkedin-engagement-analytics-dashboard.sydj</FileName>
+          <Tags>Card, Stacked Column Chart, Spline Chart, Radial Gauge, Combined Widget, Doughnut Chart</Tags>
+          <Features>Relative_Date_Filter-Spline_Chart, Relative_Date_Filter-Stacked_Column_Chart</Features>
+        </Dashboard>
+      </Dashboards>
+    </Category>
+	<Category>
+      <Name>Social Media</Name>
+      <Description>Check our Sample dashboards.</Description>
+      <Dashboards>
+        <Dashboard>
+          <Name>Facebook Ads Overview Dashboard</Name>
+		  <ImageName>social-media.svg</ImageName>
+          <Description>This Facebook Ads Overview Dashboard offers a comprehensive overview of an ad campaign's performance. It includes essential metrics such as clicks, cost per click (CPC), click-through rate (CTR), amount spent, impressions, reach, post engagement, cost per mille (CPM), return on ad spend (ROAS), actions, and more. The dashboard provides insights into user engagement, ad reach, and cost-effectiveness. With this dashboard, you can make informed decisions to optimize your Facebook ad campaigns and maximize their impact.</Description>
+          <FileName>facebook-ads-overview-dashboard.sydj</FileName>
+          <Tags>Card, Combo Chart, Spline Chart, Line Chart, Area Chart</Tags>
+          <Features>Relative_Date_Filter-Spline_Chart, Relative_Date_Filter-Combo_Chart, Relative_Date_Filter-Area_Chart, Relative_Date_Filter-Line_Chart</Features>
+        </Dashboard>
+      </Dashboards>
+    </Category>
+	<Category>
       <Name>Marketing</Name>
       <Description>Check our Sample dashboards.</Description>
       <Dashboards>
@@ -1099,6 +1508,34 @@
         </Dashboard>
       </Dashboards>
     </Category>
+	<Category>
+	  <Name>Information Technology</Name>
+	  <Description>Check our Sample dashboards.</Description>
+	  <Dashboards>
+		<Dashboard>
+		  <Name>Azure DevOps Project Performance Dashboard</Name>
+		  <ImageName>project-performance-dashboard.svg</ImageName>
+		  <Description>The Project Performance Dashboard offers a holistic view of a project's progress and quality. It presents essential metrics: the number of features and bugs in the current and previous months, sprint velocity, planned versus completed work items by date, work items categorized by type and priority, bugs classified by state, active bugs segmented by severity, and work items sorted by assignee and state. This dashboard empowers users to monitor feature delivery, bug resolution, team productivity, and the project's overall health, enabling timely decision-making and facilitating continuous improvement.</Description>
+		  <FileName>project-performance-dashboard.sydj</FileName>
+		  <Tags>Combo Box, Card, Spline Chart, Column Chart, Doughnut Chart, Pie Chart, Stacked Column Chart, Grid</Tags>
+		  <Features>Master Filter, Relative_Date_Filter-Spline_Chart</Features>
+		</Dashboard>
+	  </Dashboards>
+	</Category> 
+	<Category>
+	  <Name>Information Technology</Name>
+	  <Description>Check our Sample dashboards.</Description>
+	  <Dashboards>
+		<Dashboard>
+		  <Name>Todoist Task Management Dashboard</Name>
+		  <ImageName>project-performance-dashboard.svg</ImageName>
+		  <Description>The Todoist Task Management Dashboard offers a concise snapshot of your productivity and project status. It displays critical metrics: total, completed, and overdue tasks; task cycle time for efficiency; planned vs. completed tasks per project for progress tracking; task completion rate to gauge efficiency; incomplete tasks by priority for focus; estimated vs. utilized hours by project for time management; incomplete tasks by status for task tracking; the trend of completed tasks over time for productivity insights; tasks categorized by due date for deadlines; and, finally, incomplete vs. overdue tasks by assignee. Task summary details provide a comprehensive overview, ensuring streamlined task management.</Description>
+		  <FileName>todoist-task-management-dashboard.sydj</FileName>
+		  <Tags>Combo Box, Card, Radial Gauge, Pie Chart, Column Chart, Doughnut Chart, Bar Chart, Spline Chart, Combo Chart, Grid</Tags>
+		  <Features>Master Filter, Relative_Date_Filter-Spline_Chart, Conditional-formatting_Grid</Features>
+		</Dashboard>
+	  </Dashboards>
+	</Category> 
 	  <!--<Category>
       <Name>Marketing</Name>
       <Description>Check our Sample dashboards.</Description>
@@ -1225,6 +1662,35 @@
         </Dashboard>
       </Dashboards>
     </Category>
+	<Category>
+      <Name>Sales</Name>
+      <Description>Check our Sample dashboards.</Description>
+      <Dashboards>
+        <Dashboard>
+          <Name>Salesforce Opportunities Dashboard</Name>
+          <ImageName>sales.svg</ImageName>
+          <Description>This Salesforce Opportunities Dashboard provides a comprehensive overview of key sales metrics. It showcases the number of opportunities, win rate, opportunities conversion rate, and open opportunities by lead source. The dashboard also highlights pipeline value, average deal value, and revenue won. Sales cycle length, top 10 open and won opportunities by revenue, and pipeline value by month offer insights into performance. Additionally, closed opportunities by stage, opportunity stage distribution, sales velocity by month, and active opportunities revenue by stage and lead source provide a comprehensive view of sales progression, performance, and revenue generation.</Description>
+          <FileName>salesforce-opportunities-dashboard.sydj</FileName>
+          <Tags>Number card, Combined Widget, Bar Chart, Gauge, Funnel Chart, Line Chart, HeatMap, Doughnut Chart, Spline Chart</Tags>
+          <Features>Relative_Date_Filter-Line_Chart, Relative_Date_Filter-Spline_Chart</Features>
+        </Dashboard>
+      </Dashboards>
+    </Category>
+	<Category>
+      <Name>Sales</Name>
+      <Description>Check our Sample dashboards.</Description>
+      <Dashboards>
+        <Dashboard>
+          <Name>Amazon Redshift Sales Activity Tracker Dashboard</Name>
+          <ImageName>sales.svg</ImageName>
+          <Description>This Amazon Redshift Sales Activity Tracker dashboard helps you track and follow all tickets sold over a specific period with metrics including available tickets, events, buyers, sales amount by category, and more.</Description>
+          <FileName>amazon-redshift-sales-activity-tracker-dashboard.sydj</FileName>
+          <Tags>Card, Bar Chart, Map, Doughnut Chart, Area Chart, Spline Chart, Grid, Pie Chart</Tags>
+          <Features>Top-N-Rank-Filter-Pie_Chart, Relative_Date_Filter-Area_Chart, Relative_Date_Filter-Spline_Chart</Features>
+        </Dashboard>
+      </Dashboards>
+    </Category>
+
 	  <!--<Category>
       <Name>Sales</Name>
       <Description>Check our Sample dashboards.</Description>
@@ -1247,7 +1713,7 @@
           <Name>Sales Activity Tracker Dashboard</Name>
           <ImageName>sales.svg</ImageName>
           <Description>This Sales Activity Tracker dashboard helps you track and follow all tickets sold over a specific period with metrics including available tickets, events, buyers, sales amount by category, and more.</Description>
-          <FileName>sales-activity-tracker-dashboard.sydj</FileName>
+          <FileName>amazon-redshift-sales-activity-tracker-dashboard.sydj</FileName>
           <Tags>Image, Number card, Doughnut Chart, Spline Chart, Grid, Area Chart, Heat Map, KPI Card</Tags>
           <Features>Trendline-Spline_Chart, Top-N-Rank-Filter-Doughnut_Chart, Relative_Date_Filter-Area_Chart, Top-N-Rank-Filter-Heat_Map</Features>
         </Dashboard>
@@ -1260,10 +1726,10 @@
         <Dashboard>
           <Name>Clinical Trials Dashboard</Name>
 		  <ImageName>healthcare.svg</ImageName>
-          <Description>The dashboard provides a review of all trials, summarizing the clinical trial data by intervention type, clinical phase, clinical condition, trial status, location, and more.</Description>
+          <Description>This clinical trials dashboard displays the key metrics: total trials, enrollments, sponsors, completions, and dropouts, as well as rates for enrollment, completion, and dropouts. It shows trials and enrollments by year, phase, country. Average enrollments are analyzed by sponsor, phase, funding type, and time. The dashboard displays trials by funding entity and study type, top 5 trials by condition, NS trials by intervention, types, and status. Get insight into trial progress, participant retention, funding distribution, study types, and interventions. Enable data-driven decisions for optimizing clinical trial outcomes.</Description>
           <FileName>clinical-trials-dashboard.sydj</FileName>
-          <Tags>Combo Box, Number card, Column Chart, Map, Doughnut Chart, Pie Chart, Line Chart,Stacked Bar Chart, Grid</Tags>
-          <Features>Master Filter, Conditional_Formatting-Grid, Trendline-Column_Chart, Top-N-Rank-Filter-Doughnut_Chart, Top-N-Rank-Filter-Pie_Chart, Forecasting-Line_Chart</Features>
+          <Tags>Combo Box, Card, Radial Gauge, Combo Chart, Column Chart, Map, Combined Widget, Doughnut Chart, Bar Chart, Stacked Column Chart, Grid</Tags>
+          <Features>Master Filter, Relative_Date_Filter-Combo_Chart, Drill_Down-Doughnut_Chart, Conditional_Formatting-Grid, Top-N-Rank-Filter-Bar_Chart</Features>
         </Dashboard>
       </Dashboards>
     </Category>
@@ -1316,10 +1782,10 @@
 		<Dashboard>
 		  <Name>Pharmaceutical Labor Dashboard</Name>
 		  <ImageName>pharmaceutical.svg</ImageName>
-		  <Description>This dashboard provides summarized details for a pharmacy's pharmaceutical labor management with metrics such as operation costs, labor costs, revenue and gross profit per prescription, work hours per job title, and prescription growth rate.</Description>
+		  <Description>This pharmaceutical labor dashboard provides a comprehensive view of key metrics essential for workforce management. It includes the metrics labor cost, utilization, efficiency, productivity, absenteeism rate, employee turnover, employee satisfaction, training sessions by designation, workforce diversity, prescription growth trend, shipping expenses, average prescriptions, delivery cost, labor cost as a percentage of revenue and labor details summary. The dashboard enables the monitoring of labor performance, cost analysis, employee satisfaction, diversity initiatives, and business trends, facilitating data-driven decision-making for optimizing pharmaceutical operations and ensuring workforce effectiveness.</Description>
 		  <FileName>pharmaceutical-labor-dashboard.sydj</FileName>
-		  <Tags>Combo box, Number Card, KPI Card, Grid, Line Chart, Spline Chart</Tags>
-		  <Features>Master Filter, Forecasting-Spline_Chart</Features>
+		  <Tags>Combo box, Card, Line Chart, Gauge, Doughnut Chart, Bar Chart, Spline Chart, Combo Chart, Grid</Tags>
+		  <Features>Master Filter, Trendline-Spline_Chart, Relative_Date_Filter-Combo_Chart, Relative_Date_Filter-Line_Chart, Relative_Date_Filter-Spline_Chart</Features>
 		</Dashboard>
 	  </Dashboards>
 	</Category>
@@ -1342,12 +1808,12 @@
       <Description>Check our Sample dashboards.</Description>
       <Dashboards>
         <Dashboard>
-          <Name>Sales Manager Summary Dashboard</Name>
+          <Name>Microsoft Dynamics CRM Sales Manager Summary Dashboard</Name>
           <ImageName>sales.svg</ImageName>
-          <Description>This sales manager summary dashboard helps sales leads and managers track the company's revenue, including revenue trends, opportunity details, sales opportunity pipeline, revenue by country, accounts by revenue, win count, lost revenue, revenue won, win count trends, sales leaders by revenue won, revenue by industry, new accounts, and opportunity status by owner.</Description>
+          <Description>This Sales Manager Summary Dashboard offers a comprehensive overview of your sales performance, revenue generation, and customer acquisition efforts within Microsoft Dynamics CRM. With a wealth of essential metrics at your fingertips, you can make informed decisions and optimize your sales operations. This dashboard provides a holistic view of your sales process, from lead generation to revenue realization. Monitor the total number of leads and opportunities, track the win rate to evaluate your team's effectiveness, and explore revenue breakdowns by lead source, account, and country. Gain valuable insights into your estimated revenue pipeline and forecast, empowering you to plan strategically. Identify top-performing sales leaders by reviewing each sales leader's top 10 revenue wins. With these key metrics, you can assess your sales performance, identify areas for improvement, and drive your team toward success.</Description>
           <FileName>sales-manager-summary-dashboard.sydj</FileName>
-          <Tags>Date Picker, Number Card, Funnel Chart, Spline Chart, KPI Card, Bar Chart, Tree Map, Choropleth Map, Grid</Tags>
-          <Features>Master Filter, Relative_Date_Filter-Spline_Chart, Relative_Date_Filter-Date_Picker, Conditional_Formatting-Grid, Top-N-Rank-Filter-TreeMap, Conditional_Formatting-Choropleth_Map, Top-N-Rank-Filter-Bar_Chart</Features>
+          <Tags>Date Picker, Card, Combined Widget, Radial Gauge, Spline Chart, Bar Chart, Funnel Chart, Tree Map, Map, Grid</Tags>
+          <Features>Master Filter, Relative_Date_Filter-Date_Picker, Relative_Date_Filter-Spline_Chart, Conditional_Formatting-Grid, Top-N-Rank-Filter-Bar_Chart, Top-N-Rank-Filter-Tree_Map</Features>
         </Dashboard>
       </Dashboards>
     </Category>
@@ -1356,12 +1822,12 @@
       <Description>Check our Sample dashboards.</Description>
       <Dashboards>
         <Dashboard>
-          <Name>Sales Leads Tracking Dashboard</Name>
+          <Name>Microsoft Dynamics CRM Sales Leads Tracking Dashboard</Name>
           <ImageName>sales.svg</ImageName>
-          <Description>This sales leads tracking dashboard helps sales leads and managers track their top 10 accounts by revenue, accounts by country, total accounts, total leads, accounts by industry, leads by source and owner,  top 10 owners by accounts, leads by rating, leads by campaign, lead generation rate, and lead summary.</Description>
+          <Description>This sales leads tracking dashboard provides a comprehensive overview of an organization's lead generation and conversion process. It includes the key metrics: accounts, leads, sales forecast, leads generation by month, leads by campaign, top 10 accounts by revenue, leads by rating, accounts by country, top 10 owners by number of accounts, leads by source and owner, and accounts by industry. With this dashboard, you can easily monitor and analyze crucial aspects of your sales pipeline, identify opportunities for growth, optimize marketing efforts, and make data-driven decisions to drive revenue and achieve business objectives.</Description>
           <FileName>sales-leads-tracking-dashboard.sydj</FileName>
-          <Tags>Date Picker, Number Card, Funnel Chart, Spline Chart, KPI Card, Bar Chart, Column Chart, Heat Map, Choropleth Map, Doughnut Chart, Tree Map, Grid</Tags>
-          <Features>Master Filter, Relative_Date_Filter-Date_Picker, Conditional_Formatting-Choropleth_Map, Top-N-Rank-Filter-Bar_Chart, Top-N-Rank-Filter-TreeMap, Top-N-Rank-Filter-Column_Chart, Conditional_Formatting-Grid</Features>
+          <Tags>Date Picker, Card, Spline Chart, Area Chart, Bar Chart, Radial Gauge, Doughnut Chart, Heat Map, Map, Stacked Column Chart, Tree Map, Grid</Tags>
+          <Features>Master Filter, Relative_Date_Filter-Date_Picker, Relative_Date_Filter-Area_Chart, Relative_Date_Filter-Spline_Chart, Top-N-Rank-Filter-Bar_Chart, Top-N-Rank-Filter-Tree_Map, Conditional_Formatting-Grid</Features>
         </Dashboard>
       </Dashboards>
     </Category>
@@ -1370,12 +1836,12 @@
       <Description>Check our Sample dashboards.</Description>
       <Dashboards>
         <Dashboard>
-          <Name>Sales Opportunities Dashboard</Name>
+          <Name>Microsoft Dynamics CRM Sales Opportunities Dashboard</Name>
           <ImageName>sales.svg</ImageName>
-          <Description>This sales opportunities dashboard helps sales leads and managers track sales opportunities, including sales progress by country, total opportunities, deals won vs. lost by revenue, deals won vs. lost by owner, opportunity by rating, top 5 won opportunities, top 5 accounts by opportunities, campaign type, top 5 campaigns by opportunities, sales revenue by campaign, opportunity summary, opportunity status by owner, estimated vs. actual revenue, and top 10 customers by estimated revenue.</Description>
+          <Description>This sales opportunities dashboard provides a comprehensive view of your organization's sales performance and effectiveness in Microsoft Dynamics CRM. It allows you to track key metrics such as won and lost opportunities, opportunity distribution by owner and state, top revenue-generating opportunities, revenue by country, and the comparison of won and lost opportunities by owner. Additionally, it provides insights into the impact of campaigns through metrics like opportunities by campaign type and top campaigns by opportunities. The dashboard also includes revenue analysis, showcasing won and lost revenue by month and actual versus estimated revenue. Lastly, it highlights the top accounts by opportunities and customers by estimated revenue, enabling you to focus on high-potential opportunities and strategic customer relationships. With this dashboard, you can monitor sales performance, identify trends, and make data-driven decisions to optimize your sales processes and maximize revenue generation.</Description>
           <FileName>sales-opportunities-dashboard.sydj</FileName>
-          <Tags>Date Picker, Number Card, Combo Chart, KPI Card, Bar Chart, Column Chart, Pie Map, Area Chart, Choropleth Map, Doughnut Chart, Tree Map, Stacked Column Chart, Grid</Tags>
-          <Features>Master Filter, Relative_Date_Filter-Date_Picker, Conditional_Formatting-Choropleth_Map, Top-N-Rank-Filter-Bar_Chart, Top-N-Rank-Filter-TreeMap, Top-N-Rank-Filter-Column_Chart, Conditional_Formatting-Grid, Conditional_Formatting-Combo_Box, Relative_Date_Filter-Area_Chart</Features>
+          <Tags>Date Picker, Card, Stacked Column Chart, Map, Area Chart, Bar Chart, Pie Chart, Doughnut Chart, Tree Map, Column Chart, Grid</Tags>
+          <Features>Master Filter, Relative_Date_Filter-Date_Picker, Top-N-Rank-Filter-Bar_Chart, Top-N-Rank-Filter-Tree_Map, Conditional_Formatting-Grid, Relative_Date_Filter-Area_Chart, Relative_Date_Filter-Column_Chart</Features>
         </Dashboard>
       </Dashboards>
     </Category>
@@ -1384,11 +1850,11 @@
 	  <Description>Check our Sample dashboards.</Description>
 	  <Dashboards>
 		<Dashboard>
-		  <Name>Forum Management Dashboard</Name>
+		  <Name>Amazon DynamoDB Forum Management Dashboard</Name>
 		  <ImageName>project-overview-dashboard.svg</ImageName>
-		  <Description>This forum management dashboard helps moderators effectively manage and maintain their forums by tracking key metrics and KPIs such as average posts per forum, average views per forum, overall questions and answers for posts, posts with the most votes, and more.</Description>
+		  <Description>This forum management dashboard provides a comprehensive look into the performance of and engagement with your forums. It tracks key metrics such as the total number of forums, posts, and replies, giving you a holistic understanding of your community's size and activity. Explore votes by forum and uncover the top 5 thread posts by votes to identify trending and influential discussions. Gain valuable insights into the balance between questions and answers, track average posts by week to monitor growth, and evaluate user engagement through average views per forum, posts per forum, and views per post. This dashboard equips you with the essential data to make informed decisions and optimize your forums' success.</Description>
 		  <FileName>forum-management-dashboard.sydj</FileName>
-		  <Tags>Combo Box, KPI Card, Number Card,Pie Chart, Bar Chart, Column Chart, Spline Chart, Grid </Tags>
+		  <Tags>Combo Box, Card, Pie Chart, Column Chart, Doughnut Chart, Spline Charts, Bar Chart, Grid</Tags>
 		  <Features>Master Filter, Top-N-Rank-Filter-Pie_Chart, Forecasting-Spline_Chart, Conditional_Formatting-Grid</Features>
 		</Dashboard>
 	  </Dashboards>
@@ -1477,6 +1943,20 @@
         </Dashboard>
       </Dashboards>
    </Category>
+   <Category>
+      <Name>Support</Name>
+      <Description>Check our Sample dashboards.</Description>
+      <Dashboards>
+        <Dashboard>
+          <Name>Nicereply Customer Satisfaction Dashboard</Name>
+		  <ImageName>support.svg</ImageName>
+          <Description>The Nicereply Customer Satisfaction Dashboard helps monitor critical metrics like total agents, average response time, response rate, customer satisfaction score, net promoter score, and customer effort score. Dive into detailed score distributions and trends, harnessing the insights you need to deliver exceptional service and nurture lasting customer relationships.</Description>
+          <FileName>nicereply-customer-satisfaction-dashboard.sydj</FileName>
+          <Tags>Card, Radial Gauge, Pie Chart, Doughnut Chart, Area Chart</Tags>
+          <Features>Relative_Date_Filter-Area_Chart</Features>
+        </Dashboard>
+      </Dashboards>
+   </Category>
 	<Category>
 	  <Name>Human Resources</Name>
 	  <Description>Check our Sample dashboards.</Description>
@@ -1512,10 +1992,10 @@
 		<Dashboard>
 		  <Name>HR Employee Details Dashboard</Name>
 		  <ImageName>hr.svg</ImageName>
-		  <Description>This HR employee dashboard tracks employee details: productivity rate, overall labor effectiveness, employees by age, employee salary by month, employee details, employees by department, active employees, overall labor effectiveness by department, absentee rate, employees by gender, and absentee rate by department.</Description>
+		  <Description>This HR Employee Details Dashboard provides a comprehensive overview of key metrics related to a company's workforce. It includes information on employee status, gender and experience distribution, age demographics, employee retention rate, employee net promoter score (NPS), turnover ratio, absentee rate, salary by month and department, productivity rate by department, and overall labor effectiveness. With these metrics, we gain valuable insights into the composition and dynamics of the workforce, including diversity, engagement, turnover, and productivity. This information enables us to make data-driven decisions to enhance employee satisfaction, retention, and overall organizational performance. By monitoring these metrics on an ongoing basis, we can proactively identify areas for improvement, optimize resource allocation, and foster a positive work environment that promotes growth, productivity, and success</Description>
 		  <FileName>hr-employee-details-dashboard.sydj</FileName>
-		  <Tags>Combo Box, Number Card, KPI card, Radial Gauge, Doughnut Chart, Stacked Column Chart, Bar Chart, Heat Map, Combo Chart, Grid</Tags>
-		  <Features>Master Filter, Relative_Date_Filter-Heat_Map, Conditional-formatting_Grid</Features>
+		  <Tags>Combo Box, Stacked Column Chart, Doughnut Chart, Stacked Bar Chart, Radial Gauge, Heat Map, Bar Chart, Grid</Tags>
+		  <Features>Master Filter</Features>
 		</Dashboard>
 	  </Dashboards>
 	</Category>
@@ -1540,10 +2020,10 @@
         <Dashboard>
           <Name>HR Attendance Dashboard</Name>
           <ImageName>hr.svg</ImageName>
-          <Description>This dashboard shows the attendance details of a company including employee name, employee days present and absent, leave taken, overall attendance percentage, overtime hours, absences by month, check-in time statistics, employees by experience and designation, employee check-in time status, resignation statistics, leave type distributors, late comers vs early check-ins, absentee details, perfect attendance, current day status, and employee attendance.</Description>
+          <Description>This dashboard shows the attendance details of a company including employee name, employee days present and absent, leave taken, overall attendance percentage, overtime hours, absences by month, check-in time statistics, employees by experience and designation, current day status, resignation statistics, leave type distribution, resignation statistics summary, and employee attendance summary.</Description>
           <FileName>hr-attendance-dashboard.sydj</FileName>
-          <Tags>Date Picker, Combo Box, Number Card, KPI card, Radial Gauge, Pie Chart, Doughnut Chart, Area Chart, Column Chart, Grid</Tags>
-          <Features>Master Filter, Conditional_Formatting-Grid, Relative_Date_Filter-Area_Chart, Drill_Down-Column_Chart, Relative_Date_Filter-Date_Picker</Features>
+          <Tags>Date Picker, Combo Box, Card, Doughnut Chart, Radial Gauge, Area Chart, Bar Chart, Column Chart, Grid</Tags>
+          <Features>Master Filter, Conditional_Formatting-Grid, Top-N-Rank-Filter-Bar_Chart, Relative_Date_Filter-Area_Chart, Drill_Down-Doughnut_Chart, Relative_Date_Filter-Spline_Chart, Relative_Date_Filter-Grid</Features>
         </Dashboard>
       </Dashboards>
     </Category>
@@ -1603,6 +2083,20 @@
             </Dashboard>
         </Dashboards>
     </Category>
+	    <Category>
+        <Name>Information Technology</Name>
+        <Description>Check our Sample dashboards.</Description>
+        <Dashboards>
+            <Dashboard>
+                <Name>Trello Project Overview Dashboard</Name>
+                <ImageName>project-overview-dashboard.svg</ImageName>
+                <Description>The Trello Project Overview Dashboard offers a comprehensive view of your projects' dynamics. Monitor task cycle times and assess total, completed, incomplete, and overdue tasks while tracking project progress through planned versus completed tasks. Visualize task distribution by stage and priority, alongside project completion rates and task overdue percentages. Compare planned versus completed tasks by date and gauge resource efficiency with estimated versus utilized hours by project. Identify top performers with the top 5 assignees by completed tasks and address workloads by exploring incomplete versus overdue tasks by assignee. Analyze project hour trends and gain insight from task summaries. Keep your projects on track and optimized.</Description>
+                <FileName>trello-project-overview-dashboard.sydj</FileName>
+                <Tags>Combo Box, Number Card,Radial Gauge, Pie Chart, Line Chart,Group_Column_Chart, Bar Chart, Spline Chart,Grid</Tags>
+                <Features>Master Filter,Relative_Date_Filter-Spline_Chart</Features>
+            </Dashboard>
+        </Dashboards>
+    </Category>
       <Category>
           <Name>Information Technology</Name>
           <Description>Check our Sample dashboards.</Description>
@@ -1624,24 +2118,24 @@
               <Dashboard>
                   <Name>HR Employee Attendance Details Dashboard</Name>
                   <ImageName>hr.svg</ImageName>
-                  <Description>This HR Employee Attendance Details Dashboard helps HR admins to monitor each employee's attendance details and create reports easily. This dashboard showcases metrics such as the top 5 employees by attendance, overall attendance percentage, absenteeism rate by month, working status, leave type distribution, performance rating, employee details, and upcoming absences.</Description>
+                  <Description>This HR Employee Attendance Details Dashboard provides a comprehensive overview of employee attendance and leave management. It presents the key metrics: absences, arrival patterns, leave taken (casual and sick), paid time off, worked hours, attendance rate, working location, overall attendance by month, top 5 employees by attendance, absenteeism rate, attendance statistics, and leave type distribution. With these insights, HR personnel and managers gain valuable information on attendance patterns, employee punctuality, leave trends, and overall workforce productivity. The dashboard enables data-driven decision-making, facilitates resource allocation, and supports efforts to enhance attendance management and employee engagement within the organization.</Description>
                   <FileName>hr-employee-attendance-details-dashboard.sydj</FileName>
-                  <Tags>Date Picker, Combo Box, Number Card, KPI card, Radial Gauge, Doughnut Chart, Stacked Column Chart, Line Chart, Area Chart, Spline Chart, Grid</Tags>
-                  <Features>Top-N-Rank-Filter-Bar_Chart, Drill_Down-Doughnut_Chart, Relative_Date_Filter-Spline_Chart, Relative_Date_Filter-Line_Chart, Relative_Date_Filter-Area_Chart, Relative_Date_Filter-Grid, Conditional_Formatting-Grid</Features>
+                  <Tags>Date Picker, Combo Box, Card, Doughnut Chart, Radial Gauge, Spline Chart, Stacked Area Chart, Stacked Column Chart, Grid</Tags>
+                  <Features>Top-N-Rank-Filter-Bar_Chart, Drill_Down-Doughnut_Chart, Relative_Date_Filter-Spline_Chart, Relative_Date_Filter-Stacked_Area_Chart, Relative_Date_Filter-Grid, Conditional_Formatting-Grid</Features>
               </Dashboard>
           </Dashboards>
       </Category>
 	  <Category>
-          <Name>Healthcare</Name>
+          <Name>Health Care</Name>
           <Description>Check our Sample dashboards.</Description>
           <Dashboards>
               <Dashboard>
                   <Name>Healthcare Executive Dashboard</Name>
                   <ImageName>healthcare.svg</ImageName>
-                  <Description>The dashboard is used to monitor the healthcare KPIs in a dynamic and interactive way, and that enables healthcare professionals to access important patient statistics in real-time to increase the overall hospital performance and patient satisfaction.</Description>
+                  <Description>The Healthcare Executive Dashboard is a comprehensive overview of key metrics and KPIs like revenue, expenses, profit, operating room utilization, staff turnover, length of stay, staff-to-patient ratio, mortality rate, and patient satisfaction. This dashboard enables informed decision-making, performance monitoring, and strategic planning, optimizing financial health, operational efficiency, and patient care outcomes.</Description>
                   <FileName>healthcare-executive-dashboard.sydj</FileName>
-                  <Tags>Combo Box, Number Card, KPI card, Radial Gauge, Stacked Column Chart, Spline Chart, Pie Chart, Doughnut Chart, Bar Chart, Line Chart, Area Chart, Heat Map, Stacked Bar Chart</Tags>
-                  <Features>Releative_Date_Filter-Stacked_Column_Chart,Releative_Date_Filter-Spline_Chart, Relative_Date_Filter-Line_Chart, Relative_Date_Filter-Area_Chart, Relative_Date_Filter-Heat_Map</Features>
+                  <Tags>Combo Box, Date Picker,Number Card, KPI card, Radial Gauge, Column Chart, Doughnut Chart, Bar Chart</Tags>
+                  <Features>Master Filter</Features>
               </Dashboard>
           </Dashboards>
       </Category>
@@ -1655,7 +2149,7 @@
                   <Description>The Bitly Links Analysis Dashboard provides a high-level overview of a Bitly account's links and activities. It tracks the total number of links, clicks, where they came from, and when they happened. It also gives insight into the Bitly tags available.</Description>
                   <FileName>bitly-links-analysis-dashboard.sydj</FileName>
                   <Tags>Radial Gauge, Combined Widget, Doughnut Chart, Grid, Spline Chart, Choropleth Map, Bar Chart, Spline Area, Column Chart</Tags>
-                  <Features>Relative_Date_Filter-Spline_Chart, Relative_Date_Filter-Spline_Area, Top-N-Rank-Filter-Bar_Chart, Master Filter</Features>
+                  <Features>Relative_Date_Filter-Spline_Chart, Relative_Date_Filter-Spline_Area, Top-N-Rank-Filter-Bar_Chart</Features>
               </Dashboard>
           </Dashboards>
       </Category>
@@ -1666,10 +2160,10 @@
               <Dashboard>
                   <Name>HR Resignation Details Dashboard</Name>
                   <ImageName>hr.svg</ImageName>
-                  <Description>This HR Resignation Details Dashboard helps HR admins track employee resignation details, including attrition rate, tenure rate, team changes, attrition trend, employee retention rate, voluntary vs. involuntary resignations, attrition rate by department and gender, employee rating by month, attrition rate by month, total vs. resigned employees by department, average tenure rate by month, and employee resignation details.</Description>
+                  <Description>The HR Resignation Details Dashboard offers a comprehensive view of employee turnover and reasons for resignations. It includes metrics such as total employees, total resignations, average tenure, and resignation reasons to identify trends. Resignations by type distinguish voluntary and involuntary departures. Employee retention, attrition, and resignation rates provide insights into workforce stability. Examining resignation rate by tenure helps analyze early and long-term departures. Additionally, average tenure rate by department showcases employee commitment. Attrition rate by department and gender highlights potential disparities. Lastly, average experience by department assists in understanding workforce expertise. The dashboard empowers HR to develop targeted retention strategies and enhance employee satisfaction.</Description>
                   <FileName>hr-resignation-details-dashboard.sydj</FileName>
-                  <Tags>Combo Box, Date Picker, Number Card, Line Chart, Pyramid Chart, Doughnut Chart, Bar Chart, Pie Chart, Spline Chart, Column Chart, Grid</Tags>
-                  <Features>Conditional_Formatting-Grid, Master Filter, Relative_Date_Filter-Spline_Chart, Relative_Date_Filter-Column_Chart, Relative_Date_Filter-Line_Chart</Features>
+                  <Tags>Date Picker, Number Card, Doughnut Chart, Bar Chart, Pie Chart, Gauge, Column Chart, Grid</Tags>
+                  <Features>Conditional_Formatting-Grid, Master Filter, Drill_Down-Column_Chart</Features>
               </Dashboard>
           </Dashboards>
       </Category>

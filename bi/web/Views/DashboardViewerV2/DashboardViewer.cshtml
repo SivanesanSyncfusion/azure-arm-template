@@ -8,6 +8,7 @@
     var itemDetail = ViewBag.itemDetail as ItemDetail;
     var embedConfig = ViewBag.EmbedConfig as EmbedConfig;
     var isAdmin = Context.Session.GetString("IsAdmin") != null && Convert.ToBoolean(Context.Session.GetString("IsAdmin"));
+    var isAuthenticated = Context.User.Identity.IsAuthenticated;
     var idpreferenceId = Context.Session.GetString("idpReferenceId") != null ? Context.Session.GetString("idpReferenceId") : string.Empty;
     var idPUrl = _globalAppSettings.SystemSettings.IDPUrl;
     var displayName = Context.Session.GetString("displayname") != null ? Context.Session.GetString("displayname") : string.Empty;
@@ -34,6 +35,7 @@
     var dashboardDesignerResourceUrl = globalAppSettings.SystemSettings.DesignerCdnLink.TrimEnd('/');
     var dashboardBIUrl = new DashboardServerEndPoints(globalAppSettings).DashboardServerBIUrl();
     var filterQuery = ViewBag.FilterQuery;
+    var isBingMapRequired = ViewBag.IsBingMapRequired;
     if (embedConfig.IsEmbedDashboard || embedConfig.IsEmbedCode)
     {
         canEdit = false;
@@ -49,8 +51,11 @@
     var getWidgetEmbedCode = globalAppSettings.SystemSettings.GetWidgetEmbedCode;
     var isViewNotFound = (ViewBag.ViewNotFound != null && ViewBag.ViewNotFound ) ? true : false;
     var isCommentNotFound = (ViewBag.CommentNotFound != null && ViewBag.CommentNotFound) ? true : false;
+    var isInvalidComment = (ViewBag.InValidCommentId != null && ViewBag.InValidCommentId) ? true : false;
     var dashboardCutomTheme = string.Empty;
     var isEmbedSignature = requestUrl.Query.ToLower().Contains("embed_signature") && globalAppSettings.GetLicenseSettings().EnterpriseFeatures.Embed;
+    var themeInViewer = await _featureManager.IsEnabledAsync(FeatureManagement.ThemeInViewer);
+    var canShowSession = ServerAppConfig.IsSelfHosted && (ViewBag.CanHideSessionInEmbed == null ? true : (ViewBag.CanHideSessionInEmbed != null && ViewBag.CanHideSessionInEmbed == true) ? false : true) && !isSlideshow;
     if (((Context.Request.Query["isembed"].ToString() != null && Context.Request.Query["isembed"].ToString().ToLower() == "true") || isEmbedSignature) && !string.IsNullOrWhiteSpace(Context.Request.Query["embed_theme"]))
     {
         dashboardCutomTheme = Context.Request.Query["embed_theme"];
@@ -158,6 +163,7 @@
         var updateTemplateDashboardUrl = "@Url.Action("UpdateTemplateDashboardWithCustomerData", "Dashboards")";
         var getTemplateDashboardStatusUrl = "@Url.Action("GetTemplateDashboardStatus", "Dashboards")";
         var triggerDashboardRenderComplete = "@Url.Action("DashboardOptions", "FileRender")";
+        var IsDashboardSessionActive = "@Url.Action("IsSessionActive", "Accounts")";
         var pageurl = "@requestUrl.LocalPath";
         var canEdit = @Json.Serialize(canEdit);
         var dashboardItemDetail = @Html.Raw(Json.Serialize(itemDetail));
@@ -166,7 +172,7 @@
         var isPublic = @Json.Serialize(isPublic);
         var embedConfig = @Html.Raw(Json.Serialize(embedConfig));
         var Commentswidgets = "@Url.Action("WidgetCommentPartialView", "Comments")";
-        var editDashboardUrl = encodeURI("@Url.Action("DashboardDesigner", "Designer")" + "/@itemDetail.Id/@itemDetail.CategoryName/@itemDetail.Name");
+        var editDashboardUrl = "@Url.Action("DashboardDesigner", "Designer")" + "/@itemDetail.Id";
         var myDashboardsUrl = encodeURI("@Url.Action("Dashboards", "Dashboards")" + "?view=all");
         var editDashboardEmbedUrl = "@Url.Action("DashboardDesigner", "Designer")";
         var isSlideshow = @Json.Serialize(isSlideshow);
@@ -185,13 +191,13 @@
         var viewDetails = @Html.Raw(Json.Serialize(ViewBag.ViewDetails));
         var isUserAuthenticatedInCurrentTenant = @Json.Serialize(isUserAuthenticatedInCurrentTenant);
         var autosaveFilter = @Json.Serialize(globalAppSettings.SystemSettings.IsEnableAutosaveFilter);
-        var theming = @(!ServerAppConfig.IsSelfHosted ? "false": Json.Serialize(globalAppSettings.SystemSettings.Theming));
+        var theming = @(!ServerAppConfig.IsSelfHosted ? "false" : themeInViewer ? Json.Serialize(globalAppSettings.SystemSettings.Theming) : "false");
         var isUserAutosaveFilter = @Html.Raw(Json.Serialize(ViewBag.IsUserAutosaveFilter));
         var hasDefaultView = @Json.Serialize(ViewBag.HasDefaultView);
         var dashboardServerApiUrl = "@dashboardServerApiUrl";
         var dashboardServerApiUrlForServerEmbed = "@dashboardServerApiUrlForServerEmbed";
         var filterQuery = @Html.Raw(Json.Serialize(filterQuery));
-        var dashboardTheme = "@(!ServerAppConfig.IsSelfHosted ? "" : ViewBag.Theme)";
+        var dashboardTheme = "@(!ServerAppConfig.IsSelfHosted ? "" : themeInViewer ? ViewBag.Theme : "")";
         var isDefaultView =  @Json.Serialize(ViewBag.IsDefaultView);
         var isWidgetRequest = @Json.Serialize(pinWidget);
         var widgetId = "@widgetId";
@@ -211,11 +217,16 @@
         var parentItemId = "@ViewBag.ParentItemId";
         var isViewNotFound = @Html.Raw(Json.Serialize(isViewNotFound));
         var isCommentNotFound = @Html.Raw(Json.Serialize(isCommentNotFound));
+        var isInvalidComment = @Html.Raw(Json.Serialize(isInvalidComment));
         var dashboardCustomThemename = "@dashboardCutomTheme";
         var customThemeAppearance = "@(ServerAppConfig.IsSelfHosted && globalAppSettings.SystemSettings.IsInheritFromGlobalLookAndFeelSettings ? ServerAppConfig.Theme.Appearance : globalAppSettings.SystemSettings.ThemeAppearance)";
         var applicationTheme = "@(ServerAppConfig.IsSelfHosted && globalAppSettings.SystemSettings.IsInheritFromGlobalLookAndFeelSettings ? ServerAppConfig.Theme.ApplicationTheme : globalAppSettings.SystemSettings.CustomApplicationTheme)";
         var getWidgetEmbedCode = @Json.Serialize(getWidgetEmbedCode);
         var enableApplicationEmbed = @ServerAppConfig.EnableSameTabLinkTarget.ToString().ToLower();
+        var appVersion = "@ServerAppConfig.ProductVersion";
+        var isBingMapRequired = @Json.Serialize(isBingMapRequired);
+        var canCheckSessionInActive = @Html.Raw(Json.Serialize(canShowSession));
+        var isAuthenticated = @Html.Raw(Json.Serialize(isAuthenticated));
 </script>
     <style>
         #warning-alert, #success-alert {

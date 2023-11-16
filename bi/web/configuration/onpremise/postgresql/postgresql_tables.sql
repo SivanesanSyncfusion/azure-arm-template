@@ -226,6 +226,7 @@ CREATE TABLE SyncDS_ScheduleDetail(
 	Id SERIAL PRIMARY KEY NOT NULL,
 	ScheduleId uuid NOT NULL UNIQUE,
 	ItemId uuid NOT NULL,
+	DashboardWidgetId uuid NULL,
 	Name varchar(150) NOT NULL,
 	RecurrenceTypeId int NULL,
 	RecurrenceInfo varchar(4000) NULL,
@@ -707,7 +708,8 @@ CREATE TABLE SyncDS_PublishedItem(
 	CreatedById int NOT NULL,
 	CreatedDate timestamp NOT NULL,
 	ModifiedDate timestamp NOT NULL,
-	IsActive smallint NOT NULL)
+	IsActive smallint NOT NULL,
+	ExternalSiteId int not null DEFAULT 0)
 ;
 
 CREATE TABLE SyncDS_PublishJobs(
@@ -936,6 +938,48 @@ CREATE TABLE SyncDS_UploadDataSourceMapping (
 	IsActive smallint NOT NULL)
 ;
 
+CREATE TABLE SyncDS_ScheduleRunHistory(
+	Id SERIAL PRIMARY KEY NOT NULL,
+	ScheduleStatusId int NOT NULL,
+	ScheduleId uuid NOT NULL,
+	StartedDate timestamp NOT NULL,
+	ModifiedDate timestamp NOT NULL,
+	Message text NULL,
+	IsOnDemand smallint NOT NULL DEFAULT (0),
+	IsActive smallint NOT NULL)
+;
+
+CREATE TABLE SyncDS_DSMetrics (
+   Id SERIAL PRIMARY KEY,
+   DataSourceID VARCHAR(255),
+   IsRefresh BOOLEAN,
+   RefreshStartTime VARCHAR(255),
+   RefreshEndTime VARCHAR(255),
+   IsIncremental VARCHAR(255),
+   TableDetails VARCHAR(255),
+   RowsUpdated INTEGER,
+   TotalRows INTEGER,
+   CustomQuery VARCHAR(700),
+   SourceConnectionDetails VARCHAR(255),
+   IncrementalRefreshDetails VARCHAR(255),
+   ExtractType VARCHAR(255),
+   RefreshStatus VARCHAR(255),
+   RefreshException VARCHAR(255))
+;
+
+CREATE TABLE SyncDS_ai_qnawidgethistory (
+   searchid VARCHAR(255) PRIMARY KEY,
+   question TEXT,
+   tableinfo TEXT,
+   schemasequence TEXT,
+   fieldinfo TEXT,
+   message TEXT,
+   haserror BOOLEAN,
+   sqlquery TEXT,
+   uservote TEXT,
+   isreported BOOLEAN)
+;
+
 ---- PASTE INSERT Queries below this section --------
 
 INSERT INTO SyncDS_PublishType (Name, IsActive) Values (N'Publish',1)
@@ -1048,6 +1092,10 @@ INSERT into SyncDS_ExportType (Name,IsActive) VALUES (N'Image', 1)
 ;
 INSERT into SyncDS_ExportType (Name,IsActive) VALUES (N'Refresh', 1)
 ;
+INSERT into SyncDS_ExportType (Name,IsActive) VALUES (N'PPT', 1)
+;
+INSERT into SyncDS_ExportType (Name,IsActive) VALUES (N'CSV', 1)
+;
 
 INSERT into SyncDS_RecurrenceType (Name,IsActive) VALUES (N'Daily', 1)
 ;
@@ -1130,6 +1178,8 @@ INSERT INTO SyncDS_PermissionEntity (Name,EntityType,ItemTypeId, IsActive) VALUE
 INSERT INTO SyncDS_PermissionEntity (Name,EntityType,ItemTypeId, IsActive) VALUES (N'All Permissions',1,13,1)
 ;
 INSERT INTO SyncDS_PermissionEntity (Name,EntityType,ItemTypeId, IsActive) VALUES (N'All Groups',1,12,1)
+;
+INSERT INTO SyncDS_PermissionEntity (Name,EntityType,ItemTypeId, IsActive) VALUES (N'All Users',1,12,1)
 ;
 
 INSERT into SyncDS_Group (Name,Description,Color,IsolationCode,ModifiedDate,DirectoryTypeId,IsActive) VALUES (N'System Administrator','Has administrative rights for the dashboards','#ff0000',null,now() at time zone 'utc', 1, 1)
@@ -1312,6 +1362,8 @@ INSERT INTO SyncDS_PermissionAccEntity (PermissionEntityId, PermissionAccessId, 
 ;
 INSERT INTO SyncDS_PermissionAccEntity (PermissionEntityId, PermissionAccessId, IsActive) VALUES (14,5,1)
 ;
+INSERT INTO SyncDS_PermissionAccEntity (PermissionEntityId, PermissionAccessId, IsActive) VALUES (30,3,1)
+;
 
 INSERT into SyncDS_PermissionLogType (Name,IsActive) VALUES ( N'PermissionAdded',1)
 ;
@@ -1323,6 +1375,8 @@ INSERT into SyncDS_Source (Name,IsActive) VALUES ( N'Web',1)
 INSERT into SyncDS_Source (Name,IsActive) VALUES ( N'API',1)
 ;
 INSERT into SyncDS_Source (Name,IsActive) VALUES ( N'Schedule',1)
+;
+INSERT into SyncDS_Source (Name,IsActive) VALUES ( N'Embed',1)
 ;
 
 INSERT into SyncDS_LogStatus (Name,IsActive) VALUES ( N'Start',1)
@@ -1861,9 +1915,6 @@ INSERT INTO SyncDS_EventPayloadsMapping (EventType, PayloadType, IsActive) VALUE
 
 ---- PASTE ALTER Queries below this section --------
 ALTER TABLE SyncDS_ScheduleMissingLogs  ADD FOREIGN KEY(ScheduleId) REFERENCES SyncDS_ScheduleDetail (ScheduleId)
-;
-
-ALTER TABLE SyncDS_PublishJobs ADD COLUMN Type int not null DEFAULT 1
 ;
 
 ALTER TABLE SyncDS_PublishJobs  ADD FOREIGN KEY(Type) REFERENCES SyncDS_PublishType (Id)

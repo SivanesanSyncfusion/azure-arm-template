@@ -6,9 +6,11 @@
     var emailAddress = Context.Session.GetString("emailaddress") != null ? Context.Session.GetString("emailaddress") : string.Empty;
     var itemPermissions = Model as Dictionary<ItemType, bool>;
     var itemsCount = ViewBag.ItemsCount as Dictionary<ItemType, int>;
+    var draftCount = ViewBag.DraftDashboardCount as Dictionary<ItemType, int>;
     var showUpload = GlobalAppSettings.Branding == AppBranding.Syncfusion.Identifier || emailAddress.EndsWith("@syncfusion.com", StringComparison.OrdinalIgnoreCase) || emailAddress.Equals(ServerAppConfig.AppSettings.Syncfusion.Support.ConciergeEmail);
     var isDashboardTab = requestUrl.LocalPath.TrimEnd('/').IndexOf(Url.Action("Dashboards", "Dashboards"), StringComparison.CurrentCultureIgnoreCase) > -1;
     var userdashboardsCount = itemsCount != null ? itemsCount.ContainsKey(ItemType.Dashboard) ? itemsCount[ItemType.Dashboard] : 0 : 0;
+    var draftDashboardCount = draftCount != null ? draftCount.ContainsKey(ItemType.Dashboard) ? draftCount[ItemType.Dashboard] : 0 : 0;
     var globalAppSettings = _globalAppSettings;
     var dashboardServerResourceUrl = globalAppSettings.SystemSettings.CDNLink.TrimEnd('/');
 }
@@ -16,6 +18,7 @@
     var isDraftExistUrl = "@Url.Action("IsDraftExist", "items")";
     var dashboardDesignerUrl = "@Url.Action("DashboardDesigner", "Designer")";
     var userDashboardsCount = "@userdashboardsCount";
+    var draftDashboardCount = "@draftDashboardCount";
     var sharableDashboardsCount = "@ViewBag.SharableDashboardsCount";
 </script>
 
@@ -62,7 +65,7 @@
                         </li>
                         if (!ServerAppConfig.IsSelfHosted)
                         {
-                            <li class="deploy-template-dashboard">
+                            <li class="deploy-template-dashboard" id="deploy-template-dashboard">
                                 <div class="create-item-list-section">
                                     <div class="create-item-list-icon" style="float: left;">
                                         <img id="templates-img" class="smiley" src="@(GlobalAppSettings.CdnDomain)/static/sidebar/v1/template-dashboard.svg">

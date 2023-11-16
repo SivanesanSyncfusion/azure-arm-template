@@ -7,7 +7,8 @@
 <head>
     <script>
         var downloadedItemDetails = @Html.Raw(Json.Serialize(ViewBag.DownloadedItemDeatils));
-        var bulkDownloadUrl = "@Url.Action("BulkDownloadDashboardFile", "Items")"
+        var bulkDownloadUrl = "@Url.Action("BulkDownloadDashboardFile", "Items")";
+        var downloadItemUrl = "@Url.Action("DownloadDashboardFile", "Items")"
     </script>
     <environment include="Development,CloudDevelopment">
         <script asp-append-version="true" src="@dashboardServerResourceUrl/cdn/scripts/download-items.js"></script>
@@ -99,13 +100,13 @@
                 {{if Status == "Success"}}
                 <div class="item-dashboard grid-content" title="{{:ItemName}}">
                     <span>
-                        <a class="grid-content enable-color" href="@Url.Action("DownloadDashboardFile", "Items")?jobId={{:JobId}}&itemId={{:ItemId}}">
+                        <a class="grid-content enable-color download-icon-offline-tab" href="javascript:void(0);">
                             <i class="su su-download"></i>
                         </a>
                     </span>
                 </div>
                 {{else}}
-                <div class="item-dashboard grid-content disable-color" title="{{:ItemName}}">
+                <div class="item-dashboard grid-content disable-color download-icon-offline-tab" title="{{:ItemName}}">
                     <span>
                         <a class="grid-content disable-color" href="javascript:void(0);">
                             <i class="su su-download"></i>
@@ -140,10 +141,10 @@
         enableRowHover: true,
         enableAltRow: false, 
         rowDataBound: function () {
-            $('[data-toggle="tooltip"]').tooltip();
+            $('[data-toggle="tooltip"]').tooltip({ container: $('body') });
         },
         dataBound: function () {
-            $('[data-toggle="tooltip"]').tooltip();
+            $('[data-toggle="tooltip"]').tooltip({ container: $('body') });
         },
         create: "fnCreate",
         recordClick: "fnRecordClick",
@@ -164,7 +165,7 @@
             { field: 'CanIncludeSensitiveInfo', headerText: window.Server.App.Localization.ContainsSensitiveData, templateID: '#sensitiveinfo-template', width: 80, allowFiltering: false, allowSorting: true, allowGrouping: false },
             { field: 'Status', headerText: window.Server.App.Localization.DownloadItemStatus, templateID: '#download-status-template', width: 50, allowFiltering: false, allowSorting: false, allowGrouping: false },
             {
-                headerText: "Actions", templateID: '#download-template', width: 40, allowFiltering: false, allowSorting: false, allowGrouping:false
+                headerText: window.Server.App.Localization.Action, templateID: '#download-template', width: 40, allowFiltering: false, allowSorting: false, allowGrouping: false
             },
         ]
     });

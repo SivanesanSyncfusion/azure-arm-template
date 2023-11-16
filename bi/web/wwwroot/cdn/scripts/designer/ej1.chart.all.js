@@ -1,6 +1,6 @@
 /*!
 *  filename: ej1.chart.all.js
-*  version : 6.8.7
+*  version : 6.17.8
 *  Copyright Syncfusion Inc. 2001 - 2023. All rights reserved.
 *  Use of this code is subject to the terms of our license.
 *  A copy of the current license can be obtained at any time by e-mailing
@@ -4524,6 +4524,7 @@ BoldBIDashboard.EjSvgRender.utils = {
                 else if (intersectAction == 'rotate90')
                     intersectRotation = 90;
                 labelRotation = labelRotation!=null || orientation== "vertical" ? labelRotation : intersectRotation;
+                labelRotation = typeof(labelRotation) === "string" ? parseFloat(labelRotation) : labelRotation;
                 axis.rotationValue = labelRotation;
                 if (labelRotation) {                
                     rotateLabel = (!BoldBIDashboard.isNullOrUndefined(rotateLabel)) ? rotateLabel : '';
@@ -5107,6 +5108,7 @@ BoldBIDashboard.EjSvgRender.utils = {
         return (value <= range.max) && (value >= range.min);
     },
     _logBase: function (val, base) {
+        val = val < 0? Math.abs(val) : val;
         return Math.log(val) / Math.log(base);
     },
     _correctRect: function (x1, y1, x2, y2) {
@@ -17187,7 +17189,7 @@ BoldBIDashboard.ejTMA = ejExtendClass(BoldBIDashboard.EjIndicatorRender, {
                     commonEventArgs, textsize,
                     positionX = 0, textWidth, textHeight,
                     positionY = 0,
-                    pointColor;
+                    pointColor, chartHeight = !legend.visible? 200 : 250;
 
                 if ((type == "pyramid" || type == "funnel") && _labelPosition == 'outsideextended')
                     _labelPosition = 'inside';
@@ -17231,11 +17233,13 @@ BoldBIDashboard.ejTMA = ejExtendClass(BoldBIDashboard.EjIndicatorRender, {
                         svgWidth = bbdesigner$(chartObj.svgObject).width(),
                         svgHeight = bbdesigner$(chartObj.svgObject).height();
 
-                    // This condition is removed due to datalabel crop issue (JS-63856)
-                     if (currentseries._enableSmartLabels && (svgWidth < 250 || svgHeight < 250)) {
-                         dataLabelFont.size = "9px"; //Change pie/doughnut text size dynamically
-                         size = measureText(commonEventArgs.data.text, svgWidth, dataLabelFont);
-                         textOffset = 10;
+                    // This condition is removed due to datalabel crop issue (JS-63856)                     
+					  if (currentseries._enableSmartLabels && (svgWidth < 250 || svgHeight < chartHeight)) {
+                        //if(!legend.visible){
+							//dataLabelFont.size = "11.5px"; //Change pie/doughnut text size dynamically
+							//size = measureText(commonEventArgs.data.text, svgWidth, dataLabelFont);
+						//}
+                         textOffset = !legend.visible? 8 : 10;
                      }
                     if (isNull(connectorLine.height))
                         textOffset = textOffset || measureText(commonEventArgs.data.text, null, dataLabelFont).height;
@@ -17522,6 +17526,9 @@ BoldBIDashboard.ejTMA = ejExtendClass(BoldBIDashboard.EjIndicatorRender, {
                       //      point.hide = true;
                       //  }
                         // To check the datalabel overlaps with chart bounds - (End)
+						if ((textOptions.y - textsize.height/2) < 0 || textOptions.y > svgHeight) {
+                            point.hide = true;
+                        }
 						if (!point.hide) chartObj.svgRenderer.drawText(textOptions, datalabelText, chartObj.gSeriesTextEle[seriesIndex]);
 
                         var datalabelSize = measureText(datalabelText, datalabelText.length, dataLabelFont);
@@ -21851,7 +21858,7 @@ var Gradient = function (colors) {
         this.model.stackedValue = {};
 		this._setCulture(this.model.locale);
 		 var seriesLength = this.model.series.length;
-		 var series, seriesType;
+		 var series, seriesType, len, trendlines, visibility;
         if (BoldBIDashboard.util.isNullOrUndefined(this.model.sideBySideSeriesPlacement))  // for setting sideBySideSeriesPlacement property values
             this.model._sideBySideSeriesPlacement = (this.model.enable3D) ? false : true;
         else
@@ -21861,6 +21868,12 @@ var Gradient = function (colors) {
             series = this.model.series[i];
             seriesType = series.type.toLowerCase();
             series._isTransposed = (seriesType.indexOf("bar") == -1) ? series.isTransposed : !series.isTransposed;
+            trendlines = series.trendlines;
+			len = trendlines.length;
+			for(var j = 0; j< len ;j++){
+				visibility = trendlines[j].visibility.toLowerCase();
+				this.model._drawTrendline = visibility == "visible"? true: false;
+			}
         }
         if (seriesLength > 0)
             this.addedXYValues(excludeDataUpdate);

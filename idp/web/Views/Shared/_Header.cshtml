@@ -8,7 +8,7 @@
     var emailAddress = Context.Session.GetString("emailaddress") != null ? Context.Session.GetString("emailaddress").ToString() : string.Empty;
     var isToRemoveUserProfile = ViewBag.RemoveUserProfile != null ? ViewBag.RemoveUserProfile : false;
     var headerTitle = ViewBag.HeaderTitle != null ? ViewBag.HeaderTitle : (GlobalAppSettings.Branding == AppBranding.Bold.Identifier ? "Bold ID" : GlobalAppSettings.BrandingCompanyName);
-    var currentUserId = Guid.Parse(GlobalAppSettings.HttpContextAccessor.HttpContext.User.Claims.First(c => c.Type == ClaimTypes.NameIdentifier).Value);
+    var currentUserId = Context.User.GetUserId();
 }
 
 <div class="header-bar col-lg-12 col-md-12 col-sm-12">
@@ -50,8 +50,8 @@
                             <a href="@Url.Action("Profilepage", "User")" class="profile-menu-action col-lg-6" data-toggle="tooltip" data-placement="top" data-container="body" title="View my profile">
                                 @T["Profile"]
                             </a>
-                            <a href="@Url.Action("logout", "accounts")" class="profile-menu-action col-lg-6" data-toggle="tooltip" data-placement="top" data-container="body" title="Log Out">
-                                @T["Log out"]
+                            <a href="@Url.Action("logout", "accounts")" class="profile-menu-action col-lg-6" data-toggle="tooltip" data-placement="top" data-container="body" title="Sign Out">
+                                @T["Sign out"]
                             </a>
                         </div>
                     </div>
@@ -61,7 +61,7 @@
         else
         {
             <div class="login-account">
-                <a href="@Url.Action("Login", "Accounts")">@T["Log in"]</a>
+                <a href="@Url.Action("Login", "Accounts")">@T["Sign in"]</a>
             </div>
         }
     }

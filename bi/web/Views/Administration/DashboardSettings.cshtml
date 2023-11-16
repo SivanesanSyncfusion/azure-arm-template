@@ -9,22 +9,26 @@
     var theming = Convert.ToBoolean(ViewBag.Theming);
     var getDashboardEmbedcode = Convert.ToBoolean(ViewBag.GetDashboardEmbedCode);
     var getWidgetEmbedCode = Convert.ToBoolean(ViewBag.GetWidgetEmbedCode);
+    var lockSynchronization = Convert.ToBoolean(ViewBag.LockSynchronization);
     var helpSiteBaseUrl = ServerAppConfig.AppSettings.Documentation.BaseUri;
     var defaultViewHelpSiteUrl = GlobalAppSettings.GetHelpSiteUrl(HelpSiteUrlNames.DefaultViews);
     var autoSaveHelpSiteUrl = GlobalAppSettings.GetHelpSiteUrl(HelpSiteUrlNames.AutoSaveFilter);
     var publicDashboardsHelpSiteUrl = GlobalAppSettings.GetHelpSiteUrl(HelpSiteUrlNames.DashboardSiteSettings);
     var dashboardServerResourceUrl = globalAppSettings.SystemSettings.CDNLink.TrimEnd('/');
     var enableIsolation = globalAppSettings.SystemSettings.IsIsolationCodeEnabled;
-    var isSettingsTab = (string.IsNullOrWhiteSpace(Context.Request.Query["tab"]) || Context.Request.Query["tab"] == "dashboard-settings") ? "active" : string.Empty;
-    var isAttributeTab = (Context.Request.Query["tab"].ToString() == "attributes") ? "active" : string.Empty;
-    var isDeploymentTab = (Context.Request.Query["tab"].ToString() == "deployment-dashboards") ? "active" : string.Empty;
+    var isAttributeTab = (Context.Request.Query["tab"].ToString().ToLower() == "attributes") ? "active" : string.Empty;
+    var isDeploymentTab = (Context.Request.Query["tab"].ToString().ToLower() == "deployment-dashboards") ? "active" : string.Empty;
+    var isSettingsTab = (string.IsNullOrWhiteSpace(Context.Request.Query["tab"]) || Context.Request.Query["tab"].ToString().ToLower() == "dashboard-settings") || (!string.IsNullOrWhiteSpace(Context.Request.Query["tab"]) && string.IsNullOrWhiteSpace(isAttributeTab) && string.IsNullOrWhiteSpace(isDeploymentTab)) ? "active" : string.Empty;
     bool isSelfHosted = ServerAppConfig.IsSelfHosted;
     var deploymentDashboard = ViewBag.DeploymentDashboard;
     var isMaster = globalAppSettings.SystemSettings.IsMaster;
     var usageAnalytics = Convert.ToBoolean(ViewBag.UsageAnalytics);
     var model = ViewBag.GranularPermissions as Dictionary<object, bool>;
-    var scopeList = ServerAppConfig.SettingsScopesList;
-    var canShowAdminMenu = _identityResponse.IsAdmin || model[SettingsScopes.All] || model.Select(x => x).Where(x => scopeList.Contains(x.Key.ToString()) && x.Value == true).Count() > 1 || (model.Select(x => x).Where(x => scopeList.Contains(x.Key.ToString()) && x.Value == true).Count() == 1 && (model[PermissionEntity.UsersandGroups] || model[PermissionEntity.SpecificGroup] || model[PermissionEntity.AllGroups])) || model[PermissionEntity.UsersandGroups];
+    var canShowAdminMenu = await ServerAppConfig.CanShowAdminMenu(model, _identityResponse.IsAdmin, _featureManager);
+    var dashboardSettingsPageDescription = T["Configuration for the Dashboards."];
+    var deploymentDashboardPageDescription = T["Dashboards created in this site can be published to other site deployment."];
+    var attributesPageDescription = T["Configure site-level attributes."];
+    var themeInViewer = await _featureManager.IsEnabledAsync(FeatureManagement.ThemeInViewer);
 }
 
 @section scripts{
@@ -48,7 +52,7 @@
     @await Html.PartialAsync("_AdminMenu")
     <div class="col-xs-12 no-padding no-margin @(canShowAdminMenu ? "width-alignment" : "admin-panel-full-width")">
         <div id="dashboard-settings-header" class="col-xs-12 no-padding">
-            @await Html.PartialAsync("../Shared/_TopHeaderSection", new ViewDataDictionary(ViewData) { { "PageHeader", @T["Dashboard Settings"] }, { "PageDescription", @T["Configuration for the Dashboards."] } })
+            @await Html.PartialAsync("../Shared/_TopHeaderSection", new ViewDataDictionary(ViewData) { { "PageHeader", @T["Dashboard Settings"] }, { "PageDescription", @dashboardSettingsPageDescription } })
             <div class="col-xs-12 bi-page-header @((!isSelfHosted || isMaster) ? "tabs-header-padding" : string.Empty) top-nav-btn-secton">
                 <div class="col-xs-12 no-padding">
                     <div class="col-xs-6 no-padding button-section">
@@ -59,7 +63,7 @@
             </div>
         </div>
         <div id="deployment-header" class="col-xs-12 no-padding">
-            @await Html.PartialAsync("../Shared/_TopHeaderSection", new ViewDataDictionary(ViewData) { { "PageHeader", @T["Deployment Dashboards"] }, { "PageDescription", @T["Dashboards created in this site can be published to other site deployment."] } })
+            @await Html.PartialAsync("../Shared/_TopHeaderSection", new ViewDataDictionary(ViewData) { { "PageHeader", @T["Deployment Dashboards"] }, { "PageDescription", @deploymentDashboardPageDescription } })
             <div class="col-xs-12 bi-page-header @((!isSelfHosted || isMaster) ? "tabs-header-padding" : string.Empty) top-nav-btn-secton">
                 <div class="col-xs-12 no-padding">
                     <div id="deployment-button" class="col-xs-6 no-padding button-section">
@@ -71,7 +75,7 @@
             </div>
         </div>
         <div id="site-attribute-header" class="col-xs-12 no-padding" style="display: none">
-            @await Html.PartialAsync("../Shared/_TopHeaderSection", new ViewDataDictionary(ViewData) { { "PageHeader", @T["Attributes"] }, { "PageDescription", @T["Configure site-level attributes."] } })
+            @await Html.PartialAsync("../Shared/_TopHeaderSection", new ViewDataDictionary(ViewData) { { "PageHeader", @T["Attributes"] }, { "PageDescription", @attributesPageDescription } })
             <div class="col-xs-12 bi-page-header @((!isSelfHosted || isMaster) ? "tabs-header-padding" : string.Empty) top-nav-btn-secton">
                 <div class="col-xs-12 no-padding">
                     <div id="add-attribute-button" class="col-xs-6 no-padding button-section">
@@ -149,7 +153,8 @@
                             }
                         </div>
                     </li>
-                    @if (ServerAppConfig.IsSelfHosted)
+                    @*Hide the theme option in the dashboard settings for designer team request*@
+                    @if (ServerAppConfig.IsSelfHosted && themeInViewer)
                     {
                         <li class="dashboard-settings-list">
                             @Html.CheckBox("dashboard-theming-setting", theming, new { @class = "material-checkbox", @autocomplete = "off" })
@@ -160,7 +165,9 @@
                                 @T["This setting will allow the user to hide or show theme options in the dashboard."]
                             </div>
                         </li>
-                        <li class="dashboard-settings-list usage-analytics-list">
+                    }
+
+                    <li class="dashboard-settings-list usage-analytics-list">
                             @Html.CheckBox("usage-analytics-setting", usageAnalytics, new { @class = "material-checkbox", @autocomplete = "off" })
                             <label for="usage-analytics-setting">
                                 <span>@T["Usage analytics"]</span>
@@ -169,7 +176,6 @@
                                 @T["This setting allows you to hide or show usage analytics dashboards in the dashboard listing page."]
                             </div>
                         </li>
-                    }
                     <li class="dashboard-settings-list">
                         @Html.CheckBox("get-emebed-code-dashboard", getDashboardEmbedcode, new { @class = "material-checkbox", @autocomplete = "off" })
                         <label for="get-emebed-code-dashboard">
@@ -188,7 +194,16 @@
                             @T["This setting will allow the user to hide or show the Get Embed Code option in the context menu of the widget in the dashboard view page."]
                         </div>
                     </li>
-                </ul>
+                        <li class="dashboard-settings-list">
+                            @Html.CheckBox("lock-unlock-synchronization", lockSynchronization, new { @class = "material-checkbox", @autocomplete = "off" })
+                            <label for="lock-unlock-synchronization">
+                                <span>@T["Lock Resource Synchronization"]</span>
+                            </label>
+                            <div class="info-message">
+                                @T["This setting will disable synchronization of dashboards and data sources from other sites."]
+                            </div>
+                        </li>
+                    </ul>
             </div>
             <div role="tabpanel" class="tab-pane col-md-12 col-xs-12 col-sm-12 bi-page-body @isDeploymentTab " id="deployment-dashboards">
                 @await Html.PartialAsync("_DeploymentDashboards")

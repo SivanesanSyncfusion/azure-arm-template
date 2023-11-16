@@ -5,6 +5,7 @@ var azureB2CLogoChanged = false;
 var dialog;
 
 $(document).ready(function () {
+    jwtSigningKeyShowHide();
     addPlacehoder("body");
 
     signingKeyConfirmationDlg();
@@ -326,11 +327,17 @@ $(document).ready(function () {
                 scope.oauthSettingsForm.$setUntouched();
                 scope.oauthSettingsForm.$setPristine();
                 $("#oauth-image-upload-box").siblings(".validation-message").html("");
+                if ($("#oauth-provider-name").val() != "" && $("#oauth-authorization-endpoint").val() != "" && $("#oauth-token-endpoint").val() != "" && $("#oauth-userinfo-endpoint").val() != "" && $("#oauth-client-id").val() != "" && $("#oauth-scopes").val() != "" && $("#user-info-email").val() != "") {
+                    updateAuthSettingsButton.prop("disabled", false);
+                }
             }
             else if (name === "openid") {
                 scope.openidSettingsForm.$setUntouched();
                 scope.openidSettingsForm.$setPristine();
                 $("#openid-image-upload-box").siblings(".validation-message").html("");
+                if ($("#openid-provider-name").val() != "" && $("#openid-authority").val() != "" && $("#openid-client-id").val() != "" && $("#openid-identifier").val() != "") {
+                    updateAuthSettingsButton.prop("disabled", false);
+                }
             }
             else if (name === "jwt") {
                 scope.jwtSettingsForm.$setUntouched();
@@ -346,7 +353,7 @@ $(document).ready(function () {
                 scope.ssoSettingsb2cForm.$setPristine();
                 $("#azure-b2c-image-upload-box").siblings(".validation-message").html("");
             }
-            updateAuthSettingsButton.prop("disabled", false);
+
         } else {
             if (name === "oauth" && scope.oauthSettingsForm.$invalid) {
                 updateAuthSettingsButton.prop("disabled", true);
@@ -525,7 +532,7 @@ $(document).ready(function () {
                 }
             },
             error: function (data) {
-                WarningAlert(window.Server.App.LocalizationContent.SSOSettings, window.Server.App.LocalizationContent.SSOSettingsUpdateError, 7000);
+                WarningAlert(window.Server.App.LocalizationContent.SSOSettings, window.Server.App.LocalizationContent.SSOSettingsUpdateError, data.Message, 7000);
             }
         });
     };
@@ -562,7 +569,7 @@ $(document).ready(function () {
                 }
             },
             error: function (data) {
-                WarningAlert(window.Server.App.LocalizationContent.AzureB2CSettings, window.Server.App.LocalizationContent.AzureB2CSettingsUpdateError, 7000);
+                WarningAlert(window.Server.App.LocalizationContent.AzureB2CSettings, window.Server.App.LocalizationContent.AzureB2CSettingsUpdateError, data.Message, 7000);
             }
         });
     };
@@ -574,7 +581,7 @@ $(document).ready(function () {
             AuthProvider: "WindowsAD",
             WindowsADSettings: {
                 Domain: $("input[name='windowsadSettingsDomain']").val().trim()
-                }
+            }
         };
         $.ajax({
             url: updateauthsettingsUrl,
@@ -652,9 +659,9 @@ $(document).ready(function () {
                     WarningAlert(window.Server.App.LocalizationContent.AuthenticationSettings, window.Server.App.LocalizationContent.AuthSettingsUpdatedError, result.Message, 7000);
                 }
             },
-            error: function () {
+            error: function (result) {
                 hideWaitingPopup('server-app-container');
-                WarningAlert(window.Server.App.LocalizationContent.AuthenticationSettings, window.Server.App.LocalizationContent.AuthSettingsUpdatedError, 7000);
+                WarningAlert(window.Server.App.LocalizationContent.AuthenticationSettings, window.Server.App.LocalizationContent.AuthSettingsUpdatedError, result.Message, 7000);
             }
 
         });
@@ -686,7 +693,7 @@ $(document).ready(function () {
     }
 
     function getAuthSettingsToPost(authPrefix) {
-        var isEnabled = $("#"+authPrefix + "IsEnabled").is(":checked");
+        var isEnabled = $("#" + authPrefix + "IsEnabled").is(":checked");
         var authSettingsData;
         if (isEnabled) {
             if (authPrefix === 'oauth') {
@@ -940,25 +947,27 @@ function getDefaultAuthDisplayName(provider) {
 }
 
 function fnCopySigningKey(inputId, buttonId) {
-    if (typeof (navigator.clipboard) != 'undefined') {
-        var value = $(inputId).val();
-        navigator.clipboard.writeText(value)
-    }
-    else {
-        var copyText = $(inputId);
-        copyText.attr("type", "text").select();
-        document.execCommand("copy");
-        copyText.attr("type", "password");
-    }
+    if ($("#enable-jwt").is(":checked")) {
+        if (typeof (navigator.clipboard) != 'undefined') {
+            var value = $(inputId).val();
+            navigator.clipboard.writeText(value)
+        }
+        else {
+            var copyText = $(inputId);
+            copyText.attr("type", "text").select();
+            document.execCommand("copy");
+            copyText.attr("type", "password");
+        }
 
-    setTimeout(function () {
-        $(buttonId).attr("data-original-title", window.Server.App.LocalizationContent.Copied);
-        $(buttonId).tooltip('show');
-    }, 200);
-    setTimeout(function () {
-        $(buttonId).attr("data-original-title", window.Server.App.LocalizationContent.ClickToCopy);
-        $(buttonId).tooltip();
-    }, 3000);
+        setTimeout(function () {
+            $(buttonId).attr("data-original-title", window.Server.App.LocalizationContent.Copied);
+            $(buttonId).tooltip('show');
+        }, 200);
+        setTimeout(function () {
+            $(buttonId).attr("data-original-title", window.Server.App.LocalizationContent.ClickToCopy);
+            $(buttonId).tooltip();
+        }, 3000);
+    }
 }
 
 function signingKeyConfirmationDlg() {
@@ -993,17 +1002,32 @@ function fnRegenerateSigningKey() {
                 SuccessAlert(window.Server.App.LocalizationContent.RegenerateKey, window.Server.App.LocalizationContent.RegenerateKeySuccess, 7000);
                 $("#jwt-signing-key").val(data);
             } else {
-                WarningAlert(window.Server.App.LocalizationContent.RegenerateKey, window.Server.App.LocalizationContent.RegenerateKeyError, 7000);
+                WarningAlert(window.Server.App.LocalizationContent.RegenerateKey, window.Server.App.LocalizationContent.RegenerateKeyError, null, 7000);
             }
         },
         error: function () {
-            WarningAlert(window.Server.App.LocalizationContent.RegenerateKey, window.Server.App.LocalizationContent.RegenerateKeyError, 7000);
+            WarningAlert(window.Server.App.LocalizationContent.RegenerateKey, window.Server.App.LocalizationContent.RegenerateKeyError, null, 7000);
         }
     });
 }
 
 function onRegenerateSigningKeyDialogOpen() {
-    dialog.show();
+    if ($("#enable-jwt").is(":checked")) {
+        dialog.show();
+    }
+}
+
+$("#enable-jwt").change(function () {
+    jwtSigningKeyShowHide();
+})
+
+function jwtSigningKeyShowHide() {
+    if ($("#enable-jwt").is(":checked")) {
+        $("#jwt-signing-key,#show-signing-key").prop("disabled", false);
+    }
+    else {
+        $("#jwt-signing-key,#show-signing-key").prop("disabled", true);
+    }
 }
 
 $(document).on("click", "#sendButton", function () {

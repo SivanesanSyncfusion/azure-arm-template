@@ -25,20 +25,20 @@
       color: var(--primary-branding-bg-color) !important; }
   .e-custom .e-float-input.e-disabled {
     border-top-color: transparent !important; }
-  .e-custom.e-valid-input:hover:not(.e-success):not(.e-error):not(.e-float-icon-left):not(.e-disabled):not(.e-numeric):not(.e-non-float) {
+  .e-custom.e-valid-input:hover:not(.e-success):not(.e-error):not(.e-float-icon-left):not(.e-disabled):not(.e-numeric):not(.e-non-float):not(.e-date-range-wrapper) {
     border-color: var(--primary-branding-bg-color) !important;
     border-top-color: transparent !important; }
-    .e-custom.e-valid-input:hover:not(.e-success):not(.e-error):not(.e-float-icon-left):not(.e-disabled):not(.e-numeric):not(.e-non-float) .e-float-text {
+    .e-custom.e-valid-input:hover:not(.e-success):not(.e-error):not(.e-float-icon-left):not(.e-disabled):not(.e-numeric):not(.e-non-float):not(.e-date-range-wrapper) .e-float-text {
       color: var(--primary-branding-bg-color) !important; }
-      .e-custom.e-valid-input:hover:not(.e-success):not(.e-error):not(.e-float-icon-left):not(.e-disabled):not(.e-numeric):not(.e-non-float) .e-float-text.e-label-top::after, .e-custom.e-valid-input:hover:not(.e-success):not(.e-error):not(.e-float-icon-left):not(.e-disabled):not(.e-numeric):not(.e-non-float) .e-float-text.e-label-top::before, .e-custom.e-valid-input:hover:not(.e-success):not(.e-error):not(.e-float-icon-left):not(.e-disabled):not(.e-numeric):not(.e-non-float) .e-float-text.e-label-bottom::after, .e-custom.e-valid-input:hover:not(.e-success):not(.e-error):not(.e-float-icon-left):not(.e-disabled):not(.e-numeric):not(.e-non-float) .e-float-text.e-label-bottom::before {
+      .e-custom.e-valid-input:hover:not(.e-success):not(.e-error):not(.e-float-icon-left):not(.e-disabled):not(.e-numeric):not(.e-non-float):not(.e-date-range-wrapper) .e-float-text.e-label-top::after, .e-custom.e-valid-input:hover:not(.e-success):not(.e-error):not(.e-float-icon-left):not(.e-disabled):not(.e-numeric):not(.e-non-float):not(.e-date-range-wrapper) .e-float-text.e-label-top::before, .e-custom.e-valid-input:hover:not(.e-success):not(.e-error):not(.e-float-icon-left):not(.e-disabled):not(.e-numeric):not(.e-non-float):not(.e-date-range-wrapper) .e-float-text.e-label-bottom::after, .e-custom.e-valid-input:hover:not(.e-success):not(.e-error):not(.e-float-icon-left):not(.e-disabled):not(.e-numeric):not(.e-non-float):not(.e-date-range-wrapper) .e-float-text.e-label-bottom::before {
         border-top: solid 1px var(--primary-branding-bg-color) !important; }
-  .e-custom.e-input-focus:not(.e-error):not(.e-success):not(.e-disabled):not(.e-float-icon-left):not(.e-numeric):not(.e-non-float) {
+  .e-custom.e-input-focus:not(.e-error):not(.e-success):not(.e-disabled):not(.e-float-icon-left):not(.e-numeric):not(.e-non-float):not(.e-date-range-wrapper) {
     border-color: var(--primary-branding-bg-color) !important;
     border-top-color: transparent !important;
     box-shadow: inset 0.1px 0 var(--primary-branding-bg-color), inset -0.1px 0 var(--primary-branding-bg-color), inset 0 -0.1px var(--primary-branding-bg-color) !important; }
-    .e-custom.e-input-focus:not(.e-error):not(.e-success):not(.e-disabled):not(.e-float-icon-left):not(.e-numeric):not(.e-non-float) .e-float-text {
+    .e-custom.e-input-focus:not(.e-error):not(.e-success):not(.e-disabled):not(.e-float-icon-left):not(.e-numeric):not(.e-non-float):not(.e-date-range-wrapper) .e-float-text {
       color: var(--primary-branding-bg-color) !important; }
-      .e-custom.e-input-focus:not(.e-error):not(.e-success):not(.e-disabled):not(.e-float-icon-left):not(.e-numeric):not(.e-non-float) .e-float-text.e-label-top::after, .e-custom.e-input-focus:not(.e-error):not(.e-success):not(.e-disabled):not(.e-float-icon-left):not(.e-numeric):not(.e-non-float) .e-float-text.e-label-top::before, .e-custom.e-input-focus:not(.e-error):not(.e-success):not(.e-disabled):not(.e-float-icon-left):not(.e-numeric):not(.e-non-float) .e-float-text.e-label-bottom::after, .e-custom.e-input-focus:not(.e-error):not(.e-success):not(.e-disabled):not(.e-float-icon-left):not(.e-numeric):not(.e-non-float) .e-float-text.e-label-bottom::before {
+      .e-custom.e-input-focus:not(.e-error):not(.e-success):not(.e-disabled):not(.e-float-icon-left):not(.e-numeric):not(.e-non-float):not(.e-date-range-wrapper) .e-float-text.e-label-top::after, .e-custom.e-input-focus:not(.e-error):not(.e-success):not(.e-disabled):not(.e-float-icon-left):not(.e-numeric):not(.e-non-float):not(.e-date-range-wrapper) .e-float-text.e-label-top::before, .e-custom.e-input-focus:not(.e-error):not(.e-success):not(.e-disabled):not(.e-float-icon-left):not(.e-numeric):not(.e-non-float):not(.e-date-range-wrapper) .e-float-text.e-label-bottom::after, .e-custom.e-input-focus:not(.e-error):not(.e-success):not(.e-disabled):not(.e-float-icon-left):not(.e-numeric):not(.e-non-float):not(.e-date-range-wrapper) .e-float-text.e-label-bottom::before {
         border-top: solid 1px var(--primary-branding-bg-color) !important; }
   .e-custom.e-error {
     border-color: var(--input-box-border-alert-color) !important;
@@ -71,4 +71,4 @@ input.e-input::placeholder, textarea.e-input::placeholder, .e-input-group input.
 
 input.e-input::selection, textarea.e-input::selection, .e-input-group input.e-input::selection, .e-input-group.e-control-wrapper input.e-input::selection, .e-float-input input::selection, .e-float-input.e-control-wrapper input::selection, .e-input-group textarea.e-input::selection, .e-input-group.e-control-wrapper textarea.e-input::selection, .e-float-input textarea::selection, .e-float-input.e-control-wrapper textarea::selection {
   background: var(--selector-color) !important;
-  color: var(--primary-text-color) !important; }
+  color: var(--grey-white) !important; }

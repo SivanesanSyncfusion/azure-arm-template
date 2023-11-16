@@ -95,6 +95,12 @@ $(document).ready(function () {
             $("#csp").hide();
             $("#x-frame-options").hide();
             $("#password-policy").hide();
+
+            $("#update-cookie-settings").show();
+            $("#update-x-frame-options-settings").hide();
+            $("#update-csp-settings").hide();
+            $("#update-password-settings").hide();
+
             var query = (window.location.search).toString();
             if (query != "?view=cookie-options") {
                 history.pushState(null, '', '?view=cookie-options');
@@ -105,6 +111,12 @@ $(document).ready(function () {
             $("#cookie-options").hide();
             $("#csp").hide();
             $("#password-policy").hide();
+
+            $("#update-x-frame-options-settings").show();
+            $("#update-csp-settings").hide();
+            $("#update-cookie-settings").hide();
+            $("#update-password-settings").hide();
+
             var query = (window.location.search).toString();
             if (query != "?view=x-frame-options") {
                 history.pushState(null, '', '?view=x-frame-options');
@@ -115,6 +127,10 @@ $(document).ready(function () {
             $("#cookie-options").hide();
             $("#x-frame-options").hide();
             $("#password-policy").hide();
+            $("#update-csp-settings").show();
+            $("#update-x-frame-options-settings").hide();
+            $("#update-cookie-settings").hide();
+            $("#update-password-settings").hide();
             var query = (window.location.search).toString();
             if (query != "?view=csp-settings") {
                 history.pushState(null, '', '?view=csp-settings');
@@ -125,6 +141,12 @@ $(document).ready(function () {
             $("#cookie-options").hide();
             $("#csp").hide();
             $("#x-frame-options").hide();
+
+            $("#update-password-settings").show();
+            $("#update-x-frame-options-settings").hide();
+            $("#update-csp-settings").hide();
+            $("#update-cookie-settings").hide();
+
             var query = (window.location.search).toString();
             if (query != "?view=user-account") {
                 history.pushState(null, '', '?view=user-account');
@@ -139,6 +161,11 @@ $(document).ready(function () {
             $("#csp").hide();
             $("#cookie-options").hide();
             $("#password-policy").hide();
+
+            $("#update-x-frame-options-settings").show();
+            $("#update-csp-settings").hide();
+            $("#update-cookie-settings").hide();
+            $("#update-password-settings").hide();
             var query = (window.location.search).toString();
             if (query != "?view=x-frame-options") {
                 history.pushState(null, '', '?view=x-frame-options');
@@ -149,6 +176,11 @@ $(document).ready(function () {
             $("#cookie-options").hide();
             $("#x-frame-options").hide();
             $("#password-policy").hide();
+
+            $("#update-csp-settings").show();
+            $("#update-x-frame-options-settings").hide();
+            $("#update-cookie-settings").hide();
+            $("#update-password-settings").hide();
             var query = (window.location.search).toString();
             if (query != "?view=csp-settings") {
                 history.pushState(null, '', '?view=csp-settings');
@@ -159,6 +191,11 @@ $(document).ready(function () {
             $("#csp").hide();
             $("#x-frame-options").hide();
             $("#password-policy").hide();
+
+            $("#update-cookie-settings").show();
+            $("#update-x-frame-options-settings").hide();
+            $("#update-csp-settings").hide();
+            $("#update-password-settings").hide();
             var query = (window.location.search).toString();
             if (query != "?view=cookie-options") {
                 history.pushState(null, '', '?view=cookie-options');
@@ -169,6 +206,11 @@ $(document).ready(function () {
             $("#csp").hide();
             $("#cookie-options").hide();
             $("#x-frame-options").hide();
+
+            $("#update-password-settings").show();
+            $("#update-x-frame-options-settings").hide();
+            $("#update-csp-settings").hide();
+            $("#update-cookie-settings").hide();
             var query = (window.location.search).toString();
             if (query != "?view=user-account") {
                 history.pushState(null, '', '?view=user-account');
@@ -211,7 +253,7 @@ $(document).on("click", "#update-password-settings", function () {
             if (data.result) {
                 SuccessAlert(window.Server.App.LocalizationContent.SecuritySettings, window.Server.App.LocalizationContent.SiteSettingsUpdated, 7000);
             } else {
-                WarningAlert(window.Server.App.LocalizationContent.SecuritySettings, window.Server.App.LocalizationContent.SiteSettingsUpdateFalied, 7000);
+                WarningAlert(window.Server.App.LocalizationContent.SecuritySettings, window.Server.App.LocalizationContent.SiteSettingsUpdateFalied, data.Message, 7000);
             }
             hideWaitingPopup('body');
         },
@@ -272,7 +314,7 @@ $(document).on("click", "#update-x-frame-options-settings", function () {
             if (result.status) {
                 SuccessAlert(window.Server.App.LocalizationContent.SecuritySettings, window.Server.App.LocalizationContent.SiteSettingsUpdated, 7000);
             } else {
-                WarningAlert(window.Server.App.LocalizationContent.SecuritySettings, window.Server.App.LocalizationContent.SiteSettingsUpdateFalied, 7000);
+                WarningAlert(window.Server.App.LocalizationContent.SecuritySettings, window.Server.App.LocalizationContent.SiteSettingsUpdateFalied, result.message, 7000);
             }
         }
     });
@@ -1007,6 +1049,11 @@ $(document).on("click", "#update-csp-settings", function () {
     var imgSrcList = [];
     var connectSrcList = [];
     var frameSrcList = [];
+
+     if ($(".style-src-validation").text() != "" || $(".script-src-validation").text() != "" || $(".font-src-validation").text() != "" || $(".img-src-validation").text() != "" || $(".connect-src-validation").text() != "" || $(".frame-src-validation").text() != "") {
+        return;
+    }
+
     var styleSrcInstance = document.getElementById("style-src-chip-content").ej2_instances;
     if (styleSrcInstance != undefined) {
         styleSrcList = styleSrcInstance[0].chips;
@@ -1079,7 +1126,7 @@ $(document).on("click", "#update-csp-settings", function () {
             if (result.status) {
                 SuccessAlert(window.Server.App.LocalizationContent.SecuritySettings, window.Server.App.LocalizationContent.SiteSettingsUpdated, 7000);
             } else {
-                WarningAlert(window.Server.App.LocalizationContent.SecuritySettings, window.Server.App.LocalizationContent.SiteSettingsUpdateFalied, 7000);
+                WarningAlert(window.Server.App.LocalizationContent.SecuritySettings, window.Server.App.LocalizationContent.SiteSettingsUpdateFalied, result.message, 7000);
             }
         }
     });
@@ -1129,7 +1176,7 @@ function confirmation() {
                 SuccessAlert(window.Server.App.LocalizationContent.SecuritySettings, window.Server.App.LocalizationContent.SiteSettingsUpdated, 7000);
                 window.location.href = loginUrl;
             } else {
-                WarningAlert(window.Server.App.LocalizationContent.SecuritySettings, window.Server.App.LocalizationContent.SiteSettingsUpdateFalied, 7000);
+                WarningAlert(window.Server.App.LocalizationContent.SecuritySettings, window.Server.App.LocalizationContent.SiteSettingsUpdateFalied, result.message, 7000);
             }
         }
     });

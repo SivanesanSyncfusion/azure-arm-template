@@ -1,13 +1,13 @@
 ﻿@{
     var globalAppSettings = _globalAppSettings;
     var model = ViewBag.GranularPermissions as Dictionary<object, bool>;
-    var scopeList = ServerAppConfig.SettingsScopesList;
-    var canShowAdminMenu = _identityResponse.IsAdmin || model[SettingsScopes.All] || model.Select(x => x).Where(x => scopeList.Contains(x.Key.ToString()) && x.Value == true).Count() > 1 || (model.Select(x => x).Where(x => scopeList.Contains(x.Key.ToString()) && x.Value == true).Count() == 1 && (model[PermissionEntity.UsersandGroups] || model[PermissionEntity.SpecificGroup] || model[PermissionEntity.AllGroups])) || model[PermissionEntity.UsersandGroups];
+    var canShowAdminMenu = await ServerAppConfig.CanShowAdminMenu(model, _identityResponse.IsAdmin, _featureManager);
     ViewBag.Title = T["Look and Feel"].Value + " - " + globalAppSettings.SystemSettings.OrganizationName;
     var dashboardServerResourceUrl = globalAppSettings.SystemSettings.CDNLink.TrimEnd('/');
     var loginDisclaimerObject = string.Empty;
     var themeMode = ServerAppConfig.IsSelfHosted && globalAppSettings.SystemSettings.IsInheritFromGlobalLookAndFeelSettings ? ServerAppConfig.Theme.Appearance : globalAppSettings.SystemSettings.ThemeAppearance;
     var isDebug = globalAppSettings.SystemSettings.IsDebug;
+    var pageDescription = T["Customize the look and feel of the application."].Value;
     var themeAppearanceUms = string.Empty;
     var themeApplicationThemeUms = string.Empty;
     var themeDashboardThemeUms = string.Empty;
@@ -25,6 +25,8 @@
     var url = new Uri(Context.Request.GetDisplayUrl());
     var dns = url.GetLeftPart(UriPartial.Authority);
     var noMatchText = T["No results matched"].Value;
+    var isDefaultMainLogo = globalAppSettings.SystemSettings.MainScreenLogo.EndsWith(IconFileNames.MainLogo);
+    var isDefaultFooterLogo = globalAppSettings.SystemSettings.FooterLogo.EndsWith(IconFileNames.FooterLogo);
 }
 
 @section styles{
@@ -111,6 +113,8 @@
         var fontUms = @Html.Raw(Json.Serialize(fontUms));
         var defaultFont = @Html.Raw(Json.Serialize(ServerAppConfig.DefaultFont));
         var dns = @Html.Raw(Json.Serialize(dns));
+        var isDefaultMainLogo = @Json.Serialize(isDefaultMainLogo);
+        var isDefaultFooterLogo = @Json.Serialize(isDefaultFooterLogo);
     </script>
 }
 
@@ -121,7 +125,7 @@
     @await Html.PartialAsync("_UploadFont")
 
     <div class="col-xs-12 no-padding no-margin @(canShowAdminMenu ? "width-alignment" : "admin-panel-full-width")">
-        @await Html.PartialAsync("../Shared/_TopHeaderSection", new ViewDataDictionary(ViewData) { { "PageHeader", @T["Look and Feel"] }, { "PageDescription", @T["Customize the look and feel of the application."] } })
+        @await Html.PartialAsync("../Shared/_TopHeaderSection", new ViewDataDictionary(ViewData) { { "PageHeader", @T["Look and Feel"] }, { "PageDescription", @pageDescription } })
         <div class="col-xs-12 import-area bi-page-header top-nav-btn-secton">
             <div class="col-xs-12 no-padding">
                 <div class="col-xs-6 no-padding button-section">

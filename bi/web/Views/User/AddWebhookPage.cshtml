@@ -11,8 +11,7 @@
     var isEdit = ViewBag.IsEdit;
     var isRequestFromSettingsPage = ViewBag.IsRequestFromSettingsPage;
     var model = ViewBag.GranularPermissions as Dictionary<object, bool>;
-    var scopeList = ServerAppConfig.SettingsScopesList;
-    var canShowAdminMenu = _identityResponse.IsAdmin || model[SettingsScopes.All] || model.Select(x => x).Where(x => scopeList.Contains(x.Key.ToString()) && x.Value == true).Count() > 1 || (model.Select(x => x).Where(x => scopeList.Contains(x.Key.ToString()) && x.Value == true).Count() == 1 && (model[PermissionEntity.UsersandGroups] || model[PermissionEntity.SpecificGroup] || model[PermissionEntity.AllGroups])) || model[PermissionEntity.UsersandGroups];
+    var canShowAdminMenu = await ServerAppConfig.CanShowAdminMenu(model, _identityResponse.IsAdmin, _featureManager);
     ViewBag.PageDescription = ViewBag.IsEdit ? T["Edit your webhooks here"].Value : T["Add your webhooks here"].Value;
 }
 @section scripts{
@@ -185,7 +184,7 @@
                         <div class="form-group">
                             <label class="col-xs-12 app-textbox-label section-label secret-key-label">@T["Secret Key"]<span class="mandatory">*</span></label>
                             <div class="no-padding secret-key-div">
-                                <input type="text" id="secret-key" class="form-control validation select-override-input" name="secret-key" placeholder="@T["Secret Key"]" />
+                                <input type="text" id="secret-key" data-maxlength="100" class="form-control validation select-override-input" name="secret-key" placeholder="@T["Secret Key"]" />
                                 <span class="validation-errors"></span>
                             </div>
                             <div class="info-message">
