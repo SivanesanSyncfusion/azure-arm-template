@@ -23,6 +23,7 @@
     var passwordPolicy = ServerAppConfig.PasswordPolicy;
     var canShowAdminMenu = await ServerAppConfig.CanShowAdminMenu(permissions, _identityResponse.IsAdmin, _featureManager);
     var pageDescription = T["Add and manage your users."];
+    var showGroupModule =  globalAppSettings.SystemSettings.PreviewFeatures.DisableGroupCRUD == null  || (globalAppSettings.SystemSettings.PreviewFeatures.DisableGroupCRUD != null && !globalAppSettings.SystemSettings.PreviewFeatures.DisableGroupCRUD.Enable);
 }
 
 @section scripts{
@@ -454,12 +455,15 @@
                                     <span>@T["Remove User"]</span>
                                 </a>
                             </li>
-                            <li>
-                                <a class="dropdown-toggle user-add-group" data-toggle="tooltip" data-placement="left" title="@T["Assign a group to selected users"]">
+                            @if (showGroupModule)
+                            {
+                                <li>
+                                    <a class="dropdown-toggle user-add-group" data-toggle="tooltip" data-placement="left" title="@T["Assign a group to selected users"]">
                                     <i class="su su-group-1"> </i>
                                     <span>@T["Assign Group"]</span>
-                                </a>
-                            </li>
+                                    </a>
+                                </li>
+                            }
                          </ul>
                     </li>
                 </ul>
@@ -519,16 +523,10 @@
         @await Html.PartialAsync("../Shared/_Footer", new ViewDataDictionary(ViewData) { { "appsettings", globalAppSettings } })
     </div>
 
-    <div id="assign-group" class="no-padding pull-left" style="display:none"></div>
+    <div id="assign-group" class="col-xs-12 no-padding pull-left" style="display:none"></div>
 
     @await Html.PartialAsync("../UserManagement/_UserAddDialog", globalAppSettings)
     @await Html.PartialAsync("../UserManagement/_MultipleUserDeleteDialog")
     @await Html.PartialAsync("../UserManagement/_SingleUserDeleteDialog")
     @await Html.PartialAsync("../UserManagement/_LimitUserCreation")
-    <environment include="Development,CloudDevelopment">
-        <script asp-append-version="true" src="~/js/localizationcontent.js?v=@ServerAppConfig.ProductVersion&c=@System.Globalization.CultureInfo.CurrentCulture"></script>
-    </environment>
-    <environment exclude="Development,CloudDevelopment">
-        <script asp-append-version="true" src="~/js/localizationcontent.js?v=@ServerAppConfig.ProductVersion&c=@System.Globalization.CultureInfo.CurrentCulture"></script>
-    </environment>
 }

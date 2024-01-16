@@ -414,7 +414,8 @@ var Designer = {
                     excelExportText: "Allow Excel Export",
                     imageExportText: "Allow Image Export",
                     pdfExportText: "Allow PDF Export",
-                    hiddenColumnExportText: "Include Hidden Columns"
+                    hiddenColumnExportText: "Include Hidden Columns",
+					pagesizeToolTip: "If the page size option is not chosen in the drop-down menu, then all of the options are taken into consideration when exporting PDFs."
                 },
 				viewDataActions: {
                     allowViewDataExporting: "Allow Exporting",
@@ -933,6 +934,7 @@ var Designer = {
                 prestoText: "Presto",
                 mysqlText: "MySQL",
                 postgresqlText: "PostgreSQL",
+				apacheDorisText: "Apache Doris",
                 amazonRDSOracleText: "Oracle",
                 amazonRDSMariaDBText: "MariaDB",
                 amazonRDSAmazonAuroraMySQLText: "Amazon Aurora MySQL",
@@ -1090,6 +1092,7 @@ var Designer = {
                 servernametooltipinfo: "To allow the database server to create the data source, white list the IP addresses of Bold BI cloud servers from this ",
 				impersonateInfo: "While using Windows AD login in Bold BI you can impersonate the logged-in user while processing the data from ",
 				enableImpersonate: "Impersonate User",
+				type: "Type",
                 dataSourceType: {
                     file: "File",
                     excel: "Excel",
@@ -1125,6 +1128,8 @@ var Designer = {
                     postgres: "PostgreSQL",
                     redshift: "Amazon Redshift",
 					rockSet: "Rockset",
+					bolddatastore : "Bold Data Store",
+					apacheDoris: "Apache Doris",
                     influxdb: "InfluxDB",
                     amazonRDS: "Amazon RDS",
                     amazonRDSSqlServer: "AmazonRDSSqlServer",
@@ -2111,7 +2116,9 @@ var Designer = {
 				joinMessageMySQL: "MySQL does not support the FULL OUTER JOIN",
                 joinMessageGoogle: "Google Big Query does not support the FULL OUTER JOIN",
 				joinMessageAzureDataExplorer: "Azure Data Explorer does not support the CROSS JOIN",
-                joinMessageRockset: "Rockset does not support the FULL OUTER JOIN"
+				joinMessagePostgreSql: "PostgreSQL does not support the not equal operator in the FULL OUTER JOIN.",
+                joinMessageRockset: "Rockset does not support the FULL OUTER JOIN",
+				combineDsWithCustomQueryAlertMessage: "The combine data sources feature did not support data sources in code view mode."
             },
             parameterMessages: {
                 nameHasSpecialChar: "Name should not contain spaces and special characters",
@@ -4597,6 +4604,8 @@ var Designer = {
                 timeInterval: "Time Interval",
                 removeLoader: "Hide Loading Indicator",
 				commonTimeInterval: "Common Time Interval",
+				commonTimeErrorMessage: "Common Time Interval cannot be empty",
+				differentTimeErrorMessage: "Differed Time Interval cannot be empty",
 				differentTimeInterval: "Differed Time Interval",
                 removeLoaderDescription: "Enable this property to remove the loading indicator while refreshing the widget data"
             },
@@ -4835,7 +4844,7 @@ var Designer = {
                     avgEx: "AVG(numeric_expression)",
 					
 					sumdDesc: "Returns the sum of the Distinct values in the given expression.",
-                    sumdEx: "SUMD(expression)",
+                    sumdEx: "SUMD(numeric_expression)",
 
                     avgdDesc: "Returns the average of the Distinct values in the given expression.",
                     avgdEx: "AVGD(expression)",

@@ -9,6 +9,7 @@
     var internalServerLogo = string.Empty;
     var dashboardServerResourceUrl = string.Empty;
     var homePageUrl = Url.Action("Dashboards", "Dashboards");
+    var etlError = ViewBag.BoldETL != null ? ViewBag.BoldETL : false;
     internalServerLogo = themeBasedImageHelper.ServerErrorImage();
     if (ServerAppConfig.IsSelfHosted)
     {
@@ -42,20 +43,27 @@
 <html class="dashboard-server">
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>@T["Internal Server Error"] @(!canShowOrgName ? string.Empty : (" - " + organisationName))</title>
+    @if (!etlError)
+    {
+        <title>@T["Internal Server Error"] @(!canShowOrgName ? string.Empty : (" - " + organisationName))</title>
+    }
+    else
+    {
+        <title>@T["Redirection Error in BoldETL"] @(!canShowOrgName ? string.Empty : (" - " + organisationName))</title>
+    }
+    
     @await Html.PartialAsync("~/Views/Shared/_ApplicationThemeStyleSheet.cshtml")
     @await Html.PartialAsync("~/Views/Shared/_BaseThemeStyleSheet.cshtml")
     @await Html.PartialAsync("~/Views/Shared/_BaseFontStyleSheet.cshtml")
+    <script asp-append-version="true" src="~/js/localizationcontent.js?v=@ServerAppConfig.ProductVersion&c=@language"></script>
     <environment include="Development,CloudDevelopment">
         <link rel="stylesheet" asp-append-version="true" href="@dashboardServerResourceUrl/cdn/css/layout.css" />
         <link rel="stylesheet" asp-append-version="true" href="@dashboardServerResourceUrl/cdn/css/error-page-new.css" />
-        <script asp-append-version="true" src="~/js/localizationcontent.js?v=@ServerAppConfig.ProductVersion&c=@language"></script>
         <script asp-append-version="true" src="@dashboardServerResourceUrl/cdn/scripts/error-page.js"></script>
     </environment>
     <environment exclude="Development,CloudDevelopment">
         <link rel="stylesheet" asp-append-version="true" href="@dashboardServerResourceUrl/cdn/css/layout.min.css" />
         <link rel="stylesheet" asp-append-version="true" href="@dashboardServerResourceUrl/cdn/css/error-page-new.min.css" />
-        <script asp-append-version="true" src="~/js/localizationcontent.js?v=@ServerAppConfig.ProductVersion&c=@language"></script>
         <script asp-append-version="true" src="@dashboardServerResourceUrl/cdn/scripts/error-page.min.js"></script>
     </environment>
     <script>
@@ -74,11 +82,23 @@
                 <div class="error-image-center-2">
                     <img src="@internalServerLogo" class="error-image-2">
                 </div>
+                
                 <div class="error-type">@T["Internal Server Error (500)"]</div>
-                <div class="error-text">
+                @if (!etlError)
+                {
+                    <div class="error-text">
                         <span>@T["Sorry! The server has encountered an internal error and was unable to complete your request."]</span>
 
-                </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="error-text">
+                        <span>@T["We regret to inform you that we're currently experiencing difficulties redirecting you to the BoldETL application. Kindly attempt to refresh the page after some time. If the issue persists, please consider creating a support ticket by clicking here."]</span>
+
+                    </div>
+                }
+
                 @if (!string.IsNullOrWhiteSpace(errorMessage))
                 {
                     <div id="deploy-error-container">

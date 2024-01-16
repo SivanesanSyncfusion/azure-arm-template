@@ -16,15 +16,6 @@
     var validatePublishItemUrl = { "dashboard": "@Url.Action("ValidatePublishItem", "Publish")", "datasource": "@Url.Action("ValidateDatasourcePublishItem", "Publish")" };
     var getExternalSitesUrl = "@Url.Action("GetExternalSites", "Publish")";
     </script>
-    @if (requestUrl.IndexOf(dashboardsPageUrl, StringComparison.OrdinalIgnoreCase) == -1)
-    {
-        <environment include="Development,CloudDevelopment">
-            <link rel="stylesheet" asp-append-version="true" href="@dashboardServerResourceUrl/cdn/css/publish-dashboard.css" />
-        </environment>
-        <environment exclude="Development,CloudDevelopment">
-            <link rel="stylesheet" asp-append-version="true" href="@dashboardServerResourceUrl/cdn/css/publish-dashboard.min.css" />
-        </environment>
-    }
     <environment include="Development,CloudDevelopment">
         <script asp-append-version="true" src="@dashboardServerResourceUrl/cdn/scripts/publish-dashboard.js"></script>
     </environment>
@@ -123,6 +114,9 @@
                 <ul class="col-xs-11 publish-detail" ng-repeat="sites in selectedSites" ng-class="{active : activeMenu.TenantId === sites.TenantId}">
                     <li class="publish-active-sites" ng-click="setActive(sites, $event)">
                         <span>{{sites.TenantName}}</span>
+                        <span id="warning-info" title="@T["One or more details are invalid"]" data-toggle="tooltip" data-placement="top" data-container="#publish-site-dialog" style="display: none">
+                            <i class="su su-info"></i>
+                        </span>
                     </li>
                 </ul>
             </div>
