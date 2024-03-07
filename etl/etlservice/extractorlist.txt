@@ -1,0 +1,27 @@
+﻿Facebook Ads
+FileSystem
+GitHub
+Google Analytics
+Google Sheets
+HubSpot
+Jira
+Matomo
+MongoDB
+Mux
+Notion
+MySQL
+MSSQL
+Pipedrive
+PostgreSQL
+Oracle
+Salesforce
+Strapi
+Stripe
+Workable
+ZendeskSupport
+ZendeskTalk
+ZendeskChat
+Slack
+OpenAPI
+Web
+PythonScript

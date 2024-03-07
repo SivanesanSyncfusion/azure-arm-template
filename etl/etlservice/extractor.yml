@@ -1,0 +1,4 @@
+﻿version: 1
+encrypt_credentials: false
+plugins:
+  extractors:
