@@ -8,6 +8,35 @@ var editCustomAttributeId;
 var currentIndex;
 
 $(document).ready(function () {
+
+    var addCustomAttributeButton = $("#add-custom-attribute");
+    if (addCustomAttributeButton.length) {
+        addCustomAttributeButton.on("click", function () {
+            openCustomAttributeDialog();
+        });
+    }
+
+    var addTenantSite = $("#add-tenant-site");
+    if (addTenantSite.length) {
+        addTenantSite.on("click", function () {
+            openCustomAttributeDialog(null, 'addtenant');
+        });
+    }
+
+    var recoveryCodeCopy = $("#recovery-code-copy");
+    if (recoveryCodeCopy.length) {
+        recoveryCodeCopy.on("click", function () {
+            copyToClipboard('#copy-recovery', '#recovery-code-copy');
+        });
+    }
+
+    var removeUserAttributeLink = $("#remove-user-attribute");
+    if (removeUserAttributeLink.length) {
+        removeUserAttributeLink.on("click", function () {
+            deleteConfirmation(this);
+        });
+    }
+
     var inputbox = new ejs.inputs.TextBox({
         cssClass: 'e-outline e-custom e-non-float',
         floatLabelType: 'Never',
@@ -38,10 +67,15 @@ $(document).ready(function () {
             "custom-attribute-name": {
                 isRequired: true,
                 isValidName: true,
-                isAttributeExist: true
+                isAttributeExist: true,
+                maxlength: 255
             },
             "custom-attribute-value": {
-                isRequired: true
+                isRequired: true,
+                maxlength: 4000
+            },
+            "custom-attribute-description": {
+                maxlength: 1024
             }
         },
         highlight: function (element) {
@@ -58,10 +92,15 @@ $(document).ready(function () {
         },
         messages: {
             "custom-attribute-name": {
-                isRequired: window.Server.App.LocalizationContent.AttributeNameValidator
+                isRequired: window.Server.App.LocalizationContent.AttributeNameValidator,
+                maxlength: window.Server.App.LocalizationContent.AttributeLengthValidator.format("name", "255")
             },
             "custom-attribute-value": {
-                isRequired: window.Server.App.LocalizationContent.AttributeValueValidator
+                isRequired: window.Server.App.LocalizationContent.AttributeValueValidator,
+                maxlength: window.Server.App.LocalizationContent.AttributeLengthValidator.format("value", "4000")
+            },
+            "custom-attribute-description": {
+                maxlength: window.Server.App.LocalizationContent.AttributeLengthValidator.format("description", "1024")
             }
         }
     });
@@ -77,6 +116,10 @@ $(document).ready(function () {
     $.validator.addMethod("isAttributeExist", function (value, element) {
         return isAttributeExist(value);
     }, window.Server.App.LocalizationContent.IsAttributeNameExist);
+
+    $.validator.addMethod("ismaxlength", function (value, element, params) {
+        return value.length <= params;
+    }, window.Server.App.LocalizationContent.AttributeLengthValidator);
 });
 
 function isAttributeExist() {
@@ -252,7 +295,7 @@ function saveCustomAttribute() {
         return;
     }
 
-    var requestData = { customAttribute: JSON.stringify(customAttribute)};
+    var requestData = { customAttribute: JSON.stringify(customAttribute) };
 
     if (isUserAttributeRequest) {
         requestData = { customAttribute: JSON.stringify(customAttribute) };
@@ -323,7 +366,7 @@ function attributeNameCheck() {
     $.ajax({
         type: "POST",
         url: isAttributeNameExistsUrl,
-        data: requestData ,
+        data: requestData,
         success: function (result) {
             if (result.Status) {
                 $("#custom-attribute-name").addClass("e-error");
@@ -366,7 +409,7 @@ function updateCustomAttribute(attributeId) {
         updateSiteLevelAttribute(customAttribute);
         return;
     }
-    var requestData = { customAttribute: JSON.stringify(customAttribute)}
+    var requestData = { customAttribute: JSON.stringify(customAttribute) }
     if (isUserAttributeRequest) {
         requestData = { customAttribute: JSON.stringify(customAttribute) }
     }
@@ -496,7 +539,7 @@ function deleteConfirmation(item) {
             attributeGridObj = document.getElementById('SiteAttributesGrid').ej2_instances[0];
         }
         var attribute = attributeGridObj.getCurrentViewRecords()[attributeGridObj.getSelectedRowIndexes()];
-        messageBox("su-delete", window.Server.App.LocalizationContent.DeleteCustomAttribute, window.Server.App.LocalizationContent.DeleteAttributeConfirm.format(" - <span class ='highlight-name'>", attribute.Name, "</span>"), "error", function () {
+        messageBox("su-delete", window.Server.App.LocalizationContent.DeleteCustomAttribute, window.Server.App.LocalizationContent.DeleteAttributeConfirm.format(" - <div class='highlight-container'><span class ='highlight-name'>", attribute.Name, "</span></div>"), "error", function () {
             removeCustomAttribute(item)
         }, function () {
             clearAttributeSelection()

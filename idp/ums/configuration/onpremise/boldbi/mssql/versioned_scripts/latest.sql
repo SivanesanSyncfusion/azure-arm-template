@@ -1,17 +1,13 @@
-Drop Table [BoldBI_ai_qnawidgethistory]
-;
-
-CREATE TABLE [BoldBI_ai_qnawidgethistory] (
-   searchid VARCHAR(255) PRIMARY KEY,
-   question TEXT,
-   tableinfo TEXT,
-   fieldinfo TEXT,
-   message TEXT,
-   haserror BIT,
-   chartType TEXT,
-   uservote TEXT,
-   isreported BIT)
-;
-
-ALTER TABLE [BOLDBI_ScheduleRunHistory] ADD [LogExist] bit NOT NULL DEFAULT '0'
+CREATE TABLE [BOLDBI_Notification] (
+    [Id] [int] IDENTITY(1,1) PRIMARY KEY NOT NULL,
+    [CurrentUserId] [int] NOT NULL,
+    [ClubId] nvarchar(100) NOT NULL,
+    [CommentId] [int] NULL,
+    [ItemId] [uniqueidentifier] NULL,
+    [NotificationSource] nvarchar(100) NULL,
+    [NotifictionDetails] nvarchar(4000) NULL,
+    [NotificationTo] [int] NULL,    
+    [ModifiedDate] [datetime] NOT NULL,
+    [IsRead] [bit] NOT NULL,
+    [IsActive] [bit] NOT NULL)
 ;

@@ -1,7 +1,7 @@
 /*!
 *  filename: ej1.grid.all.js
-*  version : 6.19.14
-*  Copyright Syncfusion Inc. 2001 - 2023. All rights reserved.
+*  version : 7.8.15
+*  Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
 *  Use of this code is subject to the terms of our license.
 *  A copy of the current license can be obtained at any time by e-mailing
 *  licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -10071,6 +10071,21 @@
 						rowIndex = bbdesigner$(document.getElementsByName(pageto * pageSize)[rowIndex % pageSize]).index();
 				}
             }
+            if (!BoldBIDashboard.isNullOrUndefined(this.virtualLoadedPages)) {
+                var pagesLoaded = this.virtualLoadedPages.length;
+                if (BoldBIDashboard.isNullOrUndefined(Data) && rowIndex >= this._currentJsonData.length && trIndex > -1 && pagesLoaded == pageIndex) {
+                    Data = this._currentJsonData[trIndex];
+                }
+                if (pagesLoaded == pageIndex) {
+                    this._virtualLoadedRecords[pageIndex] = this._currentJsonData;
+                }
+                if (((pagesLoaded * pageSize) - rowIndex) > pageSize && ((pagesLoaded * pageSize) - pageSize) > rowIndex) {
+                    Data = this._loadedJsonData[this._loadedJsonData.length - 1].data[trIndex];
+                }
+                if (BoldBIDashboard.isNullOrUndefined(Data)) {
+                    Data = this._virtualLoadedRecords[pageIndex][trIndex];
+                }
+            }
             args = { rowIndex: bbdesigner$rowIndex, row: bbdesigner$gridRows.eq(rowIndex), data: Data, target: target,  prevRow: bbdesigner$prevRow, prevRowIndex: bbdesigner$prevIndex, parentTarget: e  };
             if (this._trigger("rowSelecting", args))
                 return;
@@ -15972,7 +15987,7 @@
                 if (this.text) this.text.html(text);
                 else {
                     this.text = BoldBIDashboard.buildTag("div.e-progress-txt", text);
-                    this.element.append(this.text);
+                    this.text.appendTo(this.element.find(".e-progress"));
                     this._setTop();
                 }
             }
@@ -16140,8 +16155,10 @@
 
 
         _setTop: function () {
-            var top = (this.element.height() - this.text.height()) / 2;
-            this.text.css("top", Math.floor(top));
+            if (this.text.height() != 0){
+                var top = (this.element.height() - this.text.height()) / 2;
+                this.text.css("top", Math.floor(top));
+            }
         },
 
 

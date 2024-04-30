@@ -258,14 +258,33 @@ $(document).on("click", "#know-more-error", function () {
 
 
 $(document).on("click", "#db-config-submit, #sql-existing-db-submit", function () {
-    var databaseValidationMessage = window.Server.App.LocalizationContent.OneOrMoreErrors.format("<a id='know-more-error'>", "</a>");
-    var isNewDatabaseTab = $(this).attr("id") == "db-config-submit";
     removeError();
+    var clickedButton = $(this);
+    if (!isSiteCreation) {
+        validateStartup(function (result) {
+            if (result) {
+                messageBox("su-login-error", window.Server.App.LocalizationContent.ConfigurationError, window.Server.App.LocalizationContent.ConfigurationErrorMessage, "success", function () {
+                    onCloseMessageBox();
+                });
+            }
+            else {
+                databaseConfiguration(clickedButton);
+            }
+        });
+    }
+    else {
+        databaseConfiguration(clickedButton);
+    }
+});
+
+function databaseConfiguration(clickedButton) {
+    var databaseValidationMessage = window.Server.App.LocalizationContent.OneOrMoreErrors.format("<a id='know-more-error'>", "</a>");
+    var isNewDatabaseTab = clickedButton.attr("id") == "db-config-submit";
     var canProceed = $("#db-content-holder").valid();
     if (canProceed) {
         showWaitingPopup('startup-waiting-element');
         $("#startup-waiting-element").find(".e-spinner-pane").css("height", $("#startup-waiting-element").height())
-        $(this).prop("disabled", true);
+        clickedButton.prop("disabled", true);
         window.serverName = $("#txt-servername").val();
         window.portNumber = $("#txt-portnumber").val();
         window.maintenanceDb = $('#maintenance-db').val();
@@ -369,13 +388,6 @@ $(document).on("click", "#db-config-submit, #sql-existing-db-submit", function (
                 }
                 else {
                     hideWaitingPopup('startup-waiting-element');
-                    var id = "#txt-dbname";
-                    if (isNewDatabaseTab) {
-                        id = result.Data.connectionResponse.IsServerDatabaseError ? "#txt-dbname" : result.Data.connectionResponse.IsTenantServerDatabaseError ? "#server-dbname" : result.Data.connectionResponse.IsIntermediateServerDatabaseError ? "#imdbname" : id;
-                    }
-                    else {
-                        id = result.Data.connectionResponse.IsServerDatabaseError ? "#database-name" : result.Data.connectionResponse.IsTenantServerDatabaseError ? "#server-existing-dbname" : result.Data.connectionResponse.IsIntermediateServerDatabaseError ? "#imdb-existing-dbname" : id;
-                    }
                     if (isNewDatabaseTab) {
                         $("#db-config-submit").show().prop("disabled", false);
                     }
@@ -384,13 +396,13 @@ $(document).on("click", "#db-config-submit, #sql-existing-db-submit", function (
                     }
 
                     errorContent = result.Data.value;
-                    $(id).closest('div').addClass("e-error");
-                    $(id).closest(".e-outline").siblings(".startup-validation").html(databaseValidationMessage).show();
+                    $("#additional-parameter").closest('div').addClass("e-error");
+                    $("#additional-parameter").closest(".e-outline").siblings(".startup-validation").html(databaseValidationMessage).show();
                 }
             }
         );
     }
-});
+}
 
 function registerApplication(isSimpleMode) {
     getFormData();
@@ -415,7 +427,15 @@ function registerApplication(isSimpleMode) {
             isSimpleMode: isSimpleMode,
         },
         success: function (setSystemSettingsResponse) {
-            window.location = setSystemSettingsResponse.redirectUrl;
+            if (setSystemSettingsResponse.redirectUrl != null) {
+                window.location = setSystemSettingsResponse.redirectUrl;
+            }
+            else {
+                $(".progressBar-container").hide();
+                $(".deployment-status").hide();
+                $(".deployment-error").show();
+                document.getElementById("error-display").innerHTML = setSystemSettingsResponse.error;
+            }
         },
         error: function (setSystemSettingsResponse) {
 

@@ -1,4 +1,4 @@
-﻿$(document).ready(function () {
+$(document).ready(function () {
     addPlacehoder("#user-add-dialog");
     createWaitingPopup('user-add-dialog');
     var addUserDialog = new ej.popups.Dialog({
@@ -44,7 +44,7 @@
     }, window.Server.App.LocalizationContent.AvoidSpecailCharacters);
 
     $.validator.addMethod("additionalSpecialCharValidation", function (value, element) {
-        if (/^[a-zA-Z_0-9`~!\$\^()=\-\.\{\} ]+$/.test(value) || value === "") {
+        if (/^[a-zA-Z_0-9`'~!\$\^()=\-\.\{\}À-ÖØ-öø-ÿŒœŸÿ€ß ]+$/.test(value) || value === "") {
             return true;
         }
     }, window.Server.App.LocalizationContent.AvoidSpecailCharacters);
@@ -181,3 +181,10 @@ function onUserAddDialogOpen() {
     $("#dialog-container").find("div").removeClass("e-error");
     CheckMailSettingsAndNotify(window.Server.App.LocalizationContent.ToSendAccountActivation, $(".validation-message"), "");
 }
+
+$(document).on("click", "#create-user,#new-user-dropdown", function () {
+    onUserAddDialogOpen();
+});
+$(document).on("click", "#cancel-user", function () {
+    onUserAddDialogClose();
+});

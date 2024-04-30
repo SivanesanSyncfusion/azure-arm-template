@@ -1,5 +1,12 @@
 $(document).ready(function () {
-
+    var loginForm = $("#login-form");
+    if (loginForm.length) {
+        loginForm.on("submit", function (event) {
+            if (!FormValidate()) {
+                event.preventDefault();
+            }
+        });
+    }
     var loginEmail = new ejs.inputs.TextBox({
         cssClass: 'e-outline e-custom e-account',
         floatLabelType: 'Always',
@@ -40,7 +47,11 @@ $(document).ready(function () {
         errorElement: "span",
         onkeyup: function (element, event) {
             if (event.keyCode != 9) $(element).valid();
-            else true;
+
+            if (element.name === "userName") {
+                // Remove whitespaces from the email field's value
+                $(element).val($(element).val().replace(/\s/g, ''));
+            }
         },
         onfocusout: function (element) { $(element).valid(); },
         rules: {
@@ -218,6 +229,40 @@ $(document).on("click", "#adfs-login-text", function () {
     $("#windows-login").trigger("click");
 });
 
+$(document).on("click", ".popup-login-button", function () {
+    showWaitingPopup('body');
+    var waitingPopupMessage = window.Server.App.LocalizationContent.WaitingPopupMessage;
+    $(".e-spinner-pane").append('<div class="e-spinner-message" style="font-weight:bold;color: white;font-size: 20px;padding-top: 70px;"><span id="waiting-popup-message"></span></div>');
+    $("#waiting-popup-message").append(waitingPopupMessage);
+    var screenWidth = $(window).width() / 2 - 250,
+        screenHeight = $(window).height() / 2 - 300,
+        popupFeatures = "width=500,height=600,status,resizable,left=" + screenWidth + ",top=" + screenHeight + "screenX=" + screenWidth + ",screenY=" + screenHeight;
+    popup = window.open($(".popup-login-button").attr("data-login-url"), "PopupWindow", popupFeatures);
+    setInterval(openLoginWindow, 300);
+    setTimeout(closeLoginWindow, 10000000);
+});
+
+function openLoginWindow() {
+    if (popup.window.location.href != null) {
+        var currentURL = popup.window.location.href;
+        var base = $('meta[name="base_url"]').attr("content");
+        if (currentURL != null && currentURL.includes(base)) {
+            var redirectingMessage = window.Server.App.LocalizationContent.RedirectingMessage;
+            $("#waiting-popup-message").hide();
+            if ($("#redirect-message").length === 0) {
+                $(".e-spinner-message").append('<span id="redirect-message"></span>');
+                $("#redirect-message").append(redirectingMessage);
+                popup.close();
+                window.location.href = currentURL;
+            }
+        }
+    }
+}
+
+function closeLoginWindow() {
+    popup.close();
+}
+
 function FormValidate() {
     $("#access-denied").css("display", "none");
     if ($("#password-field").css("display") === "none") {
@@ -249,5 +294,4 @@ function getParameterByName(name) {
         urlValue = homeUrl;
     return urlValue;
 }
-
 

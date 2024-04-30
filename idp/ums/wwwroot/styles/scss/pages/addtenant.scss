@@ -898,8 +898,8 @@ html {
     padding: 21px 20px 20px 20px;
     float: left;
     width: 100%;
-    margin-bottom : 30px;
-    margin-left : 10px;
+    margin-bottom: 30px;
+    margin-left: 10px;
 
     .su-search {
         width: 12px;
@@ -929,11 +929,13 @@ html {
     }
 
     .fade {
-        left: 394px !important;
+        left: 366px !important;
+    }
 
-        .tooltip-arrow {
-            top: 45px !important;
-        }
+    .tooltip-inner {
+        word-break: break-all;
+        white-space: pre !important;
+        max-width: none !important;
     }
 
     .search-bar {
@@ -1143,6 +1145,11 @@ e-filter-parent {
 .e-popup .e-checkbox-wrapper .e-frame.e-check, .e-popup .e-checkbox-wrapper:hover .e-frame.e-check {
     background-color: $primary-button-bg-normal-color;
     color: $primary-text-color;
+}
+
+.e-popup .e-checkbox-wrapper .e-frame,
+.e-popup .e-checkbox-wrapper .e-frame:hover {
+    background-color: $checkbox-bg-disable-color;
 }
 
 .e-multiselect.e-outline .e-multi-select-wrapper .e-delim-values {

@@ -16,7 +16,7 @@
 }
 
 @section styles{
-    <link rel="stylesheet" href="~/bundles/css/accounts.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/bundles/css/accounts.css" integrity="@IntegrityTagHelper.GetIntegrity("bundles/css/accounts.css")" crossorigin="anonymous"asp-append-version="true" />
 
     @if (File.Exists(customCssPath))
     {
@@ -27,7 +27,7 @@
 }
 
 @section scripts{
-    <script>
+       <script nonce="@Context.Items["ScriptNonce"]">
         var callBackUri = "@callBackUri";
         var IsAdfsUserStatus = '@IsAdfsUserStatus';
         var validateEmailUrl = "@Url.Action("ValidateEmail", "Accounts")";
@@ -44,7 +44,7 @@
         var mfaVerificationPageUrl = "@Url.Action("LoginMfaVerificationCodeValidation", "Accounts")";
     </script>
 
-    <script src="~/bundles/js/accounts-login.js" asp-append-version="true"></script>
+      <script nonce="@Context.Items["ScriptNonce"]" src="~/bundles/js/accounts-login.js" integrity="@IntegrityTagHelper.GetIntegrity("bundles/js/accounts-login.js")" crossorigin="anonymous"asp-append-version="true"></script>
 }
 
 @section MainSection{

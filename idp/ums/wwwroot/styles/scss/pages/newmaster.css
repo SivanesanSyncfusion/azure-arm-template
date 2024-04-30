@@ -121,6 +121,10 @@ body #ad-tab-nav, body .nav-tabs:not(#startup-tab-nav) {
 a {
   color: var(--global-link-text-normal-color); }
 
+.e-popup-open .e-dropdownbase.e-nodata {
+  background: var(--drop-down-menu-bg-hover-color);
+  color: var(--drop-down-menu-text-normal-color) !important; }
+
 a:hover, a:focus {
   text-decoration: none !important;
   color: var(--global-link-text-hover-color); }
@@ -171,7 +175,7 @@ input::-ms-clear, input::-ms-reveal {
   cursor: default !important; }
 
 .glyphicon-ok::before {
-  content: "" !important;
+  content: "" !important;
   font-family: "Server" !important;
   float: right; }
 
@@ -637,7 +641,8 @@ input::-ms-clear, input::-ms-reveal {
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none; }
+  -ms-user-select: none;
+  white-space: nowrap; }
   .material-checkbox + input + label::after {
     border-radius: 2px; }
   .material-checkbox + input + label::before, .material-checkbox + input + label::after {
@@ -667,7 +672,7 @@ input::-ms-clear, input::-ms-reveal {
 .material-checkbox:checked + input + label::before {
   bottom: 11.2px;
   color: var(--checkbox-text-active-color);
-  content: "";
+  content: "";
   font-family: "Server";
   left: 1px;
   font-size: 14px;
@@ -721,6 +726,12 @@ input::-ms-clear, input::-ms-reveal {
     #messageBox .message-content .list-area {
       padding: 10px 0 0 50px;
       text-align: left; }
+    #messageBox .message-content .highlight-container {
+      max-width: 411px;
+      display: inline-flex; }
+      #messageBox .message-content .highlight-container .highlight-name {
+        overflow: hidden;
+        text-overflow: ellipsis; }
   #messageBox .e-footer-content .secondary-button {
     margin-left: 10px; }
 
@@ -1032,7 +1043,7 @@ input::-ms-clear, input::-ms-reveal {
   #search-area .placeholder, #user-search-area .placeholder, #group-search-area .placeholder, #search-items .placeholder, #add-user-search-area .placeholder, #add-group-search-area .placeholder, #add-admin-search-area .placeholder {
     padding-top: 2px; } }
 .glyphicon-ok::before {
-  content: "" !important;
+  content: "" !important;
   font-family: "Server" !important; }
 
 @media screen and (min-width: 1400px) {

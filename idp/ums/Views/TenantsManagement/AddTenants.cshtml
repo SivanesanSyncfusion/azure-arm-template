@@ -63,12 +63,12 @@
     @await Html.PartialAsync("../Shared/_FontReference")
     @await Html.PartialAsync("../Shared/_ThemeReference")
 
-    <link rel="stylesheet" href="~/bundles/css/addtenantiframe.css" asp-append-version="true" />
-    <script src="~/js/onpremiselocalizationcontent.js" asp-append-version="true"></script>
-    <script src="~/bundles/js/addtenantiframe.js" asp-append-version="true"></script>
-    <script src="~/bundles/js/ej2.js" asp-append-version="true"></script>
+    <link rel="stylesheet" href="~/bundles/css/addtenantiframe.css" integrity="@IntegrityTagHelper.GetIntegrity("bundles/css/addtenantiframe.css")" crossorigin="anonymous" asp-append-version="true" />
+    <script nonce="@Context.Items["ScriptNonce"]" src="~/js/onpremiselocalizationcontent.js" asp-append-version="true"></script>
+    <script nonce="@Context.Items["ScriptNonce"]" src="~/bundles/js/addtenantiframe.js" integrity="@IntegrityTagHelper.GetIntegrity("bundles/js/addtenantiframe.js")" crossorigin="anonymous" asp-append-version="true"></script>
+    <script nonce="@Context.Items["ScriptNonce"]" src="~/bundles/js/ej2.js" integrity="@IntegrityTagHelper.GetIntegrity("bundles/js/ej2.js")" crossorigin="anonymous" asp-append-version="true"></script>
 
-    <script>
+       <script nonce="@Context.Items["ScriptNonce"]">
         var boldReportsPath = "@boldReportPath";
         var boldBiPath = "@boldBIPath";
         var boldReportsUrl = "@boldReportPath/@CloudAppConfig.TenantIdentifierPrefix/";
@@ -126,7 +126,7 @@
                     <label>@T["Create new site"]</label>
                 </div>
                 <div class="title icons">
-                    <a href="javascript:void(0);" class="popup-close" title="@T["Close"]">
+                    <a href="#" class="popup-close" title="@T["Close"]">
                         <span id="add-tenant-close" class="su su-close pull-right"></span>
                     </a>
                 </div>
@@ -317,7 +317,18 @@
                                         @Html.CheckBox("change-master", false, new { @class = "material-checkbox  make-master-checkbox" })
                                         @Html.Hidden("change-master")
                                         <label for="change-master" class="">@T["Master Site"]</label>
-                                        <div class="info-content check-box-info"> @T["The master site can publish the dashboard and data source to other sites on the same server without the need for site credentials. It can also add sets of dashboards automatically to newly created tenants."]</div>
+                                        @if (!ViewBag.IsBoldBIMultiTenant && ViewBag.IsBoldReportsMultiTenant)
+                                        {
+                                            <div id="master-site-description" class="info-content check-box-info">
+                                                @T["The master site can publish the reports and data source to other sites on the same server without the need for site credentials. It can also add sets of reports automatically to newly created tenants."]
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div id="master-site-description" class="info-content check-box-info">
+                                                @T["The master site can publish the dashboard and data source to other sites on the same server without the need for site credentials. It can also add sets of dashboards automatically to newly created tenants."]
+                                            </div>
+                                        }
                                     </div>
                                     <div id="master-site-change"></div>
                                     <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 no-padding empty-validation-error">

@@ -233,6 +233,7 @@ CREATE TABLE {database_name}.BOLDTC_TenantUser (
 	Id char(38) NOT NULL,
 	UserId char(38) NOT NULL,
 	TenantInfoId char(38) NOT NULL,
+	IsFavorite tinyint(0) NOT NULL DEFAULT '0',
 	IsActive tinyint(1) NOT NULL,
   CONSTRAINT PK_BOLDTC_TENANTUSER PRIMARY KEY (Id ASC)
 )

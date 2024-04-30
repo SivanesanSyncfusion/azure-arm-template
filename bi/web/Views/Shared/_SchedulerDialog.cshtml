@@ -202,7 +202,7 @@
                                         {
                                             @if (!string.IsNullOrWhiteSpace(widgetId.ToString()) && !string.IsNullOrWhiteSpace(widgetName.ToString()))
                                             {
-                                                <option value="@widgetId" selected="selected" data-excel="@widgetInformation.Exportoption.Excel.ToString().ToLower()" data-pdf="@widgetInformation.Exportoption.Pdf.ToString().ToLower()" data-csv="@widgetInformation.Exportoption.Csv.ToString().ToLower()" data-image="@widgetInformation.Exportoption.Image.ToString().ToLower()">@widgetName</option>
+                                                <option value="@widgetId" selected="selected" data-excel="@widgetInformation.Exportoption.Excel.ToString().ToLower()" data-pdf="@widgetInformation.Exportoption.Pdf.ToString().ToLower()" data-csv="@widgetInformation.Exportoption.Csv.ToString().ToLower()" data-image="@widgetInformation.Exportoption.Image.ToString().ToLower()" data-export-pagewise="@widgetInformation.CanExportPdfPageWise.ToString().ToLower()">@widgetName</option>
                                             }
                                             else
                                             {
@@ -281,12 +281,7 @@
             </div>
         </div>
     </div>
-    <environment include="Development,CloudDevelopment">
-        <script asp-append-version="true" src="~/js/localizationcontent.js?v=@ServerAppConfig.ProductVersion&c=@System.Globalization.CultureInfo.CurrentCulture"></script>
-    </environment>
-    <environment exclude="Development,CloudDevelopment">
-        <script asp-append-version="true" src="~/js/localizationcontent.js?v=@ServerAppConfig.ProductVersion&c=@System.Globalization.CultureInfo.CurrentCulture"></script>
-    </environment>
+    <script asp-append-version="true" src="~/js/localizationcontent.js?v=@ServerAppConfig.ProductVersion&c=@System.Globalization.CultureInfo.CurrentCulture"></script>
 </body>
 </html>
 
@@ -336,11 +331,16 @@
 
     $("#selected_dashboard,#selected_category").selectpicker();
     $("#selected_childdashboard").attr("disabled", true);
+
+    function htmlDecode(input) {
+        var doc = new DOMParser().parseFromString(input, "text/html");
+        return doc.documentElement.textContent;
+    }
     if (actionType == "Create") {
-        createSchedule(itemId, itemName, categoryName, multiDashboardName);
+        createSchedule(itemId, htmlDecode(itemName), htmlDecode(categoryName), multiDashboardName);
     }
     else {
-        editSchedule(scheduleId, itemId, itemName, categoryName, multiDashboardName, isScheduledItemDeleted, isWidgetDeleted);
+        editSchedule(scheduleId, itemId, htmlDecode(itemName), htmlDecode(categoryName), multiDashboardName, isScheduledItemDeleted, isWidgetDeleted);
     }
     if (($(parent.window).width()) > 1400) {
         $(".schedule-dialog").addClass("lg-schedule-flexible");
@@ -350,5 +350,6 @@
         $(".schedule-dialog").removeClass("lg-schedule-flexible");
     }
     addPlacehoder("#schedule-dialog");
+    widgetName = htmlDecode(widgetName);
 
 </script>

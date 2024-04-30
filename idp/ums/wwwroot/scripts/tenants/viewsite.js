@@ -35,6 +35,13 @@ $(document).ready(function () {
     createWaitingPopup('add-tenant-popup');
     createWaitingPopup('grant-users-access-dialog');
 
+    var isolationSwitchContainer = $("#isolation-switch-container");
+    if (isolationSwitchContainer.length) {
+        isolationSwitchContainer.on("click", function () {
+            enableIsolationCode();
+        });
+    }
+
     var grantUserAccessDialog = new ej.popups.Dialog({
         header: window.Server.App.LocalizationContent.GrantAccessToUsers + " - " + tenantName,
         content: document.getElementById("grant-users-access-dialog-content"),
@@ -119,7 +126,7 @@ $(document).ready(function () {
         }
         $('a[href="#custom-attribute-tab"]').tab("show");
     }
-    else if (query.includes("?tab=site-settings")) {
+    else if (query.includes("?tab=site-settings") && isActiveSite) {
         $('a[href="#site-settings-tab"]').tab("show");
     }
     else {
@@ -146,7 +153,7 @@ $(document).ready(function () {
             $("#custom-attribute a").attr("href", "#custom-attribute-tab");
             $('a[href="#custom-attribute-tab"]').tab('show');
         }
-        else if (tab === "site-settings") {
+        else if (tab === "site-settings" && isActiveSite) {
             $("#site-settings a").attr("href", "#site-settings-tab");
             $('a[href="#site-settings-tab"]').tab('show');
         }
@@ -772,7 +779,8 @@ function provideAccesstoUsers() {
 }
 
 ////Remove user Access
-$(document).on("click", ".delete-permission", function () {
+$(document).on("click", ".delete-permission", function (e) {
+    e.preventDefault();
     singleUserSelectedId = $(this).attr("data-user-id");
     document.getElementById("user-remove-confirmation-dialog").ej2_instances[0].show();
     singleUserRemove = true;
@@ -949,13 +957,12 @@ function updateTenantStatus(actionUrl, tenantId, action) {
                 else if (action === "activate") {
                     SuccessAlert(actionName + " " + window.Server.App.LocalizationContent.SiteLetter, window.Server.App.LocalizationContent.SiteActivatedSuccess, 7000);
                 }
-
-                var tenantGridObj = document.getElementById('tenants_grid').ej2_instances[0];
-                tenantGridObj.refresh();
             }
             else {
-                WarningAlert(actionName + " " + window.Server.App.LocalizationContent.SiteLetter, window.Server.App.LocalizationContent.InternalServerErrorTryAgain, data.Message, 7000);
+                WarningAlert(actionName + " " + window.Server.App.LocalizationContent.SiteLetter, window.Server.App.LocalizationContent.SuspendOrDeleteSiteFailed.format(action), data.Message, 7000);
             }
+            var tenantGridObj = document.getElementById('tenants_grid').ej2_instances[0];
+            tenantGridObj.refresh();
         },
         complete: function () {
             hideWaitingPopup('messageBox');
@@ -1119,5 +1126,19 @@ function onChangeGlobalSettings(args) {
 $(document).on("click", "#new-user-button", function () {
     var usersgrid = document.getElementById('users_grid').ej2_instances[0];
     usersgrid.clearSelection();
+});
+
+$(document).on("click", "#edit-site-attribute", function () {
+    event.preventDefault();
+    editCustomAttribute(this);
+});
+
+$(document).on("click", "#remove-site-attribute", function () {
+    event.preventDefault();
+    deleteConfirmation(this);
+});
+
+$(document).on("click", "#add-custom-attribute", function () {
+    openCustomAttributeDialog();
 });
 

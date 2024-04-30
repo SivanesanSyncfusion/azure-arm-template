@@ -296,6 +296,7 @@ $(document).on("click", "#avatar-button-click", function () {
     $(".image-validation-message").text("");
     document.getElementById("avatar-upload-box").ej2_instances[0].show();
     document.getElementById("avatar-upload-box").ej2_instances[0].refresh();
+    $("#image-preview-text").show();
 
     $("#cancel-avatar-popup").on("click", function () {
         $("#image-preview-text").show();
@@ -590,4 +591,19 @@ function SetCookie() {
             window.location.href = result.Data;
         }
     );
+}
+
+$(document).ready(function () {
+    var userEmailInput = $("#user-email");
+
+    if (userEmailInput.length) {
+        userEmailInput.on("focus", function () {
+            $(this).blur();
+        });
+    }
+});
+var saveButtonId = "#save-button";
+
+if ($(saveButtonId).length) {
+    $(saveButtonId).on("click", SaveProfile);
 }
